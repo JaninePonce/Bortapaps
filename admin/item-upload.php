@@ -118,8 +118,12 @@
             <form action="item.php" method="POST" name="item-form" class="item-form" enctype="multipart/form-data">
                 <table>
                     <tr>
-                        <td><label for="product-name">Product Name:</label></td>
+                        <td><label for="product-name">Name:</label></td>
                         <td><input type="text" name="product-name" id="product-name" required></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><textarea name="product-description"  cols="20" rows="3" style="resize: none;"></textarea></td>
                     </tr>
                     <tr>
                         <td>Price:</td>
