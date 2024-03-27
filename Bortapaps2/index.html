@@ -229,6 +229,34 @@
       </section>
 
 
+      <style>
+
+        .product-item {
+          overflow: hidden;
+        }
+
+        .quick-view {
+          position: absolute;
+          bottom: -50px;
+          width: 100%;
+          height: 50px;
+          overflow: hidden;
+          background-color: rgba(0, 0, 0, 0.737);
+          color: white;
+          transition: bottom .5s, background-color .5s, font-size .5s;
+        }
+
+        .quick-view:hover {
+          background-color: black;
+          font-size: 20px;
+        }
+
+        .product-item:hover .quick-view {
+          
+          bottom: 0px;
+        }
+
+      </style>
 
 
 
@@ -253,6 +281,8 @@
 
                   <div class="card-badge">New</div>
 
+                  <input type="button" value="QUICK VIEW" class="quick-view">
+
                   <ul class="card-action-list">
 
                     <li class="card-action-item">
@@ -271,13 +301,13 @@
                       <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                     </li>
 
-                    <li class="card-action-item">
+                    <!-- <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-3">
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
                       <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
+                    </li> -->
 
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-4">
@@ -288,6 +318,7 @@
                     </li>
 
                   </ul>
+
                 </figure>
 
                 <div class="card-content">
@@ -333,13 +364,13 @@
                       <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                     </li>
 
-                    <li class="card-action-item">
+                    <!-- <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-3">
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
                       <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li>
+                    </li> -->
 
                     <li class="card-action-item">
                       <button class="card-action-btn" aria-labelledby="card-label-4">
