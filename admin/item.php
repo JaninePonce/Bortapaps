@@ -13,7 +13,6 @@ if(isset($_POST['upload-button'])){
     $current = $file['tmp_name'];
     $destination = "items/".basename($file['name']);
 
-    move_uploaded_file($current, $destination);
 
     $check = "SELECT * FROM products WHERE `name` = '$name'";
     $checkResult = mysqli_query($conn, $check);
@@ -24,6 +23,9 @@ if(isset($_POST['upload-button'])){
         mysqli_stmt_bind_param($stmt, "ssdss", $name, $description, $price, $category, $file['name']);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
+
+        
+        move_uploaded_file($current, $destination);
 
         header("Location: item-upload.php?success=Item uploaded successfully!");
     } else {
