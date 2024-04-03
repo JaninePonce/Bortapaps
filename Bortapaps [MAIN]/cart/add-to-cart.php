@@ -4,7 +4,7 @@
     include ('../components/connection.php');
 
     if(!isset($_SESSION['id'])){
-        header("Location: ../login.php");
+        header("Location: ./users/login.php");
     }
     
     $id = $_SESSION['id'];
