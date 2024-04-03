@@ -24,6 +24,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet">
@@ -142,36 +143,6 @@
       </section>
 
 
-      <style>
-
-        .product-item {
-          overflow: hidden;
-        }
-
-        .quick-view {
-          position: absolute;
-          bottom: -50px;
-          width: 100%;
-          height: 50px;
-          overflow: hidden;
-          background-color: rgba(0, 0, 0, 0.737);
-          color: white;
-          cursor: pointer;
-          transition: bottom .5s, background-color .5s, font-size .5s;
-        }
-
-        .quick-view:hover {
-          background-color: black;
-          font-size: 20px;
-        }
-
-        .product-item:hover .quick-view {
-          
-          bottom: 0px;
-        }
-
-      </style>
-
 
 
       <!-- 
@@ -245,8 +216,7 @@
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link"><?=$row['category']?></a>
                   </div>
 
                   <h3 class="h3 card-title">
@@ -264,7 +234,9 @@
       </section>
 
 
-
+      <script>
+        
+      </script>
 
 
       <!-- 
@@ -340,23 +312,33 @@
 
             <ul class="has-scrollbar">
 
+            <?php
+
+            $sql = "SELECT * FROM products ORDER BY id desc LIMIT 10, 5";
+            $result = mysqli_query($conn, $sql);
+
+            while($row = mysqli_fetch_assoc($result)){
+            ?>
+
               <li class="product-item">
                 <div class="product-card" tabindex="0">
 
                   <figure class="card-banner">
-                    <img src="pictures/product-1.jpg" width="312" height="350" loading="lazy"
-                      alt="Running Sneaker Shoes" class="image-contain">
+                    <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                      alt="Product image" class="image-contain">
 
                     <div class="card-badge">New</div>
 
                     <ul class="card-action-list">
 
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-1">
+                      <li class="card-action-item toCartContainer">
+                          <input type="hidden" id="productId" value="<?=$row['id']?>">
+                          <button class="card-action-btn toCartbtn" aria-labelledby="card-label-1">
+                        
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                        <div  class="card-action-tooltip" id="card-label-1">Add to Cart</div>
                       </li>
 
                       <li class="card-action-item">
@@ -368,9 +350,9 @@
                       </li>
 
                       <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-3">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </button>
+                      <button class="card-action-btn" aria-labelledby="card-label-3">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </button>
 
                         <div class="card-action-tooltip" id="card-label-3">Quick View</div>
                       </li>
@@ -389,211 +371,20 @@
                   <div class="card-content">
 
                     <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Women</a>
+                      <a href="#" class="card-cat-link"><?=$row['category']?></a>
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Running Sneaker Shoes</a>
+                      <a href="#"><?=$row['name']?></a>
                     </h3>
 
-                    <data class="card-price" value="180.85">$180.85</data>
+                    <data class="card-price" value="180.85">$<?=$row['price']?></data>
 
                   </div>
 
                 </div>
               </li>
-
-              <li class="product-item">
-                <div class="product-card" tabindex="0">
-
-                  <figure class="card-banner">
-                    <img src="pictures/product-2.jpg" width="312" height="350" loading="lazy"
-                      alt="Leather Mens Slipper" class="image-contain">
-
-                    <ul class="card-action-list">
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-1">
-                          <ion-icon name="cart-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-2">
-                          <ion-icon name="heart-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-3">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-4">
-                          <ion-icon name="repeat-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                      </li>
-
-                    </ul>
-                  </figure>
-
-                  <div class="card-content">
-
-                    <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Sports</a>
-                    </div>
-
-                    <h3 class="h3 card-title">
-                      <a href="#">Leather Mens Slipper</a>
-                    </h3>
-
-                    <data class="card-price" value="190.85">$190.85</data>
-
-                  </div>
-
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="product-card" tabindex="0">
-
-                  <figure class="card-banner">
-                    <img src="pictures/product-3.jpg" width="312" height="350" loading="lazy"
-                      alt="Simple Fabric Shoe" class="image-contain">
-
-                    <div class="card-badge">New</div>
-
-                    <ul class="card-action-list">
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-1">
-                          <ion-icon name="cart-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-2">
-                          <ion-icon name="heart-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-3">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-4">
-                          <ion-icon name="repeat-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                      </li>
-
-                    </ul>
-                  </figure>
-
-                  <div class="card-content">
-
-                    <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Women</a>
-                    </div>
-
-                    <h3 class="h3 card-title">
-                      <a href="#">Simple Fabric Shoe</a>
-                    </h3>
-
-                    <data class="card-price" value="160.85">$160.85</data>
-
-                  </div>
-
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="product-card" tabindex="0">
-
-                  <figure class="card-banner">
-                    <img src="pictures/product-4.jpg" width="312" height="350" loading="lazy"
-                      alt="Air Jordan 7 Retro " class="image-contain">
-
-                    <div class="card-badge"> -25%</div>
-
-                    <ul class="card-action-list">
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-1">
-                          <ion-icon name="cart-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-2">
-                          <ion-icon name="heart-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-3">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                      </li>
-
-                      <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-4">
-                          <ion-icon name="repeat-outline"></ion-icon>
-                        </button>
-
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                      </li>
-
-                    </ul>
-                  </figure>
-
-                  <div class="card-content">
-
-                    <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Sports</a>
-                    </div>
-
-                    <h3 class="h3 card-title">
-                      <a href="#">Air Jordan 7 Retro </a>
-                    </h3>
-
-                    <data class="card-price" value="170.85">$170.85 <del>$200.21</del></data>
-
-                  </div>
-
-                </div>
-              </li>
-
+            <?php } ?>
             </ul>
 
           </div>
@@ -601,6 +392,24 @@
         </div>
       </section>
 
+
+      <script>
+        $(".product-item .toCartContainer").each(function(){
+          $(this).children(".toCartbtn").click(function(){
+            let id = $(this).children("#productId").val();
+            console.log(id);
+
+            $.ajax({
+              type: "POST",
+              url: "cart.php",
+              data: {cart_item: id},
+              success: function(){
+                console.log(added);
+              }
+            })
+          })
+        })
+      </script>
 
 
 
