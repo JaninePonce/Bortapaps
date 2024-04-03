@@ -982,6 +982,12 @@
     .has-scrollbar > li { min-width: calc(50% - 12.5px); }
   
   
+    .home-setup {
+      position: relative;
+      left: 50px;
+      top: 60px;
+
+    }
   
     /**
      * HERO
