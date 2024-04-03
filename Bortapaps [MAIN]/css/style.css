@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    --button-color: rgb(164, 144, 236);
+    --button-color-hover: rgb(120, 105, 172); 
+}
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+.server_status {
+    background-color: #888888c8;
+    text-align: center;
+}
+
+.server_active {
+    background-color: rgba(142, 251, 103, 0.864);
+    text-align: center;
+}
+
+body {
+    background-color: #333;
+}
+
+.login_container {
+    position: absolute;
+    z-index: 3;
+    height: 60vh;
+    width: 30vw;
+    top: 25vh;
+    left: 35vw;
+    background-color: rgba(255, 255, 255, 0.855);
+    box-shadow: 0px 10px 20px black;
+    border-radius: 15px;
+    transition: opacity .3s;
+    opacity: 0;
+}
+  
+.login_text {
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    top: 30px;
+    padding-bottom: 10px;
+    border-bottom: rgb(38, 38, 38) solid 1px;
+    z-index: 3;
+}
+
+.input_fields {
+    position: relative;
+    background-color: transparent;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50px;
+    width: 20vw;
+    border-bottom: 1px solid black;
+    outline-color: rgb(1, 111, 255);
+}
+
+.login_info {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_form {
+    height:100%;
+    width: 100%;
+}
+
+.submit_button {
+    position: relative;
+    top: 20px;
+    height: 40px;
+    width: 20vw;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+    border: 1px solid black;
+    background-color: var(--button-color);
+    font-size: 20px;
+    left: 77px;
+}
+
+
+
+.submit_button:hover {
+    
+    background-color: var(--button-color-hover);
+}
+
+.back_button {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 0px;
+    right: 40px;
+
+    color: white;
+    background-color: transparent;
+}
+
+.back_button:hover {
+    color:black;
+    background-color: rgba(255, 255, 255, 0.738);
+}
+
+.status-text{
+    position: absolute;
+    height: 40px;
+    width: 20vw;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 6px;
+    top: 105px;
+    z-index: 2;
+}
+
+#error_prompt {
+    left: 80px;
+    background-color: rgb(255, 202, 202);
+    color: rgb(192, 0, 0);
+    border: 2px rgb(255, 0, 0) solid;
+}
+
+#success_prompt {
+    background-color: rgb(202, 255, 207);
+    color: rgb(5, 159, 0);
+    border: 2px rgb(30, 255, 0) solid;
+}
+
+
+.body_container {
+    position: relative;
+
+    margin-top: 20vh;
+    margin-left: 15%;   
+    height: 100%;
+    width: 70vw;
+    background-color: rgba(245, 245, 245, 0.79);
+
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px 5px black;
+
+}
+
+.profile-picture {
+    position: absolute;
+    left: 84px;
+    top: 33px;
+    width: 296px;
+    height: 296px;
+    border-radius: 148px;
+    border: 5px solid #8e78ff;
+    box-shadow: 0px 2px 14px 7px rgba(142,120,255,0.5);
+
+    z-index: 2;
+}
+
+.profile-details {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    background-color: rgba(29, 29, 29, 0.892);
+    top: 28vh;
+}
+
+.button{
+    width: 249px;
+    height: 48px;
+    border-radius: 22px;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--button-color);
+}
+
+.button:hover {
+    background-color: var(--button-color-hover);
+}
+
+#edit-profile{
+    position: absolute;
+    left: 135px;
+    top: 152px;
+    width: 195px;
+    height: 36px;
+}
+
+.username {
+    position: absolute;
+    left: 421px;
+    top: 215px;
+    width: 169px;
+    height: 22px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    z-index: 2;
+}
+
+.main_text {
+    position: absolute;
+    left: 417px;
+    top: 120px;
+    width: 786px;
+    height: 148px;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.signup_text {
+    position: relative;
+    z-index: 2;
+    font-size: 13px;
+    width: 100%;
+    top: 35px;
+    right: -130px;
+}
+
+
+.signup_container {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.808);
+    height: 70vh;
+    width: 30vw;
+    top: 25vh;
+    left: 35vw;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px black;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+
+.active {
+    opacity: 1;
+    z-index: 4;
+}
+
+.signup_form {
+    height: 60vh;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup_form input, .signup_form div {
+    margin-top: 5px;
+}
+
+.signup_form .signup_info {
+    height: 40vh;
+}
+
+.signup_logintext {
+    margin-top: 20px;
+}
+
+.signup_button {
+    position: relative;
+    height: 40px;
+    width: 20vw;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+    border: 1px solid black;
+    font-size: 20px;
+    background-color: var(--button-color);
+}
+
+.signup_button:hover {
+    background-color: var(--button-color-hover);
+}
+
+.signup_info {
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edit-profile-container {
+    position: absolute;
+    left: 380px;
+    top: 200px;
+    width: 771px;
+    height: 381px;
+    border-radius: 36px;
+    background: #d1c4e9;
+    background-blend-mode: normal;
+    opacity: 0;
+}
+
+.temp_profile{
+    position: absolute;
+    left: 64px;
+    top: 67px;
+    width: 135px;
+    height: 135px;
+    border: solid ;
+}
+
+#change_photo_label {
+    position: absolute;
+    left: 210px;
+    top: 94px;
+    width: 109px;
+    height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#upload_button {
+    position: absolute;
+    left: 238px;
+    top: 124px;
+    width: 203px;
+    height: 22px;
+}
+
+#save_button {
+    position: absolute;
+    left: 445px;
+    top: 308px;
+}
+
+#close_button {
+    position: absolute;
+    left: 689px;
+    top: 24px;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    align-items: center;
+    background-color: rgb(252, 110, 110);
+    border: red 1px solid;
+}
+
+.blur_effect {
+    filter: blur(8px);
+}
+
+#close_button:hover {
+    background-color: rgb(168, 100, 100);
+}
+
+.profile-container {
+    height: 40vh;
+    width: 75vh;
+    background-color: #a594fc9a;
+    border-radius: 20px;
+    z-index: 4;
+    left: 30vw;
+    top: 35vh;
+    position: relative;
+    padding: 20px;
+}
+
+.profile-table {
+    width: 100%;
+    position: relative;
+    top: 20px;
+}
+
+.profile-table .clmn {
+    position: relative;
+    left: 40px;
+    
+}
+
+.profile-table tr,td {
+    width: 20vw;
+    padding-top: 10px;
+}
+
+.password-container {
+    height: 60px;
+    width: 21vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-container .eye {
+    cursor: pointer;
+    padding: 8px;
+    height: 50px;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    margin-top: 3px;
+    outline: 1px solid black;
+    transition: background-color .3s, color .3s;
+}
+
+.password-container .eye:hover {
+    background-color: rgb(56, 56, 56);
+    border: 1px solid black;
+    color: white;
+}
+
+.password-container .eye:active {
+    opacity: .7;
+}
+
+.password-container input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    top: 0px;
+    width: 17.5vw;
+}
+
+.login_container .password-container .eye {
+    margin-bottom: 5px;
+}
+
+.password-status {
+    position: absolute;
+    margin-bottom: 150px;
+    background-color: rgba(33, 33, 33, 0.526);
+    backdrop-filter: blur(12);
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 10px;
+    color: rgb(255, 103, 103);
+    display:flex;
+    flex-direction: column;
+}
+
+.good{
+    outline-color: green;
+}
+
+.bad{outline-color: red;}
+
+@keyframes popup {
+    0% {display: block;}
+    5% {opacity: 0%;}
+    100% {opacity: 100%;}
+
+}
+
+.constraints {
+    font-size: 10px;
+}
+
+.constraints.good {
+    color: rgb(108, 250, 108);
+}
+
+.error-msg {
+    color: red;
+    font-size: 8px;
+}
+
+.msg {
+    font-size: 8px;
+}
+
+.msg.error{
+    color: red;
+}
+
+.msg.good{
+    color:green;
+}
