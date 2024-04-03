@@ -1,3 +1,5 @@
+<?php include '../conn.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,97 +36,7 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
-    <div class="container">
-
-      <div class="overlay" data-overlay></div>
-
-      <a href="#" class="logo">
-        <img src="BORTAPAPS2.png" width="160" height="50" alt="Footcap logo">
-      </a>
-
-      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-
-        <a href="#" class="logo">
-          <img src="BORTAPAPS2.png" width="190" height="50" alt="Footcap logo">
-        </a>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">Home</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">New Arrivals</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">Men</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">Women</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">Accesories</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">About Us</a>
-          </li>
-
-        </ul>
-
-        <ul class="nav-action-list">
-
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
-              <span class="nav-action-text">Search</span>
-            </button>
-          </li>
-
-          <li>
-            <a href="#" class="nav-action-btn">
-              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-              <span class="nav-action-text">Login / Register</span>
-            </a>
-          </li>
-
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-              <span class="nav-action-text">Wishlist</span>
-
-              
-            </button>
-          </li>
-
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="bag-outline" aria-hidden="true"></ion-icon> 
-            </button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-  </header>
+  <?php include 'header.php' ?>
 
 
   <main>
@@ -135,16 +47,17 @@
       -->
  
       <section class="hero" id="hero">
-        <div class="container">
-
-          <!-- Video Banner -->
+        
           <video class="hero-banner" autoplay loop muted playsinline>
             <source src="Jungkook2.mp4" type="video/mp4">
           </video>
+        <div class="container home-setup">
+
+          <!-- Video Banner -->
      
-      <div class="text">    
+          <div class="text">    
           <h2 class="h1 hero-title">
-           Best Collections <strong>Bortapaps</strong>
+           Best Collections
           </h2>
 
           <p class="hero-text">
@@ -273,12 +186,19 @@
 
           <ul class="product-list">
 
-          <li class="product-item">
+        <?php
+          $getBestSelling = "SELECT * FROM products ORDER BY id DESC LIMIT 4";
+          $result = mysqli_query($conn, $getBestSelling);
+
+          while($row = mysqli_fetch_assoc($result)){
+
+        ?>
+            <li class="product-item">
               <div class="product-card" tabindex="0">
 
                 <figure class="card-banner">
-                  <img src="pictures/product-1.jpg" width="312" height="350" loading="lazy"
-                    alt="Lolo Imaw" class="image-contain">
+                  <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                    alt="Product Picture" class="image-contain">
 
                   <div class="card-badge">New</div>
 
@@ -330,16 +250,16 @@
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Lolo Imaw</a>
+                    <a href="#"><?=$row['name']?></a>
                   </h3>
 
-                  <data class="card-price" value="180.85">$180.85</data>
+                  <data class="card-price">$<?=$row['price']?></data>
 
                 </div>
 
               </div>
             </li>
-
+        <?php  } ?>
         </div>
       </section>
 
