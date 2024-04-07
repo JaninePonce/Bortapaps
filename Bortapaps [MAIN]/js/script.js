@@ -21,6 +21,14 @@ $(this).click(function(e){
 
               getCartNum();
               updateCart();
+
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Added to cart!",
+                showConfirmButton: false,
+                timer: 1500
+              });
           }
       })
   })

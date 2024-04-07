@@ -646,11 +646,8 @@
   
   .product-list {
     display: grid;
-    gap: 50px 25px;
+    gap: 25px 15px;
   }
-  
-  
-  
   
   
   /*-----------------------------------*\

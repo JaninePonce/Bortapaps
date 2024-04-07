@@ -11,9 +11,7 @@ if(isset($_POST['place_order'])){
 
         $create_transaction = "INSERT INTO `transactions`(`total`, `status`, `userId`, `employeeId`, `supplierId`) VALUES (DEFAULT, DEFAULT, $userId,DEFAULT,1);";
         $createResult = mysqli_query($conn, $create_transaction);
-        $transactionID = mysqli_insert_id($conn);
-
-        $transactionId = $transactionID;
+        $transactionId = mysqli_insert_id($conn);
 
         $check = "SELECT *, (carts.id) AS cartId ,(price * qty) AS total FROM carts 
         INNER JOIN products ON productId = products.id WHERE userId = $userId;";
@@ -38,9 +36,8 @@ if(isset($_POST['place_order'])){
 
         $updatesql = "UPDATE transactions SET total = $total WHERE id = $transactionId";
         $updatetransaction = mysqli_query($conn, $updatesql);
-
-        header("Location: ./index.php");
-
+        
+        header("Location: receipt.php?transactionId=".$transactionId);
 }
 
 
