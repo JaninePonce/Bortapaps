@@ -29,11 +29,17 @@
     }
 
 ?>
+
 <form action="./transactions/checkout.php" method="POST" class="order-form" name="order-form">
 <span class="material-symbols-outlined" id="close-btn">close</span>
+
+<div class="details">
+<div class="select-all" style="display: flex; flex-direction: row; align-items:center;height: 30px; width: 100px; margin-bottom: 5px">
+    <input type="checkbox" name="checkall" id="check_all" style="height: 20px; width: 20px;">
+    <label for="check_all" style="padding: 5px;">Select All</label>
+</div>
 <ol class="cart-list">
 
-    
     <?php 
         $getcart = "SELECT *, products.price * carts.qty AS total FROM `carts` INNER JOIN `products` ON carts.productid = products.id WHERE userId = $id ORDER BY carts.id DESC ";
         $getCartItems = mysqli_query($conn, $getcart);
@@ -43,7 +49,7 @@
         
     ?>
     <li class="cart-item">
-        <input type="checkbox" name="orders[]" value="<?=$row['id']?>" style="margin-right: 20px;height: 20px; width: 20px;">
+        <input type="checkbox" class="item-box" name="orders[]" value="<?=$row['id']?>" style="margin-right: 20px;height: 20px; width: 20px;">
         <img src="/Products/<?=$row['path']?>" width="100px" alt="This is a product image" >
         <div class="details">
             <h2 class="name"><?=$row['name']?></h2>
@@ -64,6 +70,7 @@
     }
     ?>
 </ol>
+</div>
 
 <input type="submit" value="Checkout" class="button cart-options" name="place-order">
 
@@ -106,5 +113,17 @@
 
     $('.cart-bar #close-btn').click(function(){
         $('.cart-bar').removeClass('show');
+    })
+
+    $("#check_all").change(function(){
+        if($("#check_all").is(":checked")){
+            $(".cart-list .item-box").each(function(){
+                $(this).prop("checked", true);
+            })
+        }else{
+            $(".cart-list .item-box").each(function(){
+                $(this).prop("checked", false);
+            })
+        }
     })
 </script>

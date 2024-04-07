@@ -474,3 +474,46 @@ body {
 .msg.good{
     color:green;
 }
+
+.receipt-container {
+    background-color: white;
+    box-shadow: 0px 0px 20px 5px black;
+    height: auto;
+    width: 50vw;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.receipt-container:after {
+    background: linear-gradient(-45deg, #000 16px, transparent 0), linear-gradient(45deg, #000 16px, transparent 0);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+    content: " ";
+    display: block;
+    width: 50vw;
+    height: 32px;
+}
+
+.receipt-container .title {
+    font-size: 70px;
+    margin: 20px;
+}
+
+hr{
+    width: 100%;
+    border-top: dashed;
+}
+
+.receipt-container .details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.receipt-container .details table{
+    width: 100%;
+    padding: 10px;
+}

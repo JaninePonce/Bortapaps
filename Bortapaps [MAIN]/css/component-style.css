@@ -25,9 +25,19 @@
 }
 
 
+.cart-bar .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-bar .details .select-all {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 .cart-list {
     position: relative;
-    top: 75px;
     margin: 20px;
     overflow-x: hidden;
     overflow-y: auto;
