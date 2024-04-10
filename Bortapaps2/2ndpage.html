@@ -31,7 +31,9 @@
 
 </head>
 
-<body id="top">
+<body id="top" style="
+overflow-x: hidden;
+">
 
   <!-- 
     - #HEADER
@@ -403,16 +405,77 @@ class="close" title="Close Modal">&times;</span>
 
 <section>
     <div class="navbar-filter" style="width: 100vw; height: 13vh; background-color: red;">
+        <span class="filter" style="font-size:30px;cursor:pointer;position: relative;height: 8vh;width: 10vw;display: flex;align-items: center;justify-content: center;padding: 1vh;top: 2vh;left: 2vw;border: 1px solid black;z-index: 2;" onclick="openNav()">Filter</span>
        
+        <div class="show"style="
+        position: relative;
+        display: flex;
+        top: -5vh;
+        left: 75vw;
+        align-items: center;
+    ">
+            <p style="
+            font-size: 20px;
+        ">SHOW:</p>
+            <select id="qty" name="qty" style="
+            position: relative;
+            left: 2vw;
+            height: 3vw;
+            width: 4vw;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 6%;
+            padding: 1vh;
+        ">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+        </div>
 
+
+    </div>
     </div>
 </section>
       <!-- 
         - #PRODUCT
       -->
 
+     
       <section class="section product">
+
+        <div id="main">
         <div class="container">
+            <div class="sorted"style="
+            position: relative;
+            display: flex;
+            top: -19vh;
+            left: 2vw;
+            align-items: center;
+        ">
+                <p style="
+                font-size: 20px;
+            ">SORT BY:</p>
+                <select id="qty" name="qty" style="
+                position: relative;
+                left: 2vw;
+                height: 3vw;
+                width: 11vw;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 6%;
+                padding: 1vh;
+            ">
+                  <option value="1">Deafult Sorting</option>
+                  <option value="2">Sort by  Popularity</option>
+                  <option value="3">Sort by Average Rating</option>
+                  <option value="4">Sort by Latest</option>
+                  <option value="5">Sort by Eme</option>
+                </select>
+            </div>
+
 
           <h2 class="h2 section-title">Bests Selling</h2>
 
@@ -649,27 +712,33 @@ class="close" title="Close Modal">&times;</span>
 
 
 
-
-       
-
-          <div id="main">
-            <h2>Sidenav Push Example</h2>
-            <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-          </div>
+          
+           
 
 
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <span class="Filter-contents"style="
+            position: relative;
+            top: 7vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: 1vw;
+            width: 48vh;
+            align-content: space-between;
+        ">
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
           </div>
+        </span>
           
          
           
-    
+        </div>
+      </section>
 
   <!-- 
     - #FOOTER

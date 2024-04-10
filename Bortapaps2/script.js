@@ -1,8 +1,8 @@
 
-// Get the modal
+
 var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
+
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -39,36 +39,22 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+function openNav() {
+  
+  const sidebar = document.getElementById('mySidenav');
+  const filterButton = document.querySelector('.filter');
 
-          function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-          }
-          
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-          }
+  
+  if (sidebar.style.width === '513px') {
+    sidebar.style.width = '0';
+    document.getElementById("main").style.marginLeft = "0";
+    filterButton.textContent = 'Filter';
+   
+  } else {
+    sidebar.style.width = '513px';
+    document.getElementById("main").style.marginLeft = "513px";
+    
+  }
+}
 
-
-// select the best selling section and the sidebar
-const bestSellingSection = document.querySelector('.section.product');
-const sidebar = document.getElementById('mySidenav');
-
-// add a click event listener to the open button
-document.querySelector('.openbtn').addEventListener('click', () => {
-  // toggle the 'pushed-right' class on the best selling section
-  bestSellingSection.classList.toggle('pushed-right');
-
-  // toggle the sidebar
-  sidebar.classList.toggle('active');
-});
-
-// add a click event listener to the close button
-sidebar.querySelector('.closebtn').addEventListener('click', () => {
-  // toggle the 'pushed-right' class on the best selling section
-  bestSellingSection.classList.toggle('pushed-right');
-
-  // toggle the sidebar
-  sidebar.classList.toggle('active');
-});
+        

@@ -813,11 +813,11 @@
 
 
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
+  height: 97%;
+  width:0%;
+  position: absolute;
   z-index: 1;
-  top: 0;
+  top: 473px;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
@@ -861,8 +861,21 @@
 }
 
 
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
 
-
+.filter:hover {
+      background-color: blue;
+}
+.Filter-contents a{
+  border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 1vw;
+}
 
 
 
