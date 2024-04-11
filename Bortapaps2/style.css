@@ -1253,6 +1253,12 @@
     .has-scrollbar > li { min-width: calc(50% - 12.5px); }
   
   
+    .home-setup {
+      position: relative;
+      left: 50px;
+      top: 60px;
+
+    }
   
     /**
      * HERO
@@ -1611,4 +1617,30 @@
       gap: 50px;
     }
   }
+}
+
+.product-item {
+  overflow: hidden;
+}
+
+.quick-view {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.737);
+  color: white;
+  cursor: pointer;
+  transition: bottom .5s, background-color .5s, font-size .5s;
+}
+
+.quick-view:hover {
+  background-color: black;
+  font-size: 20px;
+}
+
+.product-item:hover .quick-view {
+  
+  bottom: 0px;
 }

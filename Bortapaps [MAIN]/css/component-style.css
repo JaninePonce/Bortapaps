@@ -1,0 +1,128 @@
+.cart-bar{
+    background-color: #333333ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    z-index: 1;
+    right: -50vw;
+    top: 0px;
+    height: 100vh;
+    width: 40vw;
+    transition: right .5s;
+    border: 1px solid white;
+}
+
+.cart-bar.show {
+    right: 0px;
+}
+
+.cart-bar #close-btn {
+    position: absolute;
+    margin: 20px;
+    font-size: 30px;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.cart-bar .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-bar .details .select-all {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.cart-list {
+    position: relative;
+    margin: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 75vh;
+
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+display: flex;
+flex-direction: row;
+border: solid black 1px;
+}
+
+.cart-list .cart-item{
+    border-radius: 10px;
+    height: 120px;
+    padding: 10px;
+    background-color: rgb(177, 177, 177);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-list .cart-item .details {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.cart-options {
+    height: 50px;
+    width: 20vw;
+    position: absolute;
+    right: 2px;
+    bottom: 20px;
+}
+.qty-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    justify-content: space-evenly;
+}
+
+.qty-container input[type="button"] {
+    background-color: #9f9f9f;
+    width: 20px;
+}
+
+.cart-num {
+  background-color: red;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  font-size: 10px;
+  padding: 1.5px;
+  color: white;
+  border-radius: 120px;
+  margin-left: 12px;
+  margin-bottom: 5px;
+}
+
+.cart-bar {
+  position: fixed;
+  right: -80vw;
+  z-index: 5;
+  height: 100%;
+  width: 30vw;
+  border-left: black solid 2px;
+  background-color: #00000A89;  
+  backdrop-filter: blur(8px);
+  transition: right .5s;
+}
+
+.show {
+  right: 0px;
+}
+
+h6{
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 15px;
+  left: 10px;
+}
