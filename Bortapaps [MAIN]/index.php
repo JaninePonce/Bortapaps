@@ -130,8 +130,7 @@
           <ul class="product-list">
 
             <?php
-              $getBestSelling = "SELECT * FROM products ORDER BY id DESC LIMIT 4";
-              $result = mysqli_query($conn, $getBestSelling);
+              $result = mysqli_query($conn, "SELECT * FROM products ORDER BY id DESC LIMIT 4");
 
               while($row = mysqli_fetch_assoc($result)){
 
@@ -140,7 +139,7 @@
                   <div class="product-card" tabindex="0">
 
                     <figure class="card-banner">
-                      <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                      <img src="../products/<?= $row['path']?>" width="312" height="350" loading="lazy"
                         alt="Product Picture" class="image-contain">
 
                       <div class="card-badge">New</div>
