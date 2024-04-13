@@ -1,3 +1,6 @@
+<?php 
+include 'conn.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
   <title>2nd Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
- 
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
  
   
   <!-- 
@@ -28,6 +31,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet">
+  
 
 </head>
 
@@ -397,15 +401,18 @@ class="close" title="Close Modal">&times;</span>
    font-size: 69px;
    top: -7vh;
    display: flex;
-"><p style="color:white">NEW ARRIVALS</p></span>
+"></span>
+<img src="/Bortapaps2/banner.jpg" alt="banner" style="position: relative;
+    display: flex;
+    width: 207vh;">
     </div>
 </section>
      
 
 
 <section>
-    <div class="navbar-filter" style="width: 100vw; height: 13vh; background-color: red;">
-        <span class="filter" style="font-size:30px;cursor:pointer;position: relative;height: 8vh;width: 10vw;display: flex;align-items: center;justify-content: center;padding: 1vh;top: 2vh;left: 2vw;border: 1px solid black;z-index: 2;" onclick="openNav()">Filter</span>
+    <div class="navbar-filter" style="width: 100vw; height: 13vh; background-color: white;">
+        <span class="filter" style="font-size:30px;cursor:pointer;position: relative;height: 6vh;width: 8vw;display: flex;align-items: center;justify-content: center;padding: 1vh;top: 2vh;left: 2vw;border: 1px solid black;z-index: 2;" onclick="openNav()">Filter</span>
        
         <div class="show"style="
         position: relative;
@@ -442,6 +449,7 @@ class="close" title="Close Modal">&times;</span>
       <!-- 
         - #PRODUCT
       -->
+      <div class="section_scroll">
 
      
       <section class="section product">
@@ -481,12 +489,16 @@ class="close" title="Close Modal">&times;</span>
 
 
           <ul class="product-list">
+            <?php
+            $result = mysqli_query ($conn, "SELECT * FROM products LIMIT 12");
+            while ( $row =mysqli_fetch_assoc($result)){
+            ?>
 
             <li class="product-item">
               <div class="product-card" tabindex="0">
 
                 <figure class="card-banner">
-                  <img src="/mens wear.jpg" width="312" height="350" loading="lazy"
+                  <img src="/products/<?=$row['path']?>" width="312" height="350" loading="lazy"
                   class="image-contain" data-bs-toggle="modal" data-bs-target="#myModal" alt="Your Image"> 
 
                   <div class="card-badge">New</div>
@@ -531,21 +543,34 @@ class="close" title="Close Modal">&times;</span>
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link"><?=$row['category']?></a> 
+                    
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Lolo Imaw</a>
+                    <a href="#"><?=$row['name']?></a>
                   </h3>
 
-                  <data class="card-price" value="180.85">$180.85</data>
+                  <data class="card-price" value="180.85"><?=$row['price']?></data>
 
                 </div>
 
               </div>
             </li>
+          <?php
+         } 
+         ?>
+          </div>
 
+          <div class="showing-products">
+            <h2>Showing 1–12 of 24 Products</h2>
+            <a href="#" class="previous" style="left: 4vw;">&laquo; Previous</a> 
+           <span class="nextnumber">
+            <p>1</p>
+            <p>2</p>
+            </span>
+<a href="#" class="next" style="width: 11vh;left: -41vh;">Next &raquo;</a>
+</div>
 
 <!-- Modal -->
 <div class="pushed-right">
@@ -571,7 +596,7 @@ class="close" title="Close Modal">&times;</span>
       <div class="modal-body">
         <!-- Your modal content -->
         <div class="content-popup">
-          <img id="modal-img" src="/mens wear.jpg" class="modal-img" alt="modal-img" style="
+          <img id="modal-img" src=" " class="modal-img" alt="modal-img" style="
           position: relative;
           top: -1vh;
           width: 24vw;
@@ -717,7 +742,6 @@ class="close" title="Close Modal">&times;</span>
 
 
           <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <span class="Filter-contents"style="
             position: relative;
             top: 7vh;
@@ -728,14 +752,143 @@ class="close" title="Close Modal">&times;</span>
             width: 48vh;
             align-content: space-between;
         ">
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            
+         <!-- FILTER MENU -->
+          <div class="widget-title">
+            <h1>Product Categories</h1>
+          </div>
+         <div class="FilterMenu">
+         <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+       Accesories
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+       <p>Keychains</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" id="accordion" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+       Clothes
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <p>Valoy</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button"  id="accordion" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Bags  & Shoes
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <p>Valoy Shoes</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button"  id="accordion" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Bags  & Shoes
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <p>Valoy Shoes</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button"  id="accordion" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Bags  & Shoes
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <p>Valoy Shoes</p>
+      </div>
+    </div>
+  </div>
+  <hr style="height: 4px;
+    color: white;
+    position: relative;
+    top: 20px;
+    margin-bottom: 29px;">
+  <div class="widget-title">
+            <h1>Sizes</h1>
+          </div>
+          <div class="form-group">
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Small
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Medium
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Large
+  </label>
+</div>
+
+</div>
+
+<hr style="height: 4px;
+    color: white;
+    position: relative;
+    top: 20px;
+    margin-bottom: 29px;">
+
+<div class="widget-title">
+            <h1> Brand</h1>
+          </div>
+          <div class="form-group">
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Channel
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Gucci
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Luis Vuitton
+  </label>
+</div>
+
+</div>
+
+
+</div>
+
+
+
           </div>
         </span>
           
-         
+        </div>
           
         </div>
       </section>
@@ -953,7 +1106,7 @@ class="close" title="Close Modal">&times;</span>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
- 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
 </body>
 
 </html>
