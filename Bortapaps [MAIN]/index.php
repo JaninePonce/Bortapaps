@@ -1,51 +1,15 @@
-<?php include 'components/connection.php';
-session_start();
-
-
-if(!isset($_SESSION['id'])){
-    header("Location: ./users/login.php");
-}
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bortapaps Apparel</title>
-
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./css/component-style.css">
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet">
-
-</head>
-
 <body id="top">
 
   <!-- 
     - #HEADER
   -->
 
-  <?php include 'components/header.php' ?>
+  <?php include 'components/header.php'; 
+
+    if(!isset($_SESSION['id'])){
+      header("Location: ./users/login.php");
+    }
+  ?>
 
 
   <main>
@@ -165,90 +129,88 @@ if(!isset($_SESSION['id'])){
 
           <ul class="product-list">
 
-        <?php
-          $getBestSelling = "SELECT * FROM products ORDER BY id DESC LIMIT 4";
-          $result = mysqli_query($conn, $getBestSelling);
+            <?php
+              $getBestSelling = "SELECT * FROM products ORDER BY id DESC LIMIT 4";
+              $result = mysqli_query($conn, $getBestSelling);
 
-          while($row = mysqli_fetch_assoc($result)){
+              while($row = mysqli_fetch_assoc($result)){
 
-        ?>
-            <li class="product-item">
-              <div class="product-card" tabindex="0">
+            ?>
+                <li class="product-item">
+                  <div class="product-card" tabindex="0">
 
-                <figure class="card-banner">
-                  <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
-                    alt="Product Picture" class="image-contain">
+                    <figure class="card-banner">
+                      <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                        alt="Product Picture" class="image-contain">
 
-                  <div class="card-badge">New</div>
+                      <div class="card-badge">New</div>
 
-                  <input type="button" value="QUICK VIEW" class="quick-view">
+                      <input type="button" value="QUICK VIEW" class="quick-view">
 
-                  <ul class="card-action-list">
+                      <ul class="card-action-list">
 
-                      <li class="card-action-item">
-                          <form method="post" id="item-form">
-                            <input type="hidden" id="productId" value="<?=$row['id']?>">
-                            <button class="card-action-btn toCartbtn" aria-labelledby="card-label-1">
-                          </form>
-                        
-                          <ion-icon name="cart-outline"></ion-icon>
-                        </button>
+                          <li class="card-action-item">
+                              <form method="post" id="item-form">
+                                <input type="hidden" id="productId" value="<?=$row['id']?>">
+                                <button class="card-action-btn toCartbtn" aria-labelledby="card-label-1">
+                              </form>
+                            
+                              <ion-icon name="cart-outline"></ion-icon>
+                            </button>
 
-                        <div  class="card-action-tooltip" id="card-label-1">Add to Cart</div>
-                      </li>
+                            <div  class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                          </li>
 
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-2">
-                        <ion-icon name="heart-outline"></ion-icon>
-                      </button>
+                        <li class="card-action-item">
+                          <button class="card-action-btn" aria-labelledby="card-label-2">
+                            <ion-icon name="heart-outline"></ion-icon>
+                          </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
-                    </li>
+                          <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                        </li>
 
-                    <!-- <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-3">
-                        <ion-icon name="eye-outline"></ion-icon>
-                      </button>
+                        <!-- <li class="card-action-item">
+                          <button class="card-action-btn" aria-labelledby="card-label-3">
+                            <ion-icon name="eye-outline"></ion-icon>
+                          </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                    </li> -->
+                          <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                        </li> -->
 
-                    <li class="card-action-item">
-                      <button class="card-action-btn" aria-labelledby="card-label-4">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                      </button>
+                        <li class="card-action-item">
+                          <button class="card-action-btn" aria-labelledby="card-label-4">
+                            <ion-icon name="repeat-outline"></ion-icon>
+                          </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                    </li>
+                          <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                        </li>
 
-                  </ul>
+                      </ul>
 
-                </figure>
+                    </figure>
 
-                <div class="card-content">
+                    <div class="card-content">
 
-                  <div class="card-cat">
-                    <a href="#" class="card-cat-link"><?=$row['category']?></a>
+                      <div class="card-cat">
+                        <a href="#" class="card-cat-link"><?=$row['category']?></a>
+                      </div>
+
+                      <h3 class="h3 card-title">
+                        <a href="#"><?=$row['name']?></a>
+                      </h3>
+
+                      <data class="card-price">$<?=$row['price']?></data>
+
+                    </div>
+
                   </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#"><?=$row['name']?></a>
-                  </h3>
-
-                  <data class="card-price">$<?=$row['price']?></data>
-
-                </div>
-
-              </div>
-            </li>
-        <?php  } ?>
+                </li>
+            <?php  } ?>
+            
+          </ul>
         </div>
       </section>
 
-
-      <script>
-        
-      </script>
 
 
       <!-- 
@@ -496,218 +458,7 @@ if(!isset($_SESSION['id'])){
 
 
 
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-
-    <div class="footer-top section">
-      <div class="container">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">
-            <img src="./resources/BORTAPAPS2.png" width="160" height="50" alt="Footcap logo">
-          </a>
-
-          <ul class="social-list">
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <div class="footer-link-box">
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Contact Us</p>
-            </li>
-
-            <li>
-              <address class="footer-link">
-                <ion-icon name="location"></ion-icon>
-
-                <span class="footer-link-text">
-                 1234  Sabang, Danao, Phillipines
-                </span>
-              </address>
-            </li>
-
-            <li>
-              <a href="tel:+557343673257" class="footer-link">
-                <ion-icon name="call"></ion-icon>
-
-                <span class="footer-link-text">+557343673257</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="mailto:footcap@help.com" class="footer-link">
-                <ion-icon name="mail"></ion-icon>
-
-                <span class="footer-link-text">Bortapaps.com</span>
-              </a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">My Account</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-
-                <span class="footer-link-text">My Account</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-
-                <span class="footer-link-text">View Cart</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-
-                <span class="footer-link-text">Wishlist</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-
-                <span class="footer-link-text">Compare</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-
-                <span class="footer-link-text">New Products</span>
-              </a>
-            </li>
-
-          </ul>
-
-          <div class="footer-list">
-
-            <p class="footer-list-title">Costumer Service</p>
-
-            <table class="footer-table">
-              <tbody>
-
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Payment Methods</th>
-            
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Money-back Guarantee!</th>
-            
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Custom Service</th>
-
-                <tr class="table-row">
-                  <th class="table-head" scope="row">Terms & Conditions</th>
-
-              </tbody>
-            </table>
-
-          </div>
-
-          <div class="footer-list">
-
-            <p class="footer-list-title">Message Us!</p>
-
-            <p class="newsletter-text">
-              Let us know your thoughts on our products and services.-eme- 
-            </p>
-
-            <form action="" class="newsletter-form">
-              <input type="email" name="email" required placeholder="Email Address" class="newsletter-input">
-
-              <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-
-        <p class="copyright">
-          &copy; 2024 <a href="#" class="copyright-link">Bortapaps</a>. All Rights Reserved
-        </p>
-
-      </div>
-    </div>
-
-  </footer>
-
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
-  <a href="#top" class="go-top-btn" data-go-top>
-    <ion-icon name="arrow-up-outline"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-    <script src="js/script.js"></script>
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<?php include './components/footer.php'?>
 
 </body>
 

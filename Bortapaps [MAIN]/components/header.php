@@ -1,15 +1,38 @@
 <?php
   include 'connection.php';
+  session_start();
 ?>
   <!-- CSS -->
-<link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bortapaps Apparel</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/component-style.css">
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<link
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet">
 
+</head>
   <!-- CONTENTS -->
 <header class="header" data-header>
     <div class="container">
@@ -37,19 +60,19 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link">Home</a>
+            <a href="../index.php" class="navbar-link">Home</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link">New Arrivals</a>
+            <a href="../items.php?category=New Arrival" class="navbar-link">New Arrivals</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link">Men</a>
+            <a href="../items.php?category=Mens" class="navbar-link">Men</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link">Women</a>
+            <a href="../items.php?category=Womens" class="navbar-link">Women</a>
           </li>
 
           <li class="navbar-item">
