@@ -867,7 +867,7 @@
 }
 
 .filter:hover {
-      background-color: blue;
+      background-color: #0C63E4;
 }
  
 
@@ -880,7 +880,12 @@
   font-size: 25px;
 }
 
-#accordion{
+#accordion {
+  height: 9vh;
+  font-size: 25px;
+}
+
+.accordion-button{
   height: 9vh;
   font-size: 25px;
 }
@@ -905,6 +910,27 @@
     padding: 1vh;
 }
 
+.accordion-item {
+  border: none; /* Remove the default border */
+}
+
+.accordion-header {
+  border-bottom: 1px solid #ccc; /* Add a bottom border */
+}
+
+.accordion-button {
+  background-color: transparent; /* Make the background transparent */
+  border: none; /* Remove button border */
+}
+
+.accordion-button:focus {
+  box-shadow: none; /* Remove focus shadow */
+}
+
+
+
+
+
 
 a {
   text-decoration: none;
@@ -913,7 +939,7 @@ a {
 }
 
 a:hover {
-  background-color: #ddd;
+  background-color: #0C63E4;
   color: black;
 }
 

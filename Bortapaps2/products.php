@@ -212,10 +212,7 @@ class="close" title="Close Modal">&times;</span>
     <hr style="position: relative;top: 25vh;left: 6vw;width: 31vw;color: grey;opacity: 17%;">
     <span style="position: relative;width: 7vw;height: 8vh;top: 24vh;left: 18vw;background: white;display: flex;justify-content: center;">or Login with</span>
 
-     <!-- <div class="socialmediaicon" >
-    <a href="#" class="fa fa-facebook" id="facebook"></a>
-<a href="#" class="fa fa-twitter" id="twitter"></a>
-</div>  -->
+     
   </form>
 </div>
               <span class="nav-action-text">Login / Register</span>
@@ -412,14 +409,14 @@ class="close" title="Close Modal">&times;</span>
 
 <section>
     <div class="navbar-filter" style="width: 100vw; height: 13vh; background-color: white;">
-        <span class="filter" style="font-size:30px;cursor:pointer;position: relative;height: 6vh;width: 8vw;display: flex;align-items: center;justify-content: center;padding: 1vh;top: 2vh;left: 2vw;border: 1px solid black;z-index: 2;" onclick="openNav()">Filter</span>
+        <span class="filter" style="font-size:30px;cursor:pointer;position: relative;height: 61px;width: 8vw;display: flex;align-items: center;justify-content: center;padding: 1vh;top: 2vh;left: 2vw;border: 1px solid black;z-index: 2;" onclick="openNav()">Filter</span>
        
         <div class="show"style="
         position: relative;
-        display: flex;
-        top: -5vh;
-        left: 75vw;
-        align-items: center;
+    display: flex;
+    top: -5vh;
+    left: 75vw;
+    align-items: center;
     ">
             <p style="
             font-size: 20px;
@@ -427,7 +424,7 @@ class="close" title="Close Modal">&times;</span>
             <select id="qty" name="qty" style="
             position: relative;
             left: 2vw;
-            height: 3vw;
+            height: 57px;
             width: 4vw;
             display: flex;
             justify-content: space-between;
@@ -457,24 +454,26 @@ class="close" title="Close Modal">&times;</span>
         <div id="main">
         <div class="container">
             <div class="sorted"style="
-            position: relative;
-            display: flex;
-            top: -19vh;
-            left: 2vw;
-            align-items: center;
+           position: relative;
+    display: flex;
+    top: -20vh;
+    left: 2vw;
+    align-items: center;
+    width: 20vw;
+
         ">
                 <p style="
                 font-size: 20px;
             ">SORT BY:</p>
                 <select id="qty" name="qty" style="
                 position: relative;
-                left: 2vw;
-                height: 3vw;
-                width: 11vw;
-                display: flex;
-                justify-content: space-between;
-                border-radius: 6%;
-                padding: 1vh;
+    left: 2vw;
+    height: 61px;
+    width: 11vw;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6%;
+    padding: 1vh
             ">
                   <option value="1">Deafult Sorting</option>
                   <option value="2">Sort by  Popularity</option>
@@ -736,11 +735,6 @@ class="close" title="Close Modal">&times;</span>
           </ul>
 
 
-
-          
-           
-
-
           <div id="mySidenav" class="sidenav">
             <span class="Filter-contents"style="
             position: relative;
@@ -759,10 +753,11 @@ class="close" title="Close Modal">&times;</span>
           </div>
          <div class="FilterMenu">
          <div class="accordion" id="accordionPanelsStayOpenExample">
+         <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-       Accesories
+       Accessories
       </button>
     </h2>
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
@@ -773,7 +768,7 @@ class="close" title="Close Modal">&times;</span>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-      <button class="accordion-button collapsed" id="accordion" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
        Clothes
       </button>
     </h2>
@@ -785,40 +780,68 @@ class="close" title="Close Modal">&times;</span>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-      <button class="accordion-button collapsed" type="button"  id="accordion" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Bags  & Shoes
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Bags & Shoes
       </button>
     </h2>
     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
       <div class="accordion-body">
         <p>Valoy Shoes</p>
+      </div>
+    </div>
+  </div> 
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+        Accesories
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+      <div class="accordion-body">
+        <p>Valoy</p>
       </div>
     </div>
   </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-      <button class="accordion-button collapsed" type="button"  id="accordion" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Bags  & Shoes
+    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+        Hat
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
       <div class="accordion-body">
-        <p>Valoy Shoes</p>
+        <p>Valoy</p>
       </div>
     </div>
   </div>
+  
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-      <button class="accordion-button collapsed" type="button"  id="accordion" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Bags  & Shoes
+    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+        Shirts
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
       <div class="accordion-body">
-        <p>Valoy Shoes</p>
+        <p>Valoy</p>
       </div>
     </div>
   </div>
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+        Pants
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSeven">
+      <div class="accordion-body">
+        <p>Valoy</p>
+      </div>
+    </div>
+  </div>
+</div>
+
   <hr style="height: 4px;
     color: white;
     position: relative;
