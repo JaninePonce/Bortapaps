@@ -30,52 +30,54 @@
 
 ?>
 
+
 <form action="./transactions/checkout.php" method="POST" class="order-form" name="order-form">
-<span class="material-symbols-outlined" id="close-btn">close</span>
+    <span class="material-symbols-outlined close-btn">close</span>
 
-<div class="details">
-<div class="select-all" style="display: flex; flex-direction: row; align-items:center;height: 30px; width: 100px; margin-bottom: 5px">
-    <input type="checkbox" name="checkall" id="check_all" style="height: 20px; width: 20px;">
-    <label for="check_all" style="padding: 5px;">Select All</label>
-</div>
-<ol class="cart-list">
+<?php 
+    $getcart = "SELECT *, products.price * carts.qty AS total FROM `carts` INNER JOIN `products` ON carts.productid = products.id WHERE userId = $id ORDER BY carts.id DESC ";
+    $getCartItems = mysqli_query($conn, $getcart);
 
-    <?php 
-        $getcart = "SELECT *, products.price * carts.qty AS total FROM `carts` INNER JOIN `products` ON carts.productid = products.id WHERE userId = $id ORDER BY carts.id DESC ";
-        $getCartItems = mysqli_query($conn, $getcart);
+    if(mysqli_num_rows($getCartItems) > 0){
+?>
 
-        if(mysqli_num_rows($getCartItems) > 0){
-        while( $row = mysqli_fetch_assoc($getCartItems)){
-        
-    ?>
-    <li class="cart-item">
-        <input type="checkbox" class="item-box" name="orders[]" value="<?=$row['id']?>" style="margin-right: 20px;height: 20px; width: 20px;">
-        <img src="/Products/<?=$row['path']?>" width="100px" alt="This is a product image" >
-        <div class="details">
-            <h2 class="name"><?=$row['name']?></h2>
-            Total: $<?=$row['total']?>
-
-            <div class="qty-container">
-                <input type="hidden" value="<?=$row['productId']?>" id="product-id">
-                <input type="button" value="-" id="sub-qty">
-                <span id="qty-num"><?=$row['qty']?></span>
-                <input type="button" value="+" id="add-qty">
-            </div>
+    <div class="details">
+        <div class="select-all" style="display: flex; flex-direction: row; align-items:center;height: 30px; width: 100px; margin-bottom: 5px">
+            <input type="checkbox" name="checkall" id="check_all" style="height: 20px; width: 20px;">
+            <label for="check_all" style="padding: 5px;">Select All</label>
         </div>
-    </li>
+        <ol class="cart-list">
+            <?php
+                    while( $row = mysqli_fetch_assoc($getCartItems)){
+                
+            ?>
+            <li class="cart-item">
+                <input type="checkbox" class="item-box" name="orders[]" value="<?=$row['id']?>" style="margin-right: 20px;height: 20px; width: 20px;">
+                <img src="/Products/<?=$row['path']?>" width="100px" alt="This is a product image" >
+                <div class="details">
+                    <h2 class="name"><?=$row['name']?></h2>
+                    Total: $<?=$row['total']?>
 
-    <?php
-    
+                    <div class="qty-container">
+                        <input type="hidden" value="<?=$row['productId']?>" id="product-id">
+                        <input type="button" value="-" id="sub-qty">
+                        <span id="qty-num"><?=$row['qty']?></span>
+                        <input type="button" value="+" id="add-qty">
+                    </div>
+                </div>
+            </li>
+
+            <?php
+                }
+            ?>
+        </ol>
+    </div>
+
+    <input type="submit" value="Checkout" class="button cart-options" name="place-order">
+    <?php 
         }
-    }
     ?>
-</ol>
-</div>
-
-<input type="submit" value="Checkout" class="button cart-options" name="place-order">
-
 </form>
-</div>
 
 <!-- UPDATES CART -->
 
@@ -111,9 +113,7 @@
         })
     })
 
-    $('.cart-bar #close-btn').click(function(){
-        $('.cart-bar').removeClass('show');
-    })
+   
 
     $("#check_all").change(function(){
         if($("#check_all").is(":checked")){
