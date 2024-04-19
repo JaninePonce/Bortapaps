@@ -48,15 +48,28 @@
       -->
  
       <section class="hero" id="hero">
+<<<<<<< Updated upstream
         
           <video class="hero-banner" autoplay loop muted playsinline>
+=======
+
+      <video class="hero-banner" autoplay loop muted playsinline>
+>>>>>>> Stashed changes
             <source src="Jungkook2.mp4" type="video/mp4">
           </video>
         <div class="container home-setup">
 
           <!-- Video Banner -->
      
+<<<<<<< Updated upstream
           <div class="text">    
+=======
+        <div class="container">
+
+          <!-- Video Banner -->
+         
+      <div class="text">    
+>>>>>>> Stashed changes
           <h2 class="h1 hero-title">
            Best Collections
           </h2>

@@ -159,7 +159,7 @@
   
   .btn {
     background: var(--background, var(--bittersweet));
-    color: black;
+    color: var(--color, var(--white));
     font-size: var(--fs-5);
     display: flex;
     align-items: center;
@@ -360,10 +360,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    transition: top 0.3s ease;
+    transition: var(--transition-1);
     z-index: 4;
   }
-  
   
   .header.active { box-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.1); }
   
@@ -443,7 +442,7 @@
     transition: var(--transition-1);
   }
   
-  .navbar-link:is(:hover, :focus) { color: red; text-decoration: underline; }
+  .navbar-link:is(:hover, :focus) { color: var(--bittersweet); }
   
   .navbar-item:not(:last-child) { border-bottom: 1px solid var(--gainsboro); }
   
@@ -499,60 +498,6 @@
   }
 
   
-
-  /* Style the navbar */
-.navbar-item {
-  position: relative; /* Make the navbar item relative to position dropdown */
-  display: inline-block;
-}
-
-/* Style the navbar link */
-.navbar-link {
-  padding: 10px;
-  color: #333; /* Change link color */
-  text-decoration: none; /* Remove default link underline */
-}
-
-/* Style the dropdown list */
-.dropdown-list {
-  position: absolute;
-  height: 46vh;
-  width: 49vw;
-  left: -221px;
-  background-color: #fff;
-  list-style-type: none;
-  padding: 6px;
-  margin: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: none;
-}
-
-/* Style each dropdown list item */
-.dropdown-list li {
-  padding: 10px;
-}
-
-/* Style dropdown list item links */
-.dropdown-list li a {
-  color: #333;
-    text-decoration: none;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    height: 8vh;
-    position: relative;
-    left: 2vw;
-    top: 6vh;/* Remove default link underline */
-}
-
-/* Show the dropdown list when navbar item is hovered */
-.navbar-item:hover .dropdown-list {
-  display: block;
-}
-
-
-
-  
   
   
   
@@ -597,10 +542,10 @@
   
   .text{
     position: relative; /* or absolute */
-    left: -35%;
+    left: -21%;
     margin-bottom: -50%;
    padding: 1%;
-  top: 13vh;
+   border: 1%;
 
 
   }
@@ -613,12 +558,11 @@
   .container-new {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 107px;
+    align-items:center;
+    margin-top: 160px;
     color: rgb(0, 0, 0);
     font-size: large;
-    padding-block: 50px;
-    display: flex;
+    padding-block: 50px; display: flex;
     margin-bottom: 0%;
   }
 
@@ -634,55 +578,35 @@
     margin-top: 1%;
     font-size:larger;
     font-family:var(ff-roboto) ;
+
   }
 
   .button-container {
     display: flex;
-    justify-content: space-between;
-    width: 33vw;
+    justify-content: center;
     margin-top: 20px;
     text-align: center;
     text-decoration: none;
   
   }
-  .buttons {
-    border-radius: 4px;
+
+  .button {
     background-color: #000000;
     border: none;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
     text-align: center;
-    font-size: 22spx;
-    padding: 20px;
-    width: 265px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-  }
-  .buttons span {
-    cursor: pointer;
+    text-decoration: none;
     display: inline-block;
-    position: relative;
-    transition: 0.5s;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    padding-inline: 20px;
+    
   }
   
-  .buttons span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .buttons:hover span {
-    padding-right: 25px;
-  }
-  
-  .buttons:hover span:after {
-    opacity: 1;
-    right: 0;}
 
 
 
@@ -700,198 +624,10 @@
     justify-content: space-between;
     align-items: center;
     padding-block: 45px 25px;
-    
-  
-  }
-  .collection-card:hover {
-    opacity: 0.3;
-  }
-
-
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
   }
   
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5px auto;
-    border: 1px solid #888;
-    width: 43vw;
-    height: 76vh;
-    position: relative;
-    top: 8vh;
-  }
   
-  /* The Close Button */
-  .close {
-    /* Position it in the top right corner outside of the modal */
-    position: absolute;
-    right: 60vh;
-    top: 11vh;
-    color: #fffefe;
-    font-size: 35px;
-    font-weight: bold;
-  }
   
-  /* Close button on hover */
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-  
-  /* Add Zoom Animation */
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
-  
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-  }
-  
-  @keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
-  }
-  
-
-  .socialmediaicon{
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  /* Add a hover effect if you want */
-  .socialmediaicon:hover {
-    opacity: 0.7;
-  }
-  
-  /* Set a specific color for each brand */
-  
-  /* Facebook */
-   #facebook{
-    background: #3B5998;
-    color: white;
-  }
-  
-  /* Twitter */
-  #twitter{
-    background: #55ACEE;
-    color: white; 
-  }
-
-  input[type=texts] {
-    color: #f7f7f7;
-  }
-  
-  .popular-categoriess :hover{
-    color: #f7f7f7;
-  }
-
-.wishlist-container :hover {
-  background-color:rgb(131, 55, 55);
-  cursor: pointer;
-}
-
-  
-
-
-
-.sidenav {
-  height: 97%;
-  width:0%;
-  position: absolute;
-  z-index: 1;
-  top: 473px;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-.pushed-right {
-  margin-right: 300px; /* adjust this value to the width of your sidebar */
-}
-
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.filter:hover {
-      background-color: blue;
-}
-.Filter-contents a{
-  border-bottom: 1px solid white;
-    display: flex;
-    justify-content: space-between;
-    height: 10vh;
-    padding: 1vw;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
   /*-----------------------------------*\
    * #PRODUCTS
@@ -912,18 +648,11 @@
     display: grid;
     gap: 50px 25px;
   }
-
-  .size-bt{
-    width: 3vw;
-    height: 3vw
   
-  }
-
-  .size-bt:hover{
-    background-color: #333;
-    opacity: 4%;
-  }
-
+  
+  
+  
+  
   /*-----------------------------------*\
    * #CTA
   \*-----------------------------------*/
