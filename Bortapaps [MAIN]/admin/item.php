@@ -1,5 +1,5 @@
 <?php 
-include '../conn.php'; 
+include 'conn.php'; 
 
 if(isset($_POST['upload-button'])){
 
@@ -11,7 +11,7 @@ if(isset($_POST['upload-button'])){
     $file = $_FILES['product-file'];
     
     $current = $file['tmp_name'];
-    $destination = "items/".basename($file['name']);
+    $destination = "../products/$category/".basename($file['name']);
 
 
     $check = "SELECT * FROM products WHERE `name` = '$name'";

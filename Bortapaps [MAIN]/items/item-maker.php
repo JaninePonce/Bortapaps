@@ -16,7 +16,7 @@
                                     <div class="product-card" tabindex="0">
 
                                         <figure class="card-banner">
-                                        <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                             alt="Product Picture" class="image-contain">
 
                                         <div class="card-badge">New</div>
@@ -100,7 +100,7 @@
                                     <div class="product-card" tabindex="0">
 
                                         <figure class="card-banner">
-                                        <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                             alt="Product Picture" class="image-contain">
 
                                         <!-- <div class="card-badge">New</div> -->
@@ -186,7 +186,7 @@
                                     <div class="product-card" tabindex="0">
 
                                         <figure class="card-banner">
-                                        <img src="../products/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                             alt="Product Picture" class="image-contain">
 
                                         <div class="card-badge">New</div>
