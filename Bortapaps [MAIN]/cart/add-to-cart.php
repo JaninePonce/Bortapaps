@@ -44,14 +44,16 @@
         ?>
     <div class="cart-num" id="cart-num"><?=$row?></div>
 <?php } ?>
-
 </button>
 
 <script>
-    cart_container = document.querySelector(".cart-bar");
-
-    document.querySelector("#cart-button").addEventListener("click", function(){
-        cart_container.classList.toggle("show");
-    })
+    $("#cart-button").click(function(){
+        $("#cart.sidebar").addClass("show");
+        $("#cart.sidebar .close-btn").click(function(){
+            $(".sidebar").each(function(){
+                $(this).removeClass("show");
+            })
+        })
+    });
 </script>
 
