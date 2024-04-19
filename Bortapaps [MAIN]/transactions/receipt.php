@@ -1,5 +1,6 @@
 <?php
     include '../components/connection.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +34,22 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 <body>
-    <div class="receipt-container">
-        <h1 class="title">Official Receipt</h1>
-        <hr>
+    <div class="receipt-container" style="padding-top: 50px;">
+        <h3>Your order number is</h3>
+        <!-- <img src="../resources/headertest.svg" width="320px" style="margin-bottom: 20px;">
+        <h3>Go to www.bortapaps.com within 7 days and tell us about your visit</h3>
+        <h3> Expires 30 days after receipt date</h3>
+        <h3> Valid at participating Bortapaps Franchise</h3> -->
 
+        <?php 
+            if(isset($_SESSION['tab_id'])){
+                ?>
+                <h1 class="title"><?= $_SESSION['tab_id'] ?></h1>
+                <?php
+            }
+        ?>
+
+        <hr style="margin-top: 20px">
         <div class="details">
             <table>
                 <tr>
@@ -51,6 +64,10 @@
                     $transactionId = $_GET['transactionId'];
                     $sql = "SELECT * FROM orders INNER JOIN products ON productId = products.id WHERE transactionId = $transactionId";
                     $result = mysqli_query($conn, $sql);
+
+                    $sql = "SELECT * FROM order_tab WHERE id = ".$_SESSION['tab_id'];
+                    $order = mysqli_query($conn, $sql);
+                    
 
                     while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -67,7 +84,7 @@
             <hr>
 
             <?php 
-                $totalsql = "SELECT * FROM transactions WHERE id = $transactionId";
+                $totalsql = "SELECT total, order_tab.status FROM transactions INNER JOIN order_tab ON transactions.id = order_tab.transaction_id WHERE transactions.id = $transactionId";
                 $result = mysqli_query($conn, $totalsql);
 
                 while($row = mysqli_fetch_assoc($result)){
@@ -80,14 +97,9 @@
                     <td style="width: 5vw; padding: 5px;">$<?= $row['total'] ?></td>
                 </tr>
                 <tr>
-                    <td>Cash</td>
+                    <td>Status</td>
                     <td><hr></td>
-                    <td style="width: 5vw; padding: 5px;">$<?= rand(1000,2000) ?></td>
-                </tr>
-                <tr>
-                    <td>Change</td>
-                    <td><hr></td>
-                    <td style="width: 5vw; padding: 5px;"$>200.12</td>
+                    <td style="width: 5vw; padding: 5px;"><?= $row['status'] ?></td>
                 </tr>
             </table>
 
@@ -97,6 +109,7 @@
             <hr style="margin-bottom: 40px;">
 
             <h1>Thank You!</h1>
+            <h5>- Please show this to the counter -</h5>
             <svg id="barcode"></svg>
             <script>
                 JsBarcode("#barcode", <?= $transactionId ?>, {
@@ -106,7 +119,9 @@
         </div>
     </div>
     <?php 
-                }
+        }
     ?>
 </body>
+
+        <a href="../index.php" class="receipt-homebtn">Home</a>
 </html>

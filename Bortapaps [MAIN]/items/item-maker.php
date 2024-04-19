@@ -38,9 +38,12 @@
                                             </li>
 
                                             <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-2">
-                                                <ion-icon name="heart-outline"></ion-icon>
-                                            </button>
+                                            <form method="post" id="wishlist-form">
+                                                <input type="hidden" id="productId" value="<?=$row['id']?>">
+                                                <button class="card-action-btn toWishlistBtn" aria-labelledby="card-label-2">
+                                                    <ion-icon name="heart-outline"></ion-icon>
+                                                </button>
+                                            </form>
 
                                             <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                             </li>
@@ -119,9 +122,12 @@
                                             </li>
 
                                             <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-2">
-                                                <ion-icon name="heart-outline"></ion-icon>
-                                            </button>
+                                            <form method="post" id="wishlist-form">
+                                                <input type="hidden" id="productId" value="<?=$row['id']?>">
+                                                <button class="card-action-btn toWishlistBtn" aria-labelledby="card-label-2">
+                                                    <ion-icon name="heart-outline"></ion-icon>
+                                                </button>
+                                            </form>
 
                                             <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                             </li>
@@ -202,9 +208,12 @@
                                             </li>
 
                                             <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-2">
-                                                <ion-icon name="heart-outline"></ion-icon>
-                                            </button>
+                                            <form method="post" id="wishlist-form">
+                                                <input type="hidden" id="productId" value="<?=$row['id']?>">
+                                                <button class="card-action-btn toWishlistBtn" aria-labelledby="card-label-2">
+                                                    <ion-icon name="heart-outline"></ion-icon>
+                                                </button>
+                                            </form>
 
                                             <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                             </li>
