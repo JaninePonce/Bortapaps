@@ -76,7 +76,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link">Accesories</a>
+            <a href="../items.php?category=Accessories" class="navbar-link">Accesories</a>
           </li>
 
           <li class="navbar-item">
