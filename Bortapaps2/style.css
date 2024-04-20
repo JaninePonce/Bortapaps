@@ -497,6 +497,37 @@
     pointer-events: all;
   }
 
+  /*submenu style*/
+header ul .submenu {
+  position: absolute;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 10px 50px rgba(136, 132, 132, 0.555);
+  margin-top: -50px;
+  opacity: 0;
+  z-index: -999;
+  transition: all ease 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+header ul li:hover .submenu {
+  z-index: 99;
+  opacity: 1;
+  margin-top: 0;
+}
+
+header ul .submenu li {
+  margin: 0px;
+  width: 100%;
+}
+header ul .submenu li a {
+  padding: 15px 20px;
+  display: inline-block;
+  width: 100%;
+  color: black;
+}
   
   
   

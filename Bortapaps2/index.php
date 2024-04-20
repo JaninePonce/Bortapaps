@@ -69,14 +69,29 @@
 
           <li class="navbar-item">
             <a href="#" class="navbar-link">Men</a>
+            <ul class="submenu">
+              <li><a href="#">Shoes</a></li>
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">Hoodies</a></li>
+            </ul>
           </li>
 
           <li class="navbar-item">
             <a href="#" class="navbar-link">Women</a>
+            <ul class="submenu">
+              <li><a href="#">Shoes</a></li>
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">Pants</a></li>
+            </ul>
           </li>
 
           <li class="navbar-item">
             <a href="#" class="navbar-link">Accesories</a>
+            <ul class="submenu">
+              <li><a href="#">Watch</a></li>
+              <li><a href="#">Earrings</a></li>
+              <li><a href="#">Jewelry</a></li>
+            </ul>
           </li>
 
           <li class="navbar-item">
