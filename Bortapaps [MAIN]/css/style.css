@@ -222,9 +222,41 @@ body {
     font-size: 13px;
     width: 100%;
     top: 35px;
-    right: -130px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.signup_text .divider {
+    border: 0;
+    font-size: 14px;
+    height: 1.5em;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+}
+
+.signup_text .divider::before {
+    content: "";
+    background: linear-gradient(to right, transparent, white, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.signup_text .divider::after {
+    background-color: #1a1a1a;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    content: attr(data-content);
+    line-height: 1.5em;
+    padding: 0 7px;
+    position: relative;
+}
 
 .signup_container {
     position: absolute;
@@ -263,6 +295,7 @@ body {
 
 .signup_logintext {
     margin-top: 20px;
+    
 }
 
 .signup_button {
@@ -538,6 +571,7 @@ hr{
     right: 20px;
     bottom: 10px;
 }
+
 
 @media print {
     body {
