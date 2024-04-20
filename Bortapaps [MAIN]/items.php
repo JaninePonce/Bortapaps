@@ -2,11 +2,8 @@
 
 <body>
 
-<style>
-    .itemlist-padding {
-        padding: 100px;
-    }
-</style>
+<div class="banner-section">
+</div>
 
 <section class="item-section">
     <?php include 'items/item-maker.php' ?>

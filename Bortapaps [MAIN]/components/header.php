@@ -19,8 +19,8 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./css/component-style.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/component-style.css">
   <!-- 
     - google font link
   -->
@@ -40,7 +40,7 @@
       <div class="overlay" data-overlay></div>
 
       <a href="#" class="logo">
-        <img src="./resources/headertest.svg" width="200" alt="Footcap logo">
+        <img src="resources/headertest.svg" width="200" alt="Footcap logo">
       </a>
 
       <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
@@ -54,13 +54,13 @@
         </button>
 
         <a href="#" class="logo">
-          <img src="./resources/BORTAPAPS2.png" width="190" height="50" alt="Footcap logo">
+          <img src="resources/BORTAPAPS2.png" width="190" height="50" alt="Footcap logo">
         </a>
 
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="../index.php" class="navbar-link">Home</a>
+            <a href="index.php" class="navbar-link">Home</a>
           </li>
 
           <li class="navbar-item">
@@ -96,7 +96,7 @@
           </li>
 
           <li>
-            <a href="./users/logout.php" class="nav-action-btn">
+            <a href="user-page.php" class="nav-action-btn">
               <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
               <span class="nav-action-text">Login / Register</span>
