@@ -9,9 +9,15 @@ if(isset($_POST['place_order'])){
     $total = $_POST['total'];
 
 
-        $create_transaction = "INSERT INTO `transactions`(`total`, `status`, `userId`, `employeeId`, `supplierId`) VALUES (DEFAULT, DEFAULT, $userId,DEFAULT,1);";
+        $create_transaction = "INSERT INTO `transactions`(`total`, `status`, `userId`, `employeeId`, `inventoryId`) VALUES (DEFAULT, DEFAULT, $userId,DEFAULT,1);";
         $createResult = mysqli_query($conn, $create_transaction);
         $transactionId = mysqli_insert_id($conn);
+        $_SESSION['transaction_id'] = $transactionId;
+
+        $create_ordertab = "INSERT INTO order_tab(`transaction_id`) VALUES ($transactionId)";
+        mysqli_query($conn, $create_ordertab);
+        $tab_id = mysqli_insert_id($conn);
+        $_SESSION['tab_id'] = $tab_id;
 
         $check = "SELECT *, (carts.id) AS cartId ,(price * qty) AS total FROM carts 
         INNER JOIN products ON productId = products.id WHERE userId = $userId;";

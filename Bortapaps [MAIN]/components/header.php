@@ -40,7 +40,7 @@
       <div class="overlay" data-overlay></div>
 
       <a href="#" class="logo">
-        <img src="./resources/BORTAPAPS2.png" width="160" height="50" alt="Footcap logo">
+        <img src="./resources/headertest.svg" width="200" alt="Footcap logo">
       </a>
 
       <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
@@ -76,7 +76,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link">Accesories</a>
+            <a href="../items.php?category=Accessories" class="navbar-link">Accesories</a>
           </li>
 
           <li class="navbar-item">
@@ -104,14 +104,12 @@
           </li>
 
           <li>
-            <button class="nav-action-btn">
+            <button class="nav-action-btn wishlist-button">
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 
               <span class="nav-action-text">Wishlist</span>
             </button>
           </li>
-
-          </style>
 
           <li class="user-cart">
             
@@ -123,4 +121,13 @@
     </div>
   </header>
 
-  <div class="cart-bar"></div>
+  <div class="sidebar" id="cart">
+  <span class="material-symbols-outlined close-btn">close</span>
+  </div>
+
+  <div class="sidebar" id="wishlist">
+  <span class="material-symbols-outlined close-btn">close</span>
+  <ul class="wishlist"></ul>
+  </div>
+
+  <div class="popup-section"></div>

@@ -8,79 +8,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main-style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<body>
-
     
-<div class="header">
-        <h1>Bortapaps</h1>
-        <h1>Checkout</h1>
-        <a href="../index.php">Back</a>
+
+<body>
+    <div class="header">
+
     </div>
-
     <div class="main-container">
-        <form action="order.php" method="POST" class="checkout-form">
-            <div class="checkout-container">
-            
-                <div class="address-container">
-                    <h2 class="title">Delivery Address</h2>
-                    <div class="details">
-                        <h4 class="address">Lorem ipsum dolor sit amet consectetur adipisicing elit</h4>
-                    </div>
-                </div>
-                <div class="products-container">
-                    <h2 class="title">Products ordered</h2>
-                    <div class="details">
-                        <ol class="order-list">
-                            <div class="order-headers">
-                                <span>Product Image</span>
-                                <span>Name</span>
-                                <span>Unit Price</span>
-                                <span>Amount</span>
-                                <span>Subtotal</span>
-                            </div>
-                            <?php
-                                if(isset($_POST['orders'])){
-                                    $orders = $_POST['orders'];
-                                    $userId = $_SESSION['id'];
-                                    $user = $_SESSION['user'];
-                                    $total = 0;
+    <form action="order.php" method="POST" class="checkout-form">
+        <h2>Order Summary</h2><br>
+        <div class="main-layout">
+            <ul class="item-list">
+            <?php
+                if(isset($_POST['orders'])){
+                    $orders = $_POST['orders'];
+                    $userId = $_SESSION['id'];
+                    $user = $_SESSION['user'];
+                    $total = 0;
 
-                                    $sql = "SELECT *, (carts.id) AS cartId ,(price * qty) AS subtotal FROM carts INNER JOIN products ON productId = products.id WHERE userId = $userId;";
-                                    $result = mysqli_query($conn, $sql);
+                    $sql = "SELECT *, (carts.id) AS cartId ,(price * qty) AS subtotal FROM carts INNER JOIN products ON productId = products.id WHERE userId = $userId;";
+                    $result = mysqli_query($conn, $sql);
 
-                                    while($row = mysqli_fetch_assoc($result)){
-                                        if(in_array($row['productId'], $orders)){
-                                            $total += $row['subtotal'];
-                                
-                            ?>
-                            <li class="item">
-                                <img src="../Products/<?=$row['path']?>" alt="" width="150px" height="150px" style="object-fit: contain;">
-                                <h3 class="product-name"><?=$row['name']?></h3>
-                                <span class="product-price">₱<?=$row['price']?></span>
-                                <span class="product-qty"><?=$row['qty']?></span>
-                                <span class="product-subtotal">P<?=$row['subtotal']?></span>
-                            </li>
-                            <?php
-                            
-                                        }
-                                    }
-                            ?>
-                        </ol>
-                    </div>
-                </div>  
-                <div class="payment-container">
-                    <h2 class="title">Payment method</h2>
+                    while($row = mysqli_fetch_assoc($result)){
+                        if(in_array($row['productId'], $orders)){
+                            $total += $row['subtotal'];
+                
+            ?>
+                <li class="item">
+                    <img src="../Products/<?=$row['path']?>" alt="" width="100px;" style="object-fit: contain;">
                     <div class="details">
-
-                        
-                        <div class="total-div">
-                            <h2>Total</h2>
-                            <span>₱<?=$total?></span>
-                            <input type="hidden" name="total" value="<?=$total?>">
+                    <h2 class="name"><?=$row['name']?></h2>
+                    <h5>Qty: <?=$row['qty']?></h5>
+                        <div class="summary">
+                            <h5>Unit Price: $<?=$row['price']?></h5>
+                            <h5>Subtotal: $<?=$row['subtotal']?>
                         </div>
+                    </div>
+                </li>
+                <?php
+                            }
+                        }
+                ?>
+            </ul>
+            <div class="transaction-container">
+                <h3>Transaction details</h3>
+                <div class="transaction-summary">
+                    <table>
+                        <tr>
+                            <td style="padding-right: 20px"><h4>Total</h4></td>
+                            <td style="width: 85%;"><hr></td>
+                            <td style="padding-left: 20px">$<span class="money"><?=$total?></span></td>
+                            <input type="hidden" name="total" value="<?=$total?>">
+                        </tr>
+                    </table>
 
                     <?php
                             foreach($orders as $order){
@@ -91,15 +75,32 @@
                                     
                         } 
                     ?>
+
+                </div>
+                <hr>
+                <h3>Select payment option</h3>
+                <div class="payment-container">
+                    <div>
+                        <input type="radio" name="payment" id="counterpay" required>
+                        <label for="counterpay">Pay on Counter</label>
                     </div>
-                    <div class="options">
-                        <a href="../index.php" class="button">Cancel</a>
-                        <input type="submit" class="button" value="Place Order" name="place_order">
+                    <div>
+                        <input type="radio" name="payment" id="onlinepay">
+                        <label for="onlinepay">Pay Online</label>
                     </div>
                 </div>
+                <div class="buttons-container">
+                    <a href="../index.php" class="button">Cancel</a>
+                    <input type="submit" class="button checkout" value="Place Order" name="place_order">
+                </div>
             </div>
-        </form>
+        </div>
+    </form>
     </div>
+
+    <script>
+        
+    </script>
 
 </body>
 </html>
