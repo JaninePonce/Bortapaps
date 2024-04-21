@@ -97,14 +97,38 @@ function getWishlist(){
 
 $(".product-item .quick-view").each(function(){
     $(this).click(function(){
+        product_id = $(this).parent().find("#productId");
         $.ajax({
             url: "../components/quick-view.php",
+            data: { view_productId : product_id },
             success: function(data){
                 $(".popup-section").html(data);
             }
         })
     })
 })
+
+$(".product-item .compare-btn").each(function(){
+    $(this).click(function(){
+        product_id = $(this).parents(".product-item").find("#productId");
+        $.ajax({
+            url: "../components/compare.php",
+            type: "POST",
+            data: {
+                compare_productId : product_id.val()
+            },
+            success: function(data){
+                $(".compare-section").removeClass("hidden");
+                $(".compare-section .list").html(data);
+            }
+        })
+    })
+})
+
+$(".compare-section .close").click(function(){
+    $(".compare-section").addClass("hidden");
+})
+
 
 function removeItemFromWishlist(item_id){
     $.ajax({

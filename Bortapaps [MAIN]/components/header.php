@@ -121,13 +121,6 @@
     </div>
   </header>
 
-  <div class="sidebar" id="cart">
-  <span class="material-symbols-outlined close-btn">close</span>
-  </div>
-
-  <div class="sidebar" id="wishlist">
-  <span class="material-symbols-outlined close-btn">close</span>
-  <ul class="wishlist"></ul>
-  </div>
-
-  <div class="popup-section"></div>
+  <?php 
+    include 'modals.php';
+  ?>

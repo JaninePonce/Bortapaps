@@ -57,7 +57,7 @@
                                             </li> -->
 
                                             <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-4">
+                                            <button class="card-action-btn compare-btn" aria-labelledby="card-label-4">
                                                 <ion-icon name="repeat-outline"></ion-icon>
                                             </button>
 

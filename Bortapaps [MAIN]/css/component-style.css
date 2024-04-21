@@ -414,6 +414,7 @@ ul.wishlist{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .qrcode-section .qrcode-container{
@@ -432,3 +433,65 @@ ul.wishlist{
   #qr-code{
     background-color: #ffffff00;
   }
+
+
+/* -------------------------  COMPARE  ------------------------------------- */
+.compare-section{
+  position: fixed;
+  bottom: 0px;
+  height: 120px;
+  width: 60%;
+  background-color: rgba(121, 121, 121, 0.659);
+  backdrop-filter: blur(6px);
+  margin-left: 20%;
+  z-index: 2;
+  border-radius: 20px 20px 0px 0px; 
+
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  padding: 10px;
+  transition: all .3s;
+}
+
+.compare-section.hidden{
+  bottom: -200px;
+}
+
+.compare-section .close{
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+.compare-section .item .close{
+  position: absolute;
+  margin-left: 66px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.compare-section .list {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.compare-section .list .item{
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.compare-section .item img {
+  position: relative;
+  top: 0px;
+  height: 80px;
+  width: 80px;
+  margin: 5px;
+}
