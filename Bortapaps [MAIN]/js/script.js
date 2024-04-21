@@ -105,3 +105,14 @@ $(".product-item .quick-view").each(function(){
         })
     })
 })
+
+function removeItemFromWishlist(item_id){
+    $.ajax({
+        url: "../items/wishlist.php",
+        type: "POST",
+        data: {remove_item_id : item_id.value},
+        success: function(data){
+            getWishlist();
+        }
+    })
+}
