@@ -110,9 +110,9 @@
 
             <h1>Thank You!</h1>
             <h5>- Please show this to the counter -</h5>
-            <svg id="barcode"></svg>
+            <svg class="barcode"></svg>
             <script>
-                JsBarcode("#barcode", <?= $transactionId ?>, {
+                JsBarcode(".barcode", <?=$transactionId?>, {
                     displayValue: false
                 });
             </script>

@@ -215,6 +215,8 @@
     position: relative;
     height: 350px;
     overflow: hidden;
+    border-radius: 20px;
+    padding: 10px;
   }
   
   .image-contain {
@@ -308,7 +310,8 @@
     color: inherit;
     transition: var(--transition-1);
   }
-  
+
+
   .card-cat-link:is(:hover, :focus) { color: var(--bittersweet); }
   
   .product-card .card-title { margin-bottom: 12px; }
@@ -1373,7 +1376,7 @@
   overflow: hidden;
 }
 
-.quick-view {
+/* .quick-view {
   position: absolute;
   bottom: -50px;
   width: 100%;
@@ -1392,5 +1395,5 @@
 
 .product-item:hover .quick-view {
   
-  bottom: 0px;
-}
+    bottom: 0px;
+  } */

@@ -76,7 +76,12 @@ function getCartNum(){
 $(".wishlist-button").click(() => {
     $('#wishlist').addClass("show");
     getWishlist();
-    });
+});
+
+$(".search-button").click(function(){
+    $("#search").addClass("show");
+})
+
 
 $(".close-btn").each(function(){
     $(this).click(function(){
@@ -97,20 +102,25 @@ function getWishlist(){
 
 $(".product-item .quick-view").each(function(){
     $(this).click(function(){
-        product_id = $(this).parent().find("#productId");
+        product_id = $(this).parents(".product-item").find("#productId");
         $.ajax({
             url: "../components/quick-view.php",
-            data: { view_productId : product_id },
+            type: "POST",
+            data: { view_productId : product_id.val() },
             success: function(data){
+                console.log(data);
                 $(".popup-section").html(data);
+                $(".popup-section").removeClass("hidden");
             }
         })
     })
 })
 
+
 $(".product-item .compare-btn").each(function(){
     $(this).click(function(){
         product_id = $(this).parents(".product-item").find("#productId");
+        console.log(product_id.val())
         $.ajax({
             url: "../components/compare.php",
             type: "POST",
@@ -140,3 +150,45 @@ function removeItemFromWishlist(item_id){
         }
     })
 }
+
+function getLoader(element, color){
+    element.empty();
+    $.ajax({
+        url: "../components/loader.php",
+        type: "POST",
+        data: {color},
+        success: function(data){
+            element.html(data);
+        }
+    })
+}
+
+function getSearchResult(){
+    $.ajax({
+        url: "../components/search.php",
+        type: "POST",
+        data: { search_word : $("#search-field").val() },
+        success: function(data){
+            getLoader($(".searched-items"), "white");
+            setTimeout(function(){
+                $(".searched-items").empty();
+                $(".searched-items").html(data);
+            },1500);
+        }
+    })
+}
+
+$(".banner-section").click(function(){
+    window.location.href = "../items.php?category=New Arrival";
+})
+
+$(".search-bar .search").click(function(){
+    getSearchResult();
+})
+
+$("#search-field").on("keypress", function(e){
+    if(e.which === 13){
+        e.preventDefault();
+        getSearchResult();
+    }
+})

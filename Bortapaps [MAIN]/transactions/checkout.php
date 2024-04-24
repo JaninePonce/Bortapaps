@@ -109,8 +109,8 @@
                     <table>
                         <tr>
                             <td style="padding-right: 20px"><h4>Total</h4></td>
-                            <td style="width: 85%;"><hr></td>
-                            <td style="padding-left: 20px">$<span class="money"><?=$total?></span></td>
+                            <td style="width: 85%; padding-right: 20px;"><hr></td>
+                            <td>$<?=$total?></td>
                             <input type="hidden" name="total" value="<?=$total?>">
                         </tr>
                     </table>
@@ -129,14 +129,20 @@
                 <hr>
                 <h3>Select payment option</h3>
                 <div class="payment-container">
-                    <label>
-                        <input type="radio" name="payment" id="counterpay" value="Pending payment" required>
-                        <span class="material-symbols-outlined">payments</span>
-                    </label>
-                    <label>
+                    <div>
+                      <label class="payment-type">
+                          <input type="radio" name="payment" id="counterpay" value="Pending payment" required>
+                          <span class="material-symbols-outlined">payments</span>
+                          <h4>Cash</h4>
+                      </label>
+                    </div>
+                    <div>
+                    <label class="payment-type">
                         <input type="radio" name="payment" id="onlinepay" value="Paid online">
                         <span class="material-symbols-outlined">credit_card</span>
+                        <h4>Online</h4>
                     </label>
+                    </div>
                 </div>
                 <div class="buttons-container">
                     <a href="../index.php" class="button">Cancel</a>

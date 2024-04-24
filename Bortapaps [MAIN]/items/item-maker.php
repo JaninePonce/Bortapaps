@@ -21,8 +21,6 @@
 
                                         <div class="card-badge">New</div>
 
-                                        <input type="button" value="QUICK VIEW" class="quick-view">
-
                                         <ul class="card-action-list">
 
                                             <li class="card-action-item">
@@ -48,21 +46,21 @@
                                             <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                             </li>
 
-                                            <!-- <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-3">
+                                            <li class="card-action-item">
+                                            <button class="card-action-btn quick-view" aria-labelledby="card-label-3">
                                                 <ion-icon name="eye-outline"></ion-icon>
                                             </button>
 
                                             <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                                            </li> -->
+                                            </li>
 
-                                            <li class="card-action-item">
+                                            <!-- <li class="card-action-item">
                                             <button class="card-action-btn compare-btn" aria-labelledby="card-label-4">
                                                 <ion-icon name="repeat-outline"></ion-icon>
                                             </button>
 
                                             <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                                            </li>
+                                            </li> -->
 
                                         </ul>
 
@@ -102,8 +100,6 @@
 
                                 <div class="card-badge">New</div>
 
-                                <input type="button" value="QUICK VIEW" class="quick-view">
-
                                 <ul class="card-action-list">
 
                                     <li class="card-action-item">
@@ -129,21 +125,21 @@
                                     <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                     </li>
 
-                                    <!-- <li class="card-action-item">
-                                    <button class="card-action-btn" aria-labelledby="card-label-3">
+                                    <li class="card-action-item">
+                                    <button class="card-action-btn quick-view" aria-labelledby="card-label-3">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </button>
 
                                     <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                                    </li> -->
+                                    </li>
 
-                                    <li class="card-action-item">
+                                    <!-- <li class="card-action-item">
                                     <button class="card-action-btn" aria-labelledby="card-label-4">
                                         <ion-icon name="repeat-outline"></ion-icon>
                                     </button>
 
                                     <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                                    </li>
+                                    </li> -->
 
                                 </ul>
 
@@ -186,8 +182,6 @@
 
                                         <!-- <div class="card-badge">New</div> -->
 
-                                        <input type="button" value="QUICK VIEW" class="quick-view">
-
                                         <ul class="card-action-list">
 
                                             <li class="card-action-item">
@@ -213,21 +207,21 @@
                                             <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                             </li>
 
-                                            <!-- <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-3">
+                                            <li class="card-action-item">
+                                            <button class="card-action-btn quick-view" aria-labelledby="card-label-3">
                                                 <ion-icon name="eye-outline"></ion-icon>
                                             </button>
 
                                             <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                                            </li> -->
+                                            </li>
 
-                                            <li class="card-action-item">
+                                            <!-- <li class="card-action-item">
                                             <button class="card-action-btn" aria-labelledby="card-label-4">
                                                 <ion-icon name="repeat-outline"></ion-icon>
                                             </button>
 
                                             <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                                            </li>
+                                            </li> -->
 
                                         </ul>
 
@@ -272,8 +266,6 @@
 
                                         <div class="card-badge">New</div>
 
-                                        <input type="button" value="QUICK VIEW" class="quick-view">
-
                                         <ul class="card-action-list">
 
                                             <li class="card-action-item">
@@ -299,21 +291,21 @@
                                             <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                                             </li>
 
-                                            <!-- <li class="card-action-item">
-                                            <button class="card-action-btn" aria-labelledby="card-label-3">
+                                            <li class="card-action-item">
+                                            <button class="card-action-btn quick-view" aria-labelledby="card-label-3">
                                                 <ion-icon name="eye-outline"></ion-icon>
                                             </button>
 
                                             <div class="card-action-tooltip" id="card-label-3">Quick View</div>
-                                            </li> -->
+                                            </li>
 
-                                            <li class="card-action-item">
+                                            <!-- <li class="card-action-item">
                                             <button class="card-action-btn" aria-labelledby="card-label-4">
                                                 <ion-icon name="repeat-outline"></ion-icon>
                                             </button>
 
                                             <div class="card-action-tooltip" id="card-label-4">Compare</div>
-                                            </li>
+                                            </li> -->
 
                                         </ul>
 

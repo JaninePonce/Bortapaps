@@ -15,7 +15,7 @@
         unset($_SESSION['compare_list'][$index]);
     }
 
-    if(count($_SESSION['compare_list']) > 0){ 
+    if(isset($_SESSION['compare_list'])){ 
     foreach($_SESSION['compare_list'] as $item){
         $sql = "SELECT * FROM products WHERE id = '$item'";
         $result = mysqli_query($conn, $sql);
@@ -48,6 +48,10 @@ $(".compare-section .list .close").each(function(){
             },
             success: function(data){
                 $(".compare-section .list").html(data);
+                
+                if($(".compare-section .list").children(".item").length == 0){
+                    $(".compare-section").addClass("hidden");
+                }
             }
         })
     })

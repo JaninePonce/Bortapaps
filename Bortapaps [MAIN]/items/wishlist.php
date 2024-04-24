@@ -38,7 +38,7 @@
         while($row = mysqli_fetch_assoc($WishlistItems)){
 ?>
     <li class="item">
-        <img src="../products/<?= $row['path'] ?> " alt="" width="100px" style="object-fit: contain;">
+        <img src="../products/<?=$row['category'] ?>/<?= $row['path'] ?> " alt="" width="100px" style="object-fit: contain;">
         <div class="details">
           <div class="identifier">
             <h2 class="title"><?= $row['name'] ?></h2>

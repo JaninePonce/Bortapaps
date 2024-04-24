@@ -1,16 +1,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
+<?php 
+    include '../components/connection.php';
+
+    if(isset($_POST['view_productId'])){
+        $id = $_POST['view_productId'];
+
+        $sql = "SELECT * FROM products WHERE id = $id";
+        $row = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+?>
 <div class="popup">
+<div class="close-btn"></div>
     <div class="popup-container">
-    <span class="material-symbols-outlined close-btn">close</span>
         <div class="item-preview">
-            <img src="../products/men bomber jacket.jpg" alt="">
+            <img src="../products/<?= $row['category']?>/<?=$row['path'] ?>" alt="">
             <div class="details">
-                <h1 style="font-size: 40px;">Lorem ipsum</h1>
-                <div class="id-details"><span>NO: 91234127462</span> <span>Category: Mens</span></div>
+                <h1 style="font-size: 40px;"><?=$row['name']?></h1>
+                <div class="id-details"><span>NO: <?=$row['id']?></span> <span>Category: <?=$row['category']?></span></div>
                 <div class="desc">
-                    <h3>Php 215.12</h3>
-                    <br><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga officiis dignissimos ratione, dolor recusandae laborum sequi, iste corporis nisi quaerat ullam atque odit labore ipsam voluptate, iure laudantium a explicabo.</span>
+                    <h3>Php <?=$row['price']?></h3>
+                    <br><span><?=$row['description']?></span>
                 </div>
                 <div class="popup-options">
                     <div class="qty-container">
@@ -30,8 +39,15 @@
     </div>
 </div>
 
+<?php 
+    }
+?>
+
 <script>
     $(".popup .close-btn").click(function(){
-        $(".popup-section").empty();
+        $(".popup-container").addClass("hide");
+        setTimeout(function(){
+            $(".popup-section").empty();
+        }, 300)
     })
 </script>
