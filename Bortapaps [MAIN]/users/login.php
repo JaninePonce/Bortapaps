@@ -40,7 +40,9 @@
                     <input type="submit" class="submit_button" value="Login" name="submit_button">
 
                     <div class="signup_text">
-                    <span>Don't have an account?</span>&nbsp;<a href="#" onclick="open_signup()">Sign up!</a>
+                    <div><span>Don't have an account?</span>&nbsp;<a href="#" onclick="open_signup()">Sign up!</a><br></div>
+                    <hr class="divider" data-content="OR">
+                    <div><span>Login via </span><a href="../qr-code/scanner.php">QR CODE!</a></div>
                     </div>
             </form>
     </div>

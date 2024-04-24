@@ -69,6 +69,7 @@ if(isset($_POST['submit_button'])) {
                 session_start();
                 $_SESSION['user'] = $user;
                 $_SESSION['id'] = $row['id'];
+                $_SESSION['compare_list'] = array();
                 header("Location: ../index.php");
             }else{
                 echo '<script>
@@ -122,6 +123,28 @@ if(isset($_POST['signup_button'])){
             $sql = "INSERT INTO users (username, email, `password`) VALUES ('$user','$email','$hash_pass')";
             $result = mysqli_query($conn, $sql);
             header("Location: login.php?success=Sucessfully registered!");
+        }
+    }
+}
+
+
+if(isset($_GET['user']) && isset($_GET['pass'])){
+    $user = (string) $_GET['user'];
+    $pass = $_GET['pass'];
+
+    $sql = "SELECT * FROM users WHERE `username` = '$user'";
+    $result = mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_assoc($result);
+
+        if($row['password'] == $pass){
+            session_start();
+            
+            $_SESSION['user'] = $user;
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['compare_list'] = array();
+            header("Location: ../index.php");
         }
     }
 }

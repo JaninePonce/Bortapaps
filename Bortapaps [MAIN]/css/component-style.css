@@ -185,6 +185,25 @@ ul.wishlist{
     align-items: end;
   }
 
+  .wishlist .item .identifier {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .wishlist .item .identifier button{
+    transition: all .5s;
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
+  }
+
+  .wishlist .item .identifier button:hover {
+    background-color: red;
+    color: white;
+  }
+
 @keyframes popup-in {
     0%{ transform: translate(0.1);}
     70%{ transform: translate(1.2);}
@@ -193,12 +212,11 @@ ul.wishlist{
 
 .popup {
     position: fixed;
-    top:0px;
-    left:0px;
-    z-index: 6;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
     background-color: #33333AAA;
     backdrop-filter: blur(5px);
-
     height: 100dvh;
     width: 100dvw;
     display: flex;
@@ -206,8 +224,32 @@ ul.wishlist{
     justify-content: center;
 }
 
+.popup .close-btn{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  1%{transform: scale(.2);}
+  75%{transform: scale(1.1);}
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popOut{
+  100%{
+    transform: scale(0);
+  }
+}
 
 .popup-container {
+    position: relative;
+    z-index: 4;
     height: 80vh;
     width: 65vw;
     background-color: whitesmoke;
@@ -215,8 +257,13 @@ ul.wishlist{
     overflow: hidden;
     border: 3px solid black;
     
-    animation-name: popup-in;
-    animation-duration: 1s;
+    animation-name: fadeIn;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+}
+
+.popup-container.hide{
+  animation: popOut .3s;
 }
 
 .popup .item-preview {
@@ -283,6 +330,7 @@ ul.wishlist{
     cursor: pointer;
 }
 
+
 .popup .cart-btn:hover {
     background-color: #222;
 }
@@ -301,17 +349,244 @@ ul.wishlist{
     transform: scale(1.2);
 }
 
-.popup .close-btn {
-    position: absolute;
-    font-size: 40px;
-    font-weight: bold;
-    right: 20vw;
-    top: 14vh;
-    cursor: pointer;
-    transition: all .3s ease-out;
+.itemlist-padding {
+    padding: 100px;
 }
 
-.popup .close-btn:hover {
-    color: #555;
-    transform: scale(1.2);
+@keyframes banner_loop {
+    0% {background-image: url(/resources/newarrival_yellow.jpg);}
+    25% {background-image: url(/resources/newarrival_bw.jpg);}
+    50% {background-image: url(/resources/newarrival_grey.jpg);}
+    75% {background-image: url(/resources/newarrival_orange.jpg);}
+    100%{background-image: url(/resources/newarrival_yellow.jpg);}
+  }
+
+  .banner-section {
+    width: 100%;
+    height: 55dvh;
+    background-size: contain;
+
+    animation-name: banner_loop;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+
+  }
+
+  .profile-container {
+    height: 100dvh;
+    background-image: url(/resources/profile_background.jpg);
+    background-size: cover;
+    background-position: bottom;
+
+    display: flex;
+    align-items: end;
+  }
+
+  .profile-container .profile-picture {
+    width: 300px;
+    border-radius: 50%;
+    border: 10px solid rgb(100, 255, 100);
+    z-index: 2;
+  }
+
+  .profile-container .profile {
+    position: absolute;
+    top: 20dvh;
+    left: 5dvw;
+    
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .profile-container .details-container{
+    height: 70%;
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+    border-top: 2px solid black;
+    background-color: white;
+    padding-top: 80px;
+    padding-left: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+  .details-container .details{
+    border: 1px solid black;
+    position: relative;
+    z-index: 1;
+    top: -20px;
+    height: 55dvh;
+    width: 100dvh;
+  }
+
+  .details-container .qrcode-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .qrcode-section .qrcode-container{
+    border: 5px solid black;
+    border-radius: 20px;
+    height: 40dvh;
+    width: 40dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: linear-gradient(red, orange); */
+    background-color: white;
+  }
+
+  #qr-code{
+    background-color: #ffffff00;
+  }
+
+
+/* -------------------------  COMPARE  ------------------------------------- */
+.compare-section{
+  position: fixed;
+  bottom: 0px;
+  height: 120px;
+  width: 60%;
+  background-color: rgba(121, 121, 121, 0.659);
+  backdrop-filter: blur(6px);
+  margin-left: 20%;
+  z-index: 2;
+  border-radius: 20px 20px 0px 0px; 
+
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  padding: 10px;
+  transition: all .3s;
+}
+
+.compare-section.hidden{
+  bottom: -200px;
+}
+
+.compare-section .close{
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+.compare-section .item .close{
+  position: absolute;
+  margin-left: 66px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.compare-section .list {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.compare-section .list .item{
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.compare-section .item img {
+  position: relative;
+  top: 0px;
+  height: 80px;
+  width: 80px;
+  margin: 5px;
+}
+
+/* --------------------- SEARCH -------------------------- */
+
+#search .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  gap: 20px;
+}
+
+#search .search-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.search-bar input[type="text"]{
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  padding-left: 20px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.search-bar input[type="text"]:focus{
+  outline: none;
+}
+
+.search-bar ion-icon{
+  height: 100%;
+  font-size: 30px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 0px 50% 50% 0px;
+  cursor: pointer;
+}
+
+#search .searched-items{
+  border: 2px white solid;
+  border-radius: 20px;
+  height: 75dvh;
+  width: 100%;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#search .item-list{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  overflow-x: hidden;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  align-content: center;
+  gap: 10px 3px;
+}
+
+
+#search .item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 10px;
+
+  background-color: whitesmoke;
+  border: 5px solid black;
 }

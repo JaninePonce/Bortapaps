@@ -1,6 +1,10 @@
 <?php
   include 'connection.php';
   session_start();
+
+  if(!isset($_SESSION['id'])){
+    header("Location: ../users/login.php");
+  }
 ?>
   <!-- CSS -->
   <!DOCTYPE html>
@@ -11,6 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bortapaps Apparel</title>
 
+
   <!-- 
     - favicon
   -->
@@ -19,8 +24,8 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./css/component-style.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/component-style.css">
   <!-- 
     - google font link
   -->
@@ -40,7 +45,7 @@
       <div class="overlay" data-overlay></div>
 
       <a href="#" class="logo">
-        <img src="./resources/headertest.svg" width="200" alt="Footcap logo">
+        <img src="resources/headertest.svg" width="200" alt="Footcap logo">
       </a>
 
       <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
@@ -54,18 +59,18 @@
         </button>
 
         <a href="#" class="logo">
-          <img src="./resources/BORTAPAPS2.png" width="190" height="50" alt="Footcap logo">
+          <img src="resources/BORTAPAPS2.png" width="190" height="50" alt="Footcap logo">
         </a>
 
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="../index.php" class="navbar-link">Home</a>
+            <a href="index.php" class="navbar-link">Home</a>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <a href="../items.php?category=New Arrival" class="navbar-link">New Arrivals</a>
-          </li>
+          </li> -->
 
           <li class="navbar-item">
             <a href="../items.php?category=Mens" class="navbar-link">Men</a>
@@ -88,15 +93,14 @@
         <ul class="nav-action-list">
 
           <li>
-            <button class="nav-action-btn">
+            <button class="nav-action-btn search-button">
               <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
               <span class="nav-action-text">Search</span>
             </button>
           </li>
 
           <li>
-            <a href="./users/logout.php" class="nav-action-btn">
+            <a href="user-page.php" class="nav-action-btn">
               <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
               <span class="nav-action-text">Login / Register</span>
@@ -121,13 +125,6 @@
     </div>
   </header>
 
-  <div class="sidebar" id="cart">
-  <span class="material-symbols-outlined close-btn">close</span>
-  </div>
-
-  <div class="sidebar" id="wishlist">
-  <span class="material-symbols-outlined close-btn">close</span>
-  <ul class="wishlist"></ul>
-  </div>
-
-  <div class="popup-section"></div>
+  <?php 
+    include 'modals.php';
+  ?>

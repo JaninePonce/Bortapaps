@@ -2,12 +2,12 @@
     session_start();
 
     include ('../components/connection.php');
+    
+    $id = $_SESSION['id'];
 
     if(!isset($_SESSION['id'])){
         header("Location: ./users/login.php");
     }
-    
-    $id = $_SESSION['id'];
 
     if(isset($_POST['pid'])){
         $productid = $_POST['pid'];

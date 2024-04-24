@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2024 at 05:57 AM
+-- Generation Time: Apr 20, 2024 at 03:49 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,9 +40,33 @@ CREATE TABLE `carts` (
 
 INSERT INTO `carts` (`id`, `userId`, `productId`, `qty`) VALUES
 (95, 9, 15743581, 1),
-(106, 3, 15743597, 7),
-(110, 3, 15743595, 5),
-(111, 3, 15743596, 7);
+(106, 3, 15743597, 9),
+(110, 3, 15743595, 7),
+(111, 3, 15743596, 9),
+(200, 1, 15743596, 4),
+(201, 10, 15743596, 2),
+(202, 10, 15743591, 1),
+(203, 10, 15743593, 1),
+(204, 1, 15743595, 1),
+(205, 1, 15743597, 1),
+(206, 1, 15743598, 1),
+(207, 1, 15743592, 1),
+(208, 1, 15743593, 1),
+(209, 1, 15743591, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `sub-category` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL DEFAULT 'UNISEX'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -75,6 +99,7 @@ CREATE TABLE `inventory` (
   `id` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
   `supplierId` int(11) NOT NULL,
+  `categoryId` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `sold` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -98,66 +123,45 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `productId`, `qty`, `total`, `transactionId`) VALUES
-(174, 15743582, 1, 200, 105),
-(175, 15743595, 2, 498, 105),
-(176, 15743596, 2, 398, 105),
-(177, 15743594, 2, 399, 106),
-(178, 15743593, 3, 1050, 106),
-(179, 15743596, 2, 398, 107),
-(180, 15743595, 3, 747, 107),
-(181, 15743597, 3, 600, 941823721),
-(182, 15743595, 3, 747, 941823721),
-(183, 15743582, 3, 600, 941823721),
-(184, 15743591, 2, 1398, 941823721),
-(185, 15743594, 2, 399, 941823721),
-(186, 15743596, 5, 995, 941823721),
-(187, 15743598, 1, 159, 941823721),
-(188, 15743593, 1, 350, 941823721),
-(189, 15743592, 1, 350, 941823721),
-(190, 15743589, 1, 400, 941823721),
-(191, 15743590, 1, 130, 941823721),
-(192, 15743583, 1, 251, 941823721),
-(193, 15743580, 1, 312, 941823721),
-(194, 15743584, 1, 150, 941823721),
-(195, 15743585, 1, 100, 941823721),
-(196, 15743598, 1, 159, 941823722),
-(197, 15743597, 1, 200, 941823722),
-(198, 15743596, 1, 199, 941823722),
-(199, 15743595, 1, 249, 941823722),
-(200, 15743591, 1, 699, 941823722),
-(201, 15743592, 1, 350, 941823722),
-(202, 15743593, 2, 700, 941823722),
-(203, 15743594, 1, 200, 941823722),
-(204, 15743589, 3, 1200, 941823722),
-(205, 15743590, 2, 259, 941823722),
-(206, 15743598, 1, 159, 941823723),
-(207, 15743597, 1, 200, 941823723),
-(208, 15743596, 1, 199, 941823723),
-(209, 15743595, 1, 249, 941823723),
-(210, 15743592, 1, 350, 941823723),
-(211, 15743593, 1, 350, 941823723),
-(212, 15743591, 2, 1398, 941823723),
-(213, 15743594, 1, 200, 941823723),
-(214, 15743589, 1, 400, 941823723),
-(215, 15743590, 1, 130, 941823723),
-(216, 15743598, 2, 318, 941823724),
-(217, 15743597, 1, 200, 941823724),
-(218, 15743597, 1, 200, 941823725),
-(219, 15743598, 1, 159, 941823725),
-(220, 15743596, 1, 199, 941823725),
-(221, 15743592, 1, 350, 941823725),
-(222, 15743591, 1, 699, 941823725),
-(223, 15743589, 1, 400, 941823725),
-(224, 15743598, 1, 159, 941823726),
-(225, 15743596, 1, 199, 941823726),
-(226, 15743597, 2, 400, 941823727),
-(227, 15743598, 1, 159, 941823727),
-(228, 15743596, 1, 199, 941823727),
-(229, 15743595, 1, 249, 941823727),
-(230, 15743591, 1, 699, 941823727),
-(231, 15743592, 1, 350, 941823727),
-(232, 15743593, 1, 350, 941823727),
-(233, 15743594, 1, 200, 941823727);
+(251, 15743597, 1, 200, 941823736),
+(252, 15743598, 1, 159, 941823736),
+(253, 15743596, 2, 398, 941823736),
+(254, 15743595, 3, 747, 941823736),
+(255, 15743597, 1, 200, 941823737),
+(256, 15743593, 1, 350, 941823737),
+(257, 15743598, 1, 159, 941823737);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_tab`
+--
+
+CREATE TABLE `order_tab` (
+  `id` int(11) NOT NULL,
+  `transaction_id` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'Pending payment',
+  `entry_date` datetime NOT NULL,
+  `exp_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order_tab`
+--
+
+INSERT INTO `order_tab` (`id`, `transaction_id`, `status`, `entry_date`, `exp_date`) VALUES
+(3, 941823736, 'Pending payment', '2024-04-18 16:19:17', '2024-04-25 16:19:17'),
+(4, 941823737, 'Pending payment', '2024-04-20 18:04:47', '2024-04-27 18:04:47');
+
+--
+-- Triggers `order_tab`
+--
+DELIMITER $$
+CREATE TRIGGER `exp_trigger` BEFORE INSERT ON `order_tab` FOR EACH ROW SET
+    NEW.entry_date = IFNULL(NEW.entry_date, NOW()),
+    NEW.exp_date = TIMESTAMPADD(DAY, 7, NEW.entry_date)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -231,24 +235,17 @@ CREATE TABLE `transactions` (
   `status` varchar(255) NOT NULL DEFAULT 'Pending',
   `userId` int(11) NOT NULL,
   `employeeId` int(11) DEFAULT NULL,
-  `supplierId` int(11) NOT NULL
+  `inventoryId` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`id`, `total`, `status`, `userId`, `employeeId`, `supplierId`) VALUES
-(105, 398, 'Pending', 3, NULL, 1),
-(106, 1050, 'Pending', 9, NULL, 1),
-(107, 747, 'Pending', 1, NULL, 1),
-(941823721, 100, 'Pending', 1, NULL, 1),
-(941823722, 259, 'Pending', 1, NULL, 1),
-(941823723, 129.5, 'Pending', 1, NULL, 1),
-(941823724, 200, 'Pending', 1, NULL, 1),
-(941823725, 400, 'Pending', 1, NULL, 1),
-(941823726, 199, 'Pending', 1, NULL, 1),
-(941823727, 199.5, 'Pending', 1, NULL, 1);
+INSERT INTO `transactions` (`id`, `total`, `status`, `userId`, `employeeId`, `inventoryId`, `date`) VALUES
+(941823736, 747, 'Pending', 1, NULL, 1, '2024-04-18 16:19:17'),
+(941823737, 159, 'Pending', 1, NULL, 1, '2024-04-20 18:04:47');
 
 -- --------------------------------------------------------
 
@@ -275,7 +272,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (5, 'asd', 'asd@asd', '$2y$10$DJbgar.6YgkJ8tgXnQPxQ.jHKZCKqE9EOZzwbl4gtlqyKg8QEr6Vy'),
 (6, 'newuser', 'newuser@gmail.com', '$2y$10$XOgNpTeXZ2FHntRTNV.IoegtU2vFs4nAnr8zRXb7xTrNbn9l3jG1m'),
 (7, 'paulchoy', 'paul@choy.com', '$2y$10$R0cxK1yGKvSCWTZCVcg6IOoTUHtayLZc5GohR4krP9RmS1YaiaMdu'),
-(9, 'userpaul', 'userpaul@gmail.com', '$2y$10$F.qerHYwhadH/voy5r5XHewZv6clhb1y0nIyKtyZ5CLE8u.Pm8wcy');
+(9, 'userpaul', 'userpaul@gmail.com', '$2y$10$F.qerHYwhadH/voy5r5XHewZv6clhb1y0nIyKtyZ5CLE8u.Pm8wcy'),
+(10, 'test_user', 'test@gmail.com', '$2y$10$08zthMccYgJAMubC0e5TEelVvRh.cgMSl/AR70K4fY60J8iaF5Zuq');
 
 -- --------------------------------------------------------
 
@@ -286,6 +284,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 CREATE TABLE `user_profile` (
   `id` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
+  `profile_pic` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -293,6 +292,27 @@ CREATE TABLE `user_profile` (
   `postalcode` int(11) NOT NULL,
   `phonenum` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_wishlist`
+--
+
+CREATE TABLE `user_wishlist` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_wishlist`
+--
+
+INSERT INTO `user_wishlist` (`id`, `user_id`, `product_id`) VALUES
+(5, 1, 15743597),
+(7, 1, 15743592),
+(8, 1, 15743594);
 
 --
 -- Indexes for dumped tables
@@ -307,6 +327,12 @@ ALTER TABLE `carts`
   ADD KEY `productId` (`productId`);
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
@@ -318,7 +344,8 @@ ALTER TABLE `employees`
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`id`),
   ADD KEY `productId` (`productId`),
-  ADD KEY `supplierId` (`supplierId`);
+  ADD KEY `supplierId` (`supplierId`),
+  ADD KEY `categoryId` (`categoryId`);
 
 --
 -- Indexes for table `orders`
@@ -327,6 +354,13 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `transactionId` (`transactionId`),
   ADD KEY `productId` (`productId`);
+
+--
+-- Indexes for table `order_tab`
+--
+ALTER TABLE `order_tab`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `transaction_id` (`transaction_id`);
 
 --
 -- Indexes for table `products`
@@ -347,7 +381,7 @@ ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `userId` (`userId`),
   ADD KEY `employeeId` (`employeeId`),
-  ADD KEY `supplierId` (`supplierId`);
+  ADD KEY `inventoryId` (`inventoryId`);
 
 --
 -- Indexes for table `users`
@@ -363,6 +397,14 @@ ALTER TABLE `user_profile`
   ADD KEY `userId` (`userId`);
 
 --
+-- Indexes for table `user_wishlist`
+--
+ALTER TABLE `user_wishlist`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -370,7 +412,13 @@ ALTER TABLE `user_profile`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -388,7 +436,13 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
+
+--
+-- AUTO_INCREMENT for table `order_tab`
+--
+ALTER TABLE `order_tab`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -406,19 +460,25 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=941823728;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=941823738;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_profile`
 --
 ALTER TABLE `user_profile`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_wishlist`
+--
+ALTER TABLE `user_wishlist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -436,7 +496,8 @@ ALTER TABLE `carts`
 --
 ALTER TABLE `inventory`
   ADD CONSTRAINT `inventory_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `inventory_ibfk_2` FOREIGN KEY (`supplierId`) REFERENCES `suppliers` (`id`);
+  ADD CONSTRAINT `inventory_ibfk_2` FOREIGN KEY (`supplierId`) REFERENCES `suppliers` (`id`),
+  ADD CONSTRAINT `inventory_ibfk_3` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`);
 
 --
 -- Constraints for table `orders`
@@ -446,18 +507,30 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`productId`) REFERENCES `products` (`id`);
 
 --
+-- Constraints for table `order_tab`
+--
+ALTER TABLE `order_tab`
+  ADD CONSTRAINT `order_tab_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`);
+
+--
 -- Constraints for table `transactions`
 --
 ALTER TABLE `transactions`
   ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `transactions_ibfk_3` FOREIGN KEY (`employeeId`) REFERENCES `employees` (`id`),
-  ADD CONSTRAINT `transactions_ibfk_4` FOREIGN KEY (`supplierId`) REFERENCES `suppliers` (`id`);
+  ADD CONSTRAINT `transactions_ibfk_3` FOREIGN KEY (`employeeId`) REFERENCES `employees` (`id`);
 
 --
 -- Constraints for table `user_profile`
 --
 ALTER TABLE `user_profile`
   ADD CONSTRAINT `user_profile_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `user_wishlist`
+--
+ALTER TABLE `user_wishlist`
+  ADD CONSTRAINT `user_wishlist_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `user_wishlist_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
