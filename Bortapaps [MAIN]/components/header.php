@@ -1,6 +1,10 @@
 <?php
   include 'connection.php';
   session_start();
+
+  if(!isset($_SESSION['id'])){
+    header("Location: ../users/login.php");
+  }
 ?>
   <!-- CSS -->
   <!DOCTYPE html>
@@ -10,6 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bortapaps Apparel</title>
+
 
   <!-- 
     - favicon
@@ -63,9 +68,9 @@
             <a href="index.php" class="navbar-link">Home</a>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <a href="../items.php?category=New Arrival" class="navbar-link">New Arrivals</a>
-          </li>
+          </li> -->
 
           <li class="navbar-item">
             <a href="../items.php?category=Mens" class="navbar-link">Men</a>
@@ -88,9 +93,8 @@
         <ul class="nav-action-list">
 
           <li>
-            <button class="nav-action-btn">
+            <button class="nav-action-btn search-button">
               <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
               <span class="nav-action-text">Search</span>
             </button>
           </li>
@@ -121,13 +125,6 @@
     </div>
   </header>
 
-  <div class="sidebar" id="cart">
-  <span class="material-symbols-outlined close-btn">close</span>
-  </div>
-
-  <div class="sidebar" id="wishlist">
-  <span class="material-symbols-outlined close-btn">close</span>
-  <ul class="wishlist"></ul>
-  </div>
-
-  <div class="popup-section"></div>
+  <?php 
+    include 'modals.php';
+  ?>

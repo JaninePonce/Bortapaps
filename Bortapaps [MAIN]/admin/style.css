@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -35,13 +36,28 @@ select {
     display: none;
 }
 
-
-body {
-    background-color: #333;
-    height: 100vh;
+.flex {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.row{
+    flex-direction: row;
+}
+
+body {
+    background-color: #dddddd;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .main-container {
@@ -118,4 +134,110 @@ body {
 .message .error {
     background-color: lightcoral;
     border: 3px solid red;
+}
+
+.container{
+    height: 90%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.875);
+}
+
+.title {
+    justify-content: space-around;
+    width: 100%;
+}
+
+.transaction{
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: whitesmoke;
+    gap: 10px;
+    padding: 40px;
+}
+
+.transaction .status{
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#barcode-field {
+    width: 20dvw;
+    height: 35px;
+    border-radius: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#barcode-field::-webkit-inner-spin-button,
+#barcode-field::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.transaction .details{
+    height: 80%;
+    width: 100%;
+    -moz-appea: textfield;
+}
+
+.transaction .item-list{
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+
+
+    overflow-y: auto;
+    gap:10px;
+}
+
+.transaction .item-list .item{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid black;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.product-options .view-option{
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.view-option:hover{
+    background-color: #4545458f;
+}
+
+.green{
+    background-color: #4fea6b;
+}
+
+.grey {
+    background-color: #333;
+}
+
+.button{
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+    border-bottom: 3px solid black;
 }

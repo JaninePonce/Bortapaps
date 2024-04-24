@@ -1,6 +1,7 @@
 <?php 
 include 'conn.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,22 +23,7 @@ include 'conn.php';
         font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-    }
-    header{
-        width: 100dvw;
-    height: 15dvh;
-    background-color: #FFFFFF;
-    left: -1dvw;
-    position: relative;
-    top: -1dvh;
-    border-bottom: 1px solid #ccc8c8;
-    margin: 23px;
-    }
-    #logo{
-        position: relative;
-    width: 21dvw;
-    height: 17dvh;
-    top: -3dvh;
+  zoom: 80%;
     }
 .side_select{
     width: 16dvw;
@@ -66,8 +52,8 @@ include 'conn.php';
     background-color: #FFFFFF;
     margin: 0;
     position: relative;
-    left: 56dvw;
-    top: -999px;
+    left: 70dvw;
+    top: -920px;
 }
 h1 {
     position: relative;
@@ -201,18 +187,20 @@ select{
     width: 659px;
     height: 699px;
 }
+.description{
+  position:absolute;
+  top: 700px;
+}
 #description{
-    position: absolute;
+    position: relative;
     display: flex;
-    top: 915px;
     left: 23px;
     font-size: 38px;
 }
 #id{
-    position: absolute;
+    position: relative;
     width: 120px;
     font-size: 22px;
-    top: 918px;
     left: 829px;
     font-weight: 300;
     line-height: 1;
@@ -240,7 +228,12 @@ select{
 .gen_accor{
     position: relative;
     width: 1004px;
-    top: 131px;
+    top: 280px;
+}
+
+.review{
+  position: relative;
+  top:200px;
 }
 #reviews{
     position: absolute;
@@ -265,7 +258,7 @@ select{
     width: 100dvw;
     height: 100dvh;
     background-color: #FFFFFF;
-    top: -93dvh;
+    top: -70dvh;
 }
 #viewed{
     position: relative;
@@ -277,13 +270,10 @@ select{
 
 </style>
 <body>
-   <header>
-    <img id="logo" src="/Bortapaps2/1.svg" alt="banner">
-   </header>
    <div class="side_select">
-    <img id="side_select"src="/Bortapaps [MAIN]/products/men bomber jacket.jpg" alt="product">
+    <img id="side_select"src="products\Mens\men bomber jacket.png" alt="product">
    <div class="item_picture">
-   <img src="/Bortapaps [MAIN]/products/men bomber jacket.jpg" alt="product" id="product_item">
+   <img src="products\Mens\men bomber jacket.png" alt="product" id="product_item">
 </div>
    </div>
    <div class="description">

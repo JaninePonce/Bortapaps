@@ -16,7 +16,9 @@ domReady(function () {
 	// If found you qr code
 	function onScanSuccess(decodeText, decodeResult) {
 		// alert("You Qr is : " + decodeText, decodeResult);
-        window.location.href = decodeText;
+    if(decodeText.includes("account.php")){
+      window.location.href = decodeText
+    };
         // window.open(decodeText, "_blank");
 	}
 
