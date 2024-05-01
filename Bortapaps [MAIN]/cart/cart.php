@@ -53,7 +53,7 @@
             ?>
             <li class="cart-item">
                 <input type="checkbox" class="item-box" name="orders[]" value="<?=$row['id']?>" style="margin-right: 20px;height: 20px; width: 20px;">
-                <img src="/Products/<?=$row['category']?>/<?=$row['path']?>" width="100px" alt="This is a product image" >
+                <img src="products/<?=$row['category']?>/<?=$row['path']?>" width="100px" alt="This is a product image" >
                 <div class="details">
                     <h2 class="name"><?=$row['name']?></h2>
                     Total: $<?=$row['total']?>
@@ -73,7 +73,7 @@
         </ol>
     </div>
 
-    <input type="submit" value="Checkout" class="button cart-options" name="place-order">
+    <input type="submit" value="Checkout" class="button cart-options" name="place-order" style="display: none;">
     <?php 
         }
     ?>
@@ -82,6 +82,7 @@
 <!-- UPDATES CART -->
 
 <script>
+
     function manipQty(text, value){
         console.log("through");
         $.ajax({
@@ -92,7 +93,6 @@
                     productId : value
                     },
                 success: function(data){
-                    console.log(data);
                     updateCart();
                     getCartNum();
                 }
@@ -119,11 +119,32 @@
         if($("#check_all").is(":checked")){
             $(".cart-list .item-box").each(function(){
                 $(this).prop("checked", true);
+                $(".cart-options").show()
             })
         }else{
             $(".cart-list .item-box").each(function(){
                 $(this).prop("checked", false);
+                $(".cart-options").hide()
             })
         }
+    })
+
+    $(".cart-list .item-box").each(function(){
+        $(this).change(function(){
+            check = $(".cart-list").find('.item-box:checked').length;
+            if(check > 0){
+                $(".cart-options").show()
+            }else{
+                $(".cart-options").hide()
+            }
+        })
+    })
+
+    $(".close-btn").each(function(){
+        $(this).click(function(){
+            $(".sidebar").each(function(){
+                $(this).removeClass("show");
+            })
+        })
     })
 </script>

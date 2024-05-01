@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Ojuju:wght@200..800&family=Truculenta:opsz,wght@12..72,100..900&family=VT323&display=swap" rel="stylesheet">
 </head>
 
@@ -121,6 +122,14 @@
     <?php 
         }
     ?>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        window.print();
+    });
+
+</script>
 </body>
 
         <a href="../index.php" class="receipt-homebtn">Home</a>

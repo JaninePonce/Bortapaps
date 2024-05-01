@@ -2,7 +2,24 @@
 
 <?php 
     include '../components/connection.php';
+    session_start();
 
+    if(isset($_POST['pid'])){
+        $id = $_POST['pid'];
+        $uid = $_SESSION['id'];
+        $qty = $_POST['item_qty'];
+
+    
+        $checksql = mysqli_query($conn, "SELECT * FROM carts WHERE userId = $uid AND productId = $id");
+        if(mysqli_num_rows($checksql) > 0){
+            echo "NAKASULOD KO DIRI BAI";
+            mysqli_query($conn, "UPDATE FROM carts SET qty = qty + $qty WHERE userId = $uid AND productId = $id");
+        }else{
+            mysqli_query($conn, "INSERT INTO carts (userId, productId, qty) VALUES ($uid, $id, $qty)");
+        }
+
+    }
+    
     if(isset($_POST['view_productId'])){
         $id = $_POST['view_productId'];
 
@@ -13,7 +30,7 @@
 <div class="close-btn"></div>
     <div class="popup-container">
         <div class="item-preview">
-            <img src="../products/<?= $row['category']?>/<?=$row['path'] ?>" alt="">
+            <img src="products/<?= $row['category']?>/<?=$row['path'] ?>" alt="">
             <div class="details">
                 <h1 style="font-size: 40px;"><?=$row['name']?></h1>
                 <div class="id-details"><span>NO: <?=$row['id']?></span> <span>Category: <?=$row['category']?></span></div>
@@ -30,9 +47,10 @@
                     </div>
 
                     <div class="popup-buttons">
-                        <button class="cart-btn">Add to Cart</button>
+                        <input type="hidden" name="add_id" value="<?=$row['id']?>">
+                        <input type="submit" class="cart-btn" value="Add to Cart">
                         <span class="material-symbols-outlined heart-btn">favorite</span>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,10 +62,40 @@
 ?>
 
 <script>
-    $(".popup .close-btn").click(function(){
+
+    $(".popup .close-btn").click(function qvClose(){
         $(".popup-container").addClass("hide");
         setTimeout(function(){
             $(".popup-section").empty();
         }, 300)
+    })
+
+
+    $(".popup-buttons .cart-btn").click(function(){
+        alert($(this).prev().val())
+        $.ajax({
+            url: "components/quick-view.php",
+            type: "POST",
+            data: {
+                pid : $(this).prev().val(),
+                item_qty : $('#item-qty').val()
+            },
+            success: function(data){
+                getCartNum();
+                updateCart();
+                $(".popup-container").addClass("hide");
+                setTimeout(function(){
+                    $(".popup-section").empty();
+                }, 300)
+
+                Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Added to cart!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }
+        })
     })
 </script>

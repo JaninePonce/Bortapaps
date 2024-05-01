@@ -3,7 +3,7 @@
   session_start();
 
   if(!isset($_SESSION['id'])){
-    header("Location: ../users/login.php");
+    header("Location: users/login.php");
   }
 ?>
   <!-- CSS -->
@@ -24,8 +24,8 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/component-style.css">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="css/component-style.css" type="text/css">
   <!-- 
     - google font link
   -->
@@ -73,15 +73,15 @@
           </li> -->
 
           <li class="navbar-item">
-            <a href="../items.php?category=Mens" class="navbar-link">Men</a>
+            <a href="items.php?category=Mens" class="navbar-link">Men</a>
           </li>
 
           <li class="navbar-item">
-            <a href="../items.php?category=Womens" class="navbar-link">Women</a>
+            <a href="items.php?category=Womens" class="navbar-link">Women</a>
           </li>
 
           <li class="navbar-item">
-            <a href="../items.php?category=Accessories" class="navbar-link">Accesories</a>
+            <a href="items.php?category=Accessories" class="navbar-link">Accesories</a>
           </li>
 
           <li class="navbar-item">

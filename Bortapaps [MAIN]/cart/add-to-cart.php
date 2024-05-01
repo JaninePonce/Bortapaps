@@ -17,15 +17,12 @@
         $result = mysqli_fetch_assoc($checkresult);
         $row = mysqli_num_rows($checkresult);
 
-        $_SESSION['conn'] = $conn;
-        
-
         if($row > 0){
             $additem = "UPDATE carts SET qty = qty + 1  WHERE carts.productId = $productid";
             $cartresult = mysqli_query($conn, $additem);
         }else{
             $additem = "INSERT INTO carts(`userId`, `productId`, `qty`) VALUES ( $id, $productid, 1)";
-            $cartresult = mysqli_query($_SESSION['conn'], $additem);
+            $cartresult = mysqli_query($conn, $additem);
         }
 
         unset($_POST['pid']);

@@ -349,29 +349,14 @@ ul.wishlist{
     transform: scale(1.2);
 }
 
+.liked{
+  color: #fe5353;
+  pointer-events: none;
+}
+
 .itemlist-padding {
     padding: 100px;
 }
-
-@keyframes banner_loop {
-    0% {background-image: url(/resources/newarrival_yellow.jpg);}
-    25% {background-image: url(/resources/newarrival_bw.jpg);}
-    50% {background-image: url(/resources/newarrival_grey.jpg);}
-    75% {background-image: url(/resources/newarrival_orange.jpg);}
-    100%{background-image: url(/resources/newarrival_yellow.jpg);}
-  }
-
-  .banner-section {
-    width: 100%;
-    height: 55dvh;
-    background-size: contain;
-
-    animation-name: banner_loop;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    cursor: pointer;
-
-  }
 
   .profile-container {
     height: 100dvh;
@@ -590,3 +575,29 @@ ul.wishlist{
   background-color: whitesmoke;
   border: 5px solid black;
 }
+
+.liked {
+  background-color: rgb(248, 68, 98);
+}
+
+
+/* .quick-view {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.737);
+  color: white;
+  cursor: pointer;
+  transition: bottom .5s, background-color .5s, font-size .5s;
+}
+
+.quick-view:hover {
+  background-color: black;
+  font-size: 20px;
+}
+
+.product-item:hover .quick-view {
+    bottom: 0px;
+} */

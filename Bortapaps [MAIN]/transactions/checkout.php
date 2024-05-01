@@ -88,7 +88,7 @@
                 
             ?>
                 <li class="item">
-                    <img src="../Products/<?=$row['path']?>" alt="" width="100px;" style="object-fit: contain;">
+                    <img src="../products/<?=$row['category']?>/<?=$row['path']?>" alt="" width="100px;" style="object-fit: contain;">
                     <div class="details">
                     <h2 class="name"><?=$row['name']?></h2>
                     <h5>Qty: <?=$row['qty']?></h5>
@@ -153,9 +153,8 @@
     </form>
     </div>
 
-    <script>
-        
-    </script>
+    
+
 
 </body>
 </html>

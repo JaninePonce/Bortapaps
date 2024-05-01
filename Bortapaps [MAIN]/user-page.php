@@ -21,7 +21,7 @@
 
     <div class="profile-container">
         <div class="profile"> 
-            <img class="profile-picture" src="/resources/duck.jpg"></img>
+            <img class="profile-picture" src="resources/duck.jpg"></img>
             <h2 class="name">@<?=$_SESSION['user']?></h2>
         </div>
         <div class="details-container">

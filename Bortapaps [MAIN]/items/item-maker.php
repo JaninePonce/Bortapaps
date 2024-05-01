@@ -1,3 +1,4 @@
+
 <ul class="product-list itemlist-padding">
             <?php
 
@@ -16,7 +17,7 @@
                                     <div class="product-card" tabindex="0">
 
                                         <figure class="card-banner">
-                                        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                        <img src="products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                             alt="Product Picture" class="image-contain">
 
                                         <div class="card-badge">New</div>
@@ -69,7 +70,7 @@
                                         <div class="card-content">
 
                                         <div class="card-cat">
-                                            <a href="#" class="card-cat-link"><?=$row['category']?></a>
+                                            <a href="items.php?category=<?=$row['category']?>" class="card-cat-link"><?=$row['category']?></a>
                                         </div>
 
                                         <h3 class="h3 card-title">
@@ -95,7 +96,7 @@
                             <div class="product-card" tabindex="0">
 
                                 <figure class="card-banner">
-                                <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                <img src="products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                     alt="Product Picture" class="image-contain">
 
                                 <div class="card-badge">New</div>
@@ -148,7 +149,7 @@
                                 <div class="card-content">
 
                                 <div class="card-cat">
-                                    <a href="#" class="card-cat-link"><?=$row['category']?></a>
+                                    <a href="items.php?category=<?=$row['category']?>" class="card-cat-link"><?=$row['category']?></a>
                                 </div>
 
                                 <h3 class="h3 card-title">
@@ -177,7 +178,7 @@
                                     <div class="product-card" tabindex="0">
 
                                         <figure class="card-banner">
-                                        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                        <img src="products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                             alt="Product Picture" class="image-contain">
 
                                         <!-- <div class="card-badge">New</div> -->
@@ -222,15 +223,15 @@
 
                                             <div class="card-action-tooltip" id="card-label-4">Compare</div>
                                             </li> -->
-
+                                            
+                                        
                                         </ul>
-
+                                        
                                         </figure>
-
                                         <div class="card-content">
 
                                         <div class="card-cat">
-                                            <a href="#" class="card-cat-link"><?=$row['category']?></a>
+                                            <a href="items.php?category=<?=$row['category']?>" class="card-cat-link"><?=$row['category']?></a>
                                         </div>
 
                                         <h3 class="h3 card-title">
@@ -261,7 +262,7 @@
                                     <div class="product-card" tabindex="0">
 
                                         <figure class="card-banner">
-                                        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
+                                        <img src="products/<?=$row['category']?>/<?=$row['path']?>" width="312" height="350" loading="lazy"
                                             alt="Product Picture" class="image-contain">
 
                                         <div class="card-badge">New</div>
@@ -314,7 +315,7 @@
                                         <div class="card-content">
 
                                         <div class="card-cat">
-                                            <a href="#" class="card-cat-link"><?=$row['category']?></a>
+                                            <a href="items.php?category=<?=$row['category']?>" class="card-cat-link"><?=$row['category']?></a>
                                         </div>
 
                                         <h3 class="h3 card-title">
@@ -324,7 +325,6 @@
                                         <data class="card-price">$<?=$row['price']?></data>
 
                                         </div>
-
                                     </div>
                                     </li>
                                 <?php  } ?>
