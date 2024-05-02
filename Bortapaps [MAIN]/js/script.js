@@ -7,17 +7,32 @@ function updateCart(){
     }
 })}
 
-$(".product-item #wishlist-form").each(function(){
-    $(this).click(function(e){
+
+function loadItems(item){
+    $.ajax({
+      url: "items/item-maker.php",
+      data: { category},
+      success: function(data){
+          $(".item-section").html(data);
+      }
+    })
+}
+
+$(".product-list .product-item").each(function(){
+    $(this).find(".toWishlistBtn").click(function(e){
         e.preventDefault();
+
+        if($(this).hasClass("liked")) return
         
-        let wishlist_productId = $(this).children("#productId").val();
+        let wishlist_productId = $(this).prev().val();
+        let heart = $(this).parent()
         $.ajax({
             type:'POST',
             url: 'items/wishlist.php',
             data: {wishlist_productId},
             success: function(data){
                 getWishlist();
+                likedProduct(heart, true);
                 Swal.fire({
                     title: "Added to wishlist!",
                     imageUrl: "resources/Heart.gif",
@@ -27,10 +42,23 @@ $(".product-item #wishlist-form").each(function(){
                     showConfirmButton: false,
                     timer: 1500
                   });
+                
             }
         })
     })
 })
+
+
+function likedProduct(item, liked){
+    $.ajax({
+        url: "items/item-maker.php",
+        type: "POST",
+        data: {liked},
+        success: function(data){
+            item.html(data)
+        }
+    })
+}
 
 
 $(".product-item #item-form").each(function(){
@@ -142,6 +170,14 @@ $(".compare-section .close").click(function(){
     $(".compare-section").addClass("hidden");
 })
 
+function findProduct(id){
+    $(".product-list .product-item").each(function(){
+        if($(this).find(".productId").val() == id){
+            console.log($(this))
+            alert("found");
+        }
+    })
+}
 
 function removeItemFromWishlist(item_id){
     $.ajax({
@@ -150,6 +186,7 @@ function removeItemFromWishlist(item_id){
         data: {remove_item_id : item_id.value},
         success: function(data){
             getWishlist();
+            
         }
     })
 }
@@ -193,3 +230,4 @@ $("#search-field").on("keypress", function(e){
         e.preventDefault();
     }
 })
+

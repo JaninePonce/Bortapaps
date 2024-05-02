@@ -11,9 +11,9 @@
 
     
         $checksql = mysqli_query($conn, "SELECT * FROM carts WHERE userId = $uid AND productId = $id");
-        if(mysqli_num_rows($checksql) > 0){
-            echo "NAKASULOD KO DIRI BAI";
-            mysqli_query($conn, "UPDATE FROM carts SET qty = qty + $qty WHERE userId = $uid AND productId = $id");
+        var_dump($checksql);
+        if(mysqli_num_rows($checksql) > 0){ 
+            mysqli_query($conn, "UPDATE carts SET qty = qty + $qty WHERE userId = $uid AND productId = $id");
         }else{
             mysqli_query($conn, "INSERT INTO carts (userId, productId, qty) VALUES ($uid, $id, $qty)");
         }
@@ -42,14 +42,14 @@
                     <div class="qty-container">
                         <h4>Qty: </h4>
                         <button onclick="if(this.nextElementSibling.value > 1)this.nextElementSibling.stepDown()">-</button>
-                        <input type="number" style="width: 40px;" name="item-qty" id="item-qty" value="1">
+                        <input type="number" style="width: 40px; text-align:center" name="item-qty" id="item-qty" value="1">
                         <button onclick="this.previousElementSibling.stepUp()">+</button>
                     </div>
 
                     <div class="popup-buttons">
                         <input type="hidden" name="add_id" value="<?=$row['id']?>">
                         <input type="submit" class="cart-btn" value="Add to Cart">
-                        <span class="material-symbols-outlined heart-btn">favorite</span>
+                        <!-- <span class="material-symbols-outlined heart-btn">favorite</span> -->
                     </div>
                 </div>
             </div>
@@ -72,15 +72,16 @@
 
 
     $(".popup-buttons .cart-btn").click(function(){
-        alert($(this).prev().val())
+        let item_qty = $('#item-qty').val()
         $.ajax({
             url: "components/quick-view.php",
             type: "POST",
             data: {
                 pid : $(this).prev().val(),
-                item_qty : $('#item-qty').val()
+                item_qty
             },
             success: function(data){
+                // console.log(data)
                 getCartNum();
                 updateCart();
                 $(".popup-container").addClass("hide");

@@ -84,7 +84,6 @@
 <script>
 
     function manipQty(text, value){
-        console.log("through");
         $.ajax({
                 url: 'cart/cart.php',
                 type: "POST",

@@ -349,9 +349,13 @@ ul.wishlist{
     transform: scale(1.2);
 }
 
-.liked{
+
+.liked:hover{
   color: #fe5353;
-  pointer-events: none;
+}
+
+.liked:hover ion-icon{
+  color: white;
 }
 
 .itemlist-padding {
@@ -546,21 +550,16 @@ ul.wishlist{
   height: 75dvh;
   width: 100%;
   padding: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
+  overflow-y: auto;
 }
 
 #search .item-list{
-  height: 100%;
+  height: auto;
   width: 100%;
   display: grid;
   overflow-x: hidden;
   grid-template-columns: repeat(3, 1fr);
-  align-items: start;
-  align-content: center;
   gap: 10px 3px;
 }
 

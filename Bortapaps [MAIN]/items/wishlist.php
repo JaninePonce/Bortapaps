@@ -36,6 +36,7 @@
 
     if(mysqli_num_rows($WishlistItems) > 0){
         while($row = mysqli_fetch_assoc($WishlistItems)){
+            
 ?>
     <li class="item">
         <img src="products/<?=$row['category'] ?>/<?= $row['path'] ?> " alt="" width="100px" style="object-fit: contain;">

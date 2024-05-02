@@ -160,11 +160,24 @@
                           </li>
 
                         <li class="card-action-item">
-                          <button class="card-action-btn" aria-labelledby="card-label-2">
-                            <ion-icon name="heart-outline"></ion-icon>
-                          </button>
+                        <input type="hidden" class="productId" value="<?=$row['id']?>">
+                                    <?php 
+                                        if(in_array($row['id'], $_SESSION['wishlist'])){
+                                    ?>
+                                    <button class="card-action-btn liked" style="pointer-events: none;" aria-labelledby="card-label-2">
+                                        <ion-icon name="heart-outline" style="color: white"></ion-icon>
+                                    </button>
+                                    <?php 
+                                        }else{
+                                            ?>
+                                    <button class="card-action-btn toWishlistBtn" aria-labelledby="card-label-2">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </button>
+                                            <?php
+                                        }
+                                    ?>
 
-                          <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                                <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                         </li>
 
                         <li class="card-action-item">
@@ -316,11 +329,24 @@
                       </li>
 
                       <li class="card-action-item">
-                        <button class="card-action-btn" aria-labelledby="card-label-2">
-                          <ion-icon name="heart-outline"></ion-icon>
-                        </button>
+                      <input type="hidden" class="productId" value="<?=$row['id']?>">
+                                    <?php 
+                                        if(in_array($row['id'], $_SESSION['wishlist'])){
+                                    ?>
+                                    <button class="card-action-btn liked" style="pointer-events: none;" aria-labelledby="card-label-2">
+                                        <ion-icon name="heart-outline" style="color: white"></ion-icon>
+                                    </button>
+                                    <?php 
+                                        }else{
+                                            ?>
+                                    <button class="card-action-btn toWishlistBtn" aria-labelledby="card-label-2">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </button>
+                                            <?php
+                                        }
+                                    ?>
 
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                                <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
                       </li>
 
                       <li class="card-action-item">

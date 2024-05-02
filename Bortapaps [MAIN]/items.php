@@ -23,17 +23,19 @@
 
   }
 </style>
-<div class="banner-section"></div>
+<div class="banner-section">
+</div>
 
 <section class="item-section">
-    <?php include 'items/item-maker.php' ?>
+  <?= include 'items/item-maker.php'?>  
 </section>
 
 
-<?php include 'components/footer.php' ?>
+<?php include 'components/footer.php'?>
 <script>
     $(".banner-section").click(function(){
         window.location.href = "items.php?category=New Arrival";
     })
+
 </script>
 </body>

@@ -5,6 +5,15 @@
   if(!isset($_SESSION['id'])){
     header("Location: users/login.php");
   }
+
+  $_SESSION['wishlist'] = array();
+
+  $result = mysqli_query($conn, "SELECT * FROM user_wishlist WHERE user_id = ".$_SESSION['id']);
+  while($row = mysqli_fetch_assoc($result)){
+    array_push($_SESSION['wishlist'], $row['product_id']);
+  }
+
+
 ?>
   <!-- CSS -->
   <!DOCTYPE html>
