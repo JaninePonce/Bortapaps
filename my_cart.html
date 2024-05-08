@@ -19,7 +19,6 @@
         justify-content: center;
     }
     .mycart_container{
-        position: relative;
     width: 33%;
     height: 96dvh;
     background-color:#CDD0CA;
@@ -29,7 +28,7 @@
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     }
     .sub_container{
-        position: relative;
+        
     width: 100%;
     height: 95%;
     background-color: #2C2B30;
@@ -41,16 +40,22 @@
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
 }
 
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
     .title,.contents,.place_order{
         background-color: #2C2B30;
     width: 100%;
     height: 34%;
-    position: relative;
+    
     }
     .title{
         width: 51%;
     height: 10%;
-    position: absolute;
     top: -36px;
     left: 138px;
     border-radius: 30px;
@@ -63,15 +68,13 @@
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     }
     .place_order{
-        position: absolute;
-        top: 593px;
+        top: 532px;
     height: 155px;
     border-bottom-left-radius: 44px;
     border-bottom-right-radius: 44px;
     padding: 14px;
     }
     .contents{
-        position: absolute;
     width: 93%;
     top: 6%;
     left: 19px;
@@ -86,7 +89,6 @@
    
     }
     .mycart_products{
-        position: relative;
     width: 97%;
     height: 15%;
     background-color: #CDD0CA;
@@ -106,13 +108,12 @@
     position: relative;
     width: 177px;
     left: -19px;
-    top: -5px;
+    top: -10px;
 }
 .descrption{
     width: 210px;
     height: 100px;
-    position: relative;
-    top: -104px;
+    top: -111px;
     left: 108px;
     display: flex;
     flex-direction: column;
@@ -124,20 +125,18 @@
     height: 59%;
     background-color: transparent;
     border-radius: 30px;
-    position: relative;
-    top: -212px;
+    top: -214px;
     left: 301px;
     border: 1px solid #2C2B30;
 }
 .qnty_buttons{
-    position: relative;
     width: 91%;
     height: 79%;
     display: flex;
     flex-direction: row;
     gap: 5px;
     left: 15px;
-    top: 9px;
+    top: 6px;
 
 }
 button{
@@ -150,8 +149,7 @@ button{
 
 }
 .num{
-    position: relative;
-    top: -173%;
+    top: -190%;
     width: 8%;
     left: 55%;
     font-size: 23px;
@@ -159,7 +157,6 @@ button{
 .order_button{
     width: 100%;
     height: 100%;
-    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -174,7 +171,7 @@ button{
     height: 50%;
 }
 .trash{
-    position: absolute;
+
     font-size: 31px;
     left: 89px;
     top: 15px;
@@ -204,25 +201,25 @@ button{
 }
 </style>
 <body>
-   <div class="mycart_container">
-        <div class="sub_container">
+   <div class="mycart_container relative">
+        <div class="sub_container relative">
             
-                <div class="title">MY CART</div>
+                <div class="title absolute">MY CART</div>
 
-                <div class="contents">
+                <div class="contents absolute">
                 <div class="pr">
 
                     <!-- 1 -->
-                    <div class="mycart_products">
+                    <div class="mycart_products relative">
 
                         <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
+                        <div class="descrption relative">
                             <p style="color: red;">Marlboro Red</p>
                             <p>Php 0.00</p>
                         </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
+                        <div class="num relative">0x</div>
+                        <div class="quantity relative">
+                            <div class="qnty_buttons relative">
                                 <button><span class="material-symbols-outlined">remove</span></button>
                                 <button><span class="material-symbols-outlined">add</span></button>
                                 <button><span class="material-symbols-outlined">close</span></button>
@@ -230,17 +227,17 @@ button{
                         </div>
                     </div>
 
-                     <!-- 1 -->
-                     <div class="mycart_products">
+                    <!-- 1 -->
+                    <div class="mycart_products relative">
 
                         <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
+                        <div class="descrption relative">
                             <p style="color: red;">Marlboro Red</p>
                             <p>Php 0.00</p>
                         </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
+                        <div class="num relative">0x</div>
+                        <div class="quantity relative">
+                            <div class="qnty_buttons relative">
                                 <button><span class="material-symbols-outlined">remove</span></button>
                                 <button><span class="material-symbols-outlined">add</span></button>
                                 <button><span class="material-symbols-outlined">close</span></button>
@@ -248,17 +245,17 @@ button{
                         </div>
                     </div>
 
-                     <!-- 2 -->
-                     <div class="mycart_products">
+                    <!-- 1 -->
+                    <div class="mycart_products relative">
 
                         <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
+                        <div class="descrption relative">
                             <p style="color: red;">Marlboro Red</p>
                             <p>Php 0.00</p>
                         </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
+                        <div class="num relative">0x</div>
+                        <div class="quantity relative">
+                            <div class="qnty_buttons relative">
                                 <button><span class="material-symbols-outlined">remove</span></button>
                                 <button><span class="material-symbols-outlined">add</span></button>
                                 <button><span class="material-symbols-outlined">close</span></button>
@@ -266,17 +263,17 @@ button{
                         </div>
                     </div>
 
-                     <!-- 3 -->
-                     <div class="mycart_products">
+                    <!-- 1 -->
+                    <div class="mycart_products relative">
 
                         <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
+                        <div class="descrption relative">
                             <p style="color: red;">Marlboro Red</p>
                             <p>Php 0.00</p>
                         </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
+                        <div class="num relative">0x</div>
+                        <div class="quantity relative">
+                            <div class="qnty_buttons relative">
                                 <button><span class="material-symbols-outlined">remove</span></button>
                                 <button><span class="material-symbols-outlined">add</span></button>
                                 <button><span class="material-symbols-outlined">close</span></button>
@@ -284,17 +281,17 @@ button{
                         </div>
                     </div>
 
-                     <!-- 4 -->
-                     <div class="mycart_products">
+                    <!-- 1 -->
+                    <div class="mycart_products relative">
 
                         <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
+                        <div class="descrption relative">
                             <p style="color: red;">Marlboro Red</p>
                             <p>Php 0.00</p>
                         </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
+                        <div class="num relative">0x</div>
+                        <div class="quantity relative">
+                            <div class="qnty_buttons relative">
                                 <button><span class="material-symbols-outlined">remove</span></button>
                                 <button><span class="material-symbols-outlined">add</span></button>
                                 <button><span class="material-symbols-outlined">close</span></button>
@@ -302,71 +299,17 @@ button{
                         </div>
                     </div>
 
-                     <!-- 5 -->
-                     <div class="mycart_products">
+                    <!-- 1 -->
+                    <div class="mycart_products relative">
 
                         <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
+                        <div class="descrption relative">
                             <p style="color: red;">Marlboro Red</p>
                             <p>Php 0.00</p>
                         </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
-                                <button><span class="material-symbols-outlined">remove</span></button>
-                                <button><span class="material-symbols-outlined">add</span></button>
-                                <button><span class="material-symbols-outlined">close</span></button>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- 6 -->
-                     <div class="mycart_products">
-
-                        <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
-                            <p style="color: red;">Marlboro Red</p>
-                            <p>Php 0.00</p>
-                        </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
-                                <button><span class="material-symbols-outlined">remove</span></button>
-                                <button><span class="material-symbols-outlined">add</span></button>
-                                <button><span class="material-symbols-outlined">close</span></button>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- 7 -->
-                     <div class="mycart_products">
-
-                        <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
-                            <p style="color: red;">Marlboro Red</p>
-                            <p>Php 0.00</p>
-                        </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
-                                <button><span class="material-symbols-outlined">remove</span></button>
-                                <button><span class="material-symbols-outlined">add</span></button>
-                                <button><span class="material-symbols-outlined">close</span></button>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- 8 -->
-                     <div class="mycart_products">
-
-                        <img id="imge"src="/PELECT3/marlbore.png" alt="">
-                        <div class="descrption">
-                            <p style="color: red;">Marlboro Red</p>
-                            <p>Php 0.00</p>
-                        </div>
-                        <div class="num">0x</div>
-                        <div class="quantity">
-                            <div class="qnty_buttons">
+                        <div class="num relative">0x</div>
+                        <div class="quantity relative">
+                            <div class="qnty_buttons relative">
                                 <button><span class="material-symbols-outlined">remove</span></button>
                                 <button><span class="material-symbols-outlined">add</span></button>
                                 <button><span class="material-symbols-outlined">close</span></button>
@@ -375,6 +318,7 @@ button{
                     </div>
 
 
+                     
                     
                    
 
@@ -382,9 +326,9 @@ button{
             </div>
 
             <!-- placeorder -->
-                <div class="place_order">
-                    <div class="order_button">
-                        <button id="order_button" class="delete"><span class="material-symbols-outlined trash">delete</span><p id="delete">DELETE</p></button>
+                <div class="place_order absolute">
+                    <div class="order_button relative">
+                        <button id="order_button" class="delete"><span class="material-symbols-outlined trash absolute">delete</span><p id="delete">DELETE</p></button>
                         <button id="order_button" class="place">PLACE ORDER</button>
                         <button id="order_button" class="leave" style="width: 90%;">LEAVE</button>
                     </div>
