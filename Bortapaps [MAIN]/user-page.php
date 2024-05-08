@@ -29,7 +29,7 @@
 
             </div>
             <div class="qrcode-section">
-                <h5>Use this to login!</h5>
+                <h5>Use this to login next time!</h5>
                 <div class="qrcode-container">
                     <div id="qrcode"></div>
                 </div>

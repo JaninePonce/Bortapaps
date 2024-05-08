@@ -53,7 +53,7 @@
             ?>
             <li class="cart-item">
                 <input type="checkbox" class="item-box" name="orders[]" value="<?=$row['id']?>" style="margin-right: 20px;height: 20px; width: 20px;">
-                <img src="/Products/<?=$row['path']?>" width="100px" alt="This is a product image" >
+                <img src="/Products/<?=$row['category']?>/<?=$row['path']?>" width="100px" alt="This is a product image" >
                 <div class="details">
                     <h2 class="name"><?=$row['name']?></h2>
                     Total: $<?=$row['total']?>

@@ -7,6 +7,7 @@ if(isset($_POST['place_order'])){
     $orders = $_POST['orders'];
     $userId = $_SESSION['id'];
     $total = $_POST['total'];
+    $payment = $_POST['payment'];
 
 
         $create_transaction = "INSERT INTO `transactions`(`total`, `status`, `userId`, `employeeId`, `inventoryId`) VALUES (DEFAULT, DEFAULT, $userId,DEFAULT,1);";
@@ -14,7 +15,7 @@ if(isset($_POST['place_order'])){
         $transactionId = mysqli_insert_id($conn);
         $_SESSION['transaction_id'] = $transactionId;
 
-        $create_ordertab = "INSERT INTO order_tab(`transaction_id`) VALUES ($transactionId)";
+        $create_ordertab = "INSERT INTO order_tab(`transaction_id`, `status`) VALUES ($transactionId, '$payment')";
         mysqli_query($conn, $create_ordertab);
         $tab_id = mysqli_insert_id($conn);
         $_SESSION['tab_id'] = $tab_id;

@@ -69,6 +69,7 @@ if(isset($_POST['submit_button'])) {
                 session_start();
                 $_SESSION['user'] = $user;
                 $_SESSION['id'] = $row['id'];
+                $_SESSION['compare_list'] = array();
                 header("Location: ../index.php");
             }else{
                 echo '<script>
@@ -142,7 +143,7 @@ if(isset($_GET['user']) && isset($_GET['pass'])){
             
             $_SESSION['user'] = $user;
             $_SESSION['id'] = $row['id'];
-    
+            $_SESSION['compare_list'] = array();
             header("Location: ../index.php");
         }
     }
