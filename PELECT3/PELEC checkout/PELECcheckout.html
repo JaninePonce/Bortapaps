@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CHECKOUT</title>
     <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
-    
-    <header>
-        <h1>DANAO CITY JAIL</h1>
-        <nav>
-            <a href=""> Home</a>
-            <a href=""> About</a>
-            <a href=""> Service</a>
-            <a href=""> Blogs</a>
-            <a href=""> Login</a>
-        </nav>
-    </header>
-
     <h1 class="head">CHECKOUT</h1>
+   
 
     <main>
 
         <section class="order">
 
             <div class="container">
+                <section class="checkout">
+                    <hr>    
+                    <h1 align="center">Order Total: <span>$100.00</span></h1>
+                    <br>
+                    <div align="center" class="amount-container">
+                        <input type="number" id="amount" placeholder="Enter amount">
+                        <button id="enter-btn">Pay</button>
+                      </div>
+                    </form>
+        
+                </section>
                 <table>
                     <tr>
-                        <th width="200">Image</th>
-                        <th width="200">Name</th>
-                        <th width="200">Description</th>
-                        <th width="200">Quantity</th>
+                        <th width="150">Image</th>
+                        <th width="150">Name</th>
+                        <th width="150">Description</th>
+                        <th width="150">Quantity</th>
                     </tr>
                 
                     <tr align="center">
-                        <td><img src="sample.jpg" alt=""></td>
+                        <td><img src="mr.jpg" alt=""></td>
                         <td>[Product Name]</td>
                         <td>baligya ni siya</td>
                         <td>
@@ -47,7 +48,7 @@
                     
 
                     <tr align="center">
-                        <td><img src="sample.jpg" alt=""></td>
+                        <td><img src="mr.jpg" alt=""></td>
                         <td>[Product Name]</td>
                         <td>baligya ni siya</td>
                         <td>
@@ -58,7 +59,7 @@
                     </tr>
 
                     <tr align="center">
-                        <td><img src="sample.jpg" alt=""></td>
+                        <td><img src="mr.jpg" alt=""></td>
                         <td>[Product Name]</td>
                         <td>baligya ni siya</td>
                         <td>
@@ -68,29 +69,13 @@
                         </td>
                     </tr>
                 </table>
+                
             </div>
         
 
         </section>
 
-        <section class="checkout">
-            <h1 align="center">Order Summary</h1>
-            <hr>
-            <h1>Order Total: <span>$100.00</span></h1>
-            <br>
-            <h3>Select Payment</h3>
-            <form action="">
-                <label for="payment">Payment:</label>
-                    <select id="payment">
-                        <option value="Online">Online</option>
-                        <option value="otc">Over The Counter</option>
-                    </select>
-                <br><br>
-                <input type="reset"class="btn">
-                <input type="submit" class="btn">
-            </form>
-
-        </section>
+    
     </main>
 </body>
 </html>
