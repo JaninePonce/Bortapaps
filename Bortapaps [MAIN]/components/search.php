@@ -16,7 +16,7 @@
 ?>
 
     <div class="item">
-        <img src="../products/<?=$row['category']?>/<?=$row['path']?>" alt="" style="height: 90px; width: 80px;">
+        <img src="products/<?=$row['category']?>/<?=$row['path']?>" alt="" style="height: 90px; width: 80px;">
     </div>   
 
 <?php 

@@ -87,7 +87,7 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link">
+              <a href="user-page.php" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
                 <span class="footer-link-text">My Account</span>
@@ -110,16 +110,16 @@
               </a>
             </li>
 
-            <li>
+            <!-- <li>
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
                 <span class="footer-link-text">Compare</span>
               </a>
-            </li>
+            </li> -->
 
             <li>
-              <a href="#" class="footer-link">
+              <a href="items.php?category=New Arrival" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
                 <span class="footer-link-text">New Products</span>

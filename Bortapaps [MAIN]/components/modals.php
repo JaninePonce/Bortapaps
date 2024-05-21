@@ -1,6 +1,5 @@
 
 <div class="sidebar" id="cart">
-    <span class="material-symbols-outlined close-btn">close</span>
 </div>
 
 <div class="sidebar" id="wishlist">
