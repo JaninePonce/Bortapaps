@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    height: 59dvh;
+        }
+        .nav {
+            display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2%;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .nav a.active {
+            border-bottom: 3px solid #4CAF50;
+            font-weight: bold;
+        }
+        .section {
+            display: none;
+            flex-wrap: wrap;
+            
+    gap: 2%;
+    justify-content: center;
+        }
+        .section.active {
+            display: flex;
+        }
+        .product {
+            width: 17%;
+            background-color: #fff;
+          
+            margin-bottom: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+        }
+        .product img {
+            max-width: 101%;
+    height: 100%;
+    border-radius: 20px;
+        }
+        .product .price {
+            color: #4CAF50;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .product .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+        .product .rating {
+            color: #FFD700;
+            margin: 5px 0;
+        }
+        .product button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .product button:hover {
+            background-color: #45a049;
+        }
+        .discount {
+            background-color: #FF5722;
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 0.9em;
+    position: absolute;
+    top: 53px;
+    left: 20px;
+        }
+        .top {
+            background-color: #4CAF50;
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 0.9em;
+    position: absolute;
+    top: 24px;
+    right: 257px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="_container">
+    <div class="nav">
+        <a class="active" onclick="showSection('best-sellers')">Best Sellers</a>
+        <a onclick="showSection('new-arrivals')">New Arrivals</a>
+        <a onclick="showSection('featured')">Our Featured</a>
+    </div>
+
+    <div id="best-sellers" class="section active">
+        <div class="product">
+            <div class="top">TOP</div>
+            <img src="https://via.placeholder.com/150" alt="Converse Training Tery">
+            <h3>Converse Training Tery</h3>
+            <div class="price">$110.00</div>
+            <div class="rating">★★★★★ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="top">TOP</div>
+            <div class="discount">39% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Nike Air Zoom Odyssey 2">
+            <h3>Nike Air Zoom Odyssey 2</h3>
+            <div class="price">$98.00<span class="old-price">$160.00</span></div>
+            <div class="rating">★★★★☆ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="top">TOP</div>
+            <img src="https://via.placeholder.com/150" alt="Awesome Bag">
+            <h3>Awesome Bag</h3>
+            <div class="price">$98.00</div>
+            <div class="rating">★★★★★ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="discount">24% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Fashion Sports Bag">
+            <h3>Fashion Sports Bag</h3>
+            <div class="price">$98.00<span class="old-price">$129.00</span></div>
+            <div class="rating">★★★★☆ (2 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="discount">10% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Blue Bright Table Lamp">
+            <h3>Blue Bright Table Lamp</h3>
+            <div class="price">$99.00 - $110.00</div>
+            <div class="rating">★★★★★ (2 Reviews)</div>
+            <button>Select Options</button>
+        </div>
+    </div>
+
+    <div id="new-arrivals" class="section">
+        <div class="product">
+            <div class="top">TOP</div>
+            <img src="https://via.placeholder.com/150" alt="Fashionable Brown Shoes">
+            <h3>Fashionable Brown Shoes</h3>
+            <div class="price">$121.00 - $139.00</div>
+            <div class="rating">★★★★★ (2 Reviews)</div>
+            <button>Select Options</button>
+        </div>
+        <div class="product">
+            <div class="discount">24% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Fashion Sports Bag">
+            <h3>Fashion Sports Bag</h3>
+            <div class="price">$98.00<span class="old-price">$129.00</span></div>
+            <div class="rating">★★★★☆ (2 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="top">TOP</div>
+            <img src="https://via.placeholder.com/150" alt="Converse Training Tery">
+            <h3>Converse Training Tery</h3>
+            <div class="price">$110.00</div>
+            <div class="rating">★★★★★ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="discount">10% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Blue Bright Table Lamp">
+            <h3>Blue Bright Table Lamp</h3>
+            <div class="price">$99.00 - $110.00</div>
+            <div class="rating">★★★★★ (2 Reviews)</div>
+            <button>Select Options</button>
+        </div>
+        <div class="product">
+            <div class="top">TOP</div>
+            <div class="discount">39% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Nike Air Zoom Odyssey 2">
+            <h3>Nike Air Zoom Odyssey 2</h3>
+            <div class="price">$98.00<span class="old-price">$160.00</span></div>
+            <div class="rating">★★★★☆ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="featured" class="section">
+        <div class="product">
+            <div class="top">TOP</div>
+            <img src="https://via.placeholder.com/150" alt="Fashionable Brown Shoes">
+            <h3>Fashionable Brown Shoes</h3>
+            <div class="price">$121.00 - $139.00</div>
+            <div class="rating">★★★★★ (2 Reviews)</div>
+            <button>Select Options</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Converse Training Tery">
+            <h3>Converse Training Tery</h3>
+            <div class="price">$110.00</div>
+            <div class="rating">★★★★★ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="discount">39% OFF</div>
+            <img src="https://via.placeholder.com/150" alt="Nike Air Zoom Odyssey 2">
+            <h3>Nike Air Zoom Odyssey 2</h3>
+            <div class="price">$98.00<span class="old-price">$160.00</span></div>
+            <div class="rating">★★★★☆ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Awesome Bag">
+            <h3>Awesome Bag</h3>
+            <div class="price">$98.00</div>
+            <div class="rating">★★★★★ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Harmony White Shoes">
+            <h3>Harmony White Shoes</h3>
+            <div class="price">$110.00</div>
+            <div class="rating">★★★☆☆ (1 Reviews)</div>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelector(`.nav a[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

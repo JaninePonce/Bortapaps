@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Geologica:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/FINAL_LAYOUT_BORTAPAPS/style.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+body{
+    background-color: rgb(255, 255, 255);
+}
+.banner{
+    width: 100%;
+    height: 16dvh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    margin-top: 242px;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    font-size: 293%;
+}
+.categories_conatiner{
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    margin-top: 416px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-direction: row;
+    gap: 1%;
+    padding-left: 16px;
+}
+.categories_sections{
+    width: 20%;
+    height: 39dvh;
+    background-color: rgb(150, 148, 148);
+    border-radius: 20px;
+    padding: 10px;
+}
+.sub_sections{
+    width: 100%;
+    height: 110dvh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    margin-top: 50%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+#category_title{
+    font-size: 195%;
+    margin-top: -15%;
+    color: white;
+}
+
+.sub_sections_contents{
+    width: 100%;
+    height: 108dvh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.s1{
+    width: 35%;
+    padding: 12px;
+}
+.s2{
+padding: 10px;
+overflow-y: auto;
+
+}
+.s2_container{
+    width: 93%;
+    height: 50dvh;
+    background-color: rgb(255, 255, 255);
+    margin-left: 18px;
+    margin-bottom: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+.overflow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding: 10px;
+}
+.s2_details{
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    height: 54%;
+    gap: 3px;
+    font-size: 2dvh;
+}
+#name{
+    padding-left: 24px;
+}
+#star{
+    display: flex;
+    flex-direction: row;
+    padding-left: 24px;
+}
+.footer{
+    position: absolute;
+    margin-top: 112%;
+}
+
+
+.category-filter {
+    padding: 10px;
+    width: 100%;
+    font-size: 203%;
+    padding-left: 3%;
+    height: 29%;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.category-header span {
+    font-weight: 400;
+}
+
+.category-options {
+    margin-top: 10px;
+}
+
+.category-options label {
+    margin: 5px 0;
+    display: flex;
+    align-content: center;
+
+}
+
+.category-options input[type="checkbox"] {
+    margin-right: 23px;
+    transform: scale(2.5);
+}
+.toggle-button{
+    font-size: 91%;
+    border: transparent;
+    background: transparent;
+}
+#s2_image{
+    width: 100%;
+    height: 100%;
+}
+#categories_images{
+    width: 97%;
+    height: 100%;
+    margin-top: -3px;
+    margin-left: 4px;
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="navbar_contents">
+         <div class="search">
+             <input type="text" name="search" id="search" placeholder="Search...">
+         </div>
+         <div class="logo">
+             <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt="">
+         </div>
+         <div class="icons">
+            <div class="acc"></div>
+            <div class="heart">
+             <span id="heart" class="material-symbols-outlined">favorite</span>
+         </div>
+            <div class="cart">
+                 <span id="cart_total">
+                     <p>Shopping Cart</p>
+                     <p>Php 0.00</p>
+                 </span>
+                 <span>
+                     <span id="bag" class="material-symbols-outlined">shopping_bag </span>
+                 </span>
+             </div>
+            
+            </div>
+         </div>
+        </div>
+         
+     </div>
+ 
+ 
+     <div class="sub_navbar">
+         <div class="sub_navbar_contents">
+             <a href="">HOME</a>
+             <a href="">BRANDS</a>
+             <a href="">MEN</a>
+             <a href="">WOMEN</a>
+             <a href="">ACCESSORIES</a>
+             <a href="">ABOUT US</a>
+         </div>
+     </div>
+
+
+
+    <div class="banner">
+        <p>MEN'S APPAREL</p>
+    </div>
+
+    <div class="categories_conatiner">
+      <div class="categories_sections">
+        <img id="categories_images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+        <p id="category_title">JEANS</p>
+      </div>
+     
+      <div class="categories_sections">
+        <img id="categories_images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+        <p id="category_title">JEANS</p>
+      </div>
+
+      <div class="categories_sections">
+        <img id="categories_images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+        <p id="category_title">JEANS</p>
+      </div>
+
+      <div class="categories_sections">
+        <img id="categories_images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+        <p id="category_title">JEANS</p>
+      </div>
+
+      <div class="categories_sections">
+        <img id="categories_images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+        <p id="category_title">JEANS</p>
+      </div>
+
+    </div>
+
+    <div class="sub_sections">
+      
+        <div class="sub_sections_contents s1">
+
+            <div class="category-filter">
+                <div class="category-header">
+                    <span>Category</span>
+                    <button class="toggle-button">&#9654;</button>
+                </div>
+                <div class="category-options">
+                    <label>
+                        <input type="checkbox">
+                        Tops (188)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Outerwear (32)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Bottoms (87)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Swim (13)
+                    </label>
+                </div>
+            </div>
+        
+
+
+            <div class="category-filter" id="category-filter-2">
+                <div class="category-header">
+                    <span>Category</span>
+                    <button class="toggle-button">&#9654;</button>
+                </div>
+                <div class="category-options">
+                    <label>
+                        <input type="checkbox">
+                        Shirts (50)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Jackets (25)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Pants (70)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Shorts (15)
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="category-filter" id="category-filter-2">
+                <div class="category-header">
+                    <span>Category</span>
+                    <button class="toggle-button">&#9654;</button>
+                </div>
+                <div class="category-options">
+                    <label>
+                        <input type="checkbox">
+                        Shirts (50)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Jackets (25)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Pants (70)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Shorts (15)
+                    </label>
+                </div>
+            </div>
+        
+
+        </div>
+
+
+
+        <div class="sub_sections_contents s2">
+            <div class="overflow">
+
+                <div class="s2_details">    
+            <div class="s2_container"><img id="s2_image" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt=""></div>
+            <p id="name">ARIRANG</p>
+            <p id="name">Php 0.00</p>
+            <span id="star">
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+        </span>
+        </div>
+
+        
+
+        </div>
+    </div> 
+    </div>
+    
+
+
+
+    
+<div class="footer">
+    <div class="footer1">
+        <div class="logo_footer"> <img id="img_footer" src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt=""></div>
+        <div class="subscribe"><span><p>Subscribe to our Newsletter</p>
+            <p style="font-size: 80%;">Get all the latest information, Sales and Offers.</p></span>
+            <div class="email"><input type="text" id="email" name="username" placeholder="Enter Username" required>
+            <div class="button_footer"><button id="button_footer">SUBSCRIBE</button></div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="footer2">
+        <span id="info">
+            <p>Contact Info</p> 
+            <p>PHONE:Toll Free (123) 456-7890</p> 
+            <p>EMAIL:bortapaps@mail.com</p>
+            <p>ADDRESS:123 Street Name, City, England</p>
+            <p>WORKING DAYS / HOURS:</p>
+            <p>Mon - Sun / 9:00 AM - 8:00 PM</p>
+        </span>
+        <span id="about">
+            <p>About Us</p>
+            <p>Order History</p>
+            <p>Returns</p>
+            <p>Custom Service</p>
+            <p>Terms & Condition</p>
+        </span>
+        <span id="myacc">
+            <p>My Account</p>
+            <p>Sign in</p>
+            <p>View Cart</p>
+            <p>My Wishlist</p>
+            <p>Track My Order</p>
+            <p>Help</p>
+        </span>
+        <span id="socials">
+            <p style="width: 79%;">SOCIALS</p>
+            <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a> 
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-tumblr"></a>
+        </span>
+    </div>
+    <div class="footer3">
+        <p>Bortapaps eCommerce © 2024. All Rights Reserved</p>
+    </div>
+    </div>
+    
+    
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const toggleButtons = document.querySelectorAll('.toggle-button');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const categoryOptions = this.parentElement.nextElementSibling;
+            if (categoryOptions.style.display === 'none' || categoryOptions.style.display === '') {
+                categoryOptions.style.display = 'block';
+                this.innerHTML = '&#9660;'; // Change to down arrow
+            } else {
+                categoryOptions.style.display = 'none';
+                this.innerHTML = '&#9654;'; // Change to right arrow
+            }
+        });
+    });
+});
+
+
+    </script>
+    
+</body>
+</html>

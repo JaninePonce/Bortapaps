@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: burlywood;
+        }
+        .side_nav_container{
+            width: 45%;
+    height: 100dvh;
+    background-color: rgb(255, 255, 255);
+    margin-left: 55%;
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+        }
+        .search{
+            width: 97%;
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    background: white;
+    z-index: 1;
+    position: relative;
+}
+.input-box {
+  position: relative;
+  height:100px;
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 8px;
+  margin-top: 5%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.input-box i,
+.input-box .button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-box i {
+  left: 20px;
+  font-size: 40px;
+  color: #707070;
+}
+.input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 24px;
+    font-weight: 400;
+    border: none;
+    padding: 4px 145px 0 79px;
+    background-color: transparent;
+}
+.input-box .button {
+  right: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  background-color: #4070f4;
+  cursor: pointer;
+}
+.input-box .button:active {
+  transform: translateY(-50%) scale(0.98);
+}
+/* Responsive */
+@media screen and (max-width: 500px) {
+  .input-box {
+    height: 66px;
+    margin: 0 8px;
+  }
+  .input-box i {
+    left: 12px;
+    font-size: 25px;
+  }
+  .input-box input {
+    padding: 0 112px 0 50px;
+  }
+  .input-box .button {
+    right: 12px;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+
+}
+.popular{
+    width: 100%;
+    height: 9%;
+    padding: 24px;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    font-size: 3dvh;
+    gap: 2dvh;
+    margin-top: 6%;
+    padding-left: 3%;
+   
+}
+.title{
+    font-size: 4dvh;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.featured{
+    margin-top: 7%;
+    padding: 3%;
+}
+#images{
+    width: 34dvh;
+    height: 43dvh;
+}
+.featured_container{
+    height: 39dvh;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+.featured_title{
+    font-size: 4dvh;
+}
+.gen_container{
+    padding: 3%;
+    margin-top: -6%;
+    height: 88%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.images{
+    display: flex;
+    gap: 3%;
+    flex-wrap: wrap;
+}
+.size{
+    display: flex;
+    align-items: center;
+    font-size: 5dvh;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="side_nav_container">
+        <div class="search">
+            <div class="input-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here..." />
+                <button class="button">Search</button>
+            </div>
+            <span class="material-symbols-outlined size">close</span>
+    </div>
+<div class="gen_container">
+    <div class="popular">
+        <div class="title">POPULAR CATEGORIES</div>
+    </div>
+        
+
+        <div class="links">
+           
+                <a href="#">New Arrivals</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">New Arrivals</a>
+          
+        </div>
+    
+
+    <div class="featured">
+        <div class="featured_title">FEATURED BEST SELLERS</div>
+        <div class="featured_container">
+            <div class="images">
+                <div class="product_details">
+                <img id="images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+                <p>PRODUCT</p>
+                <p>0.00</p>
+            </div>
+                
+
+                <div class="product_details">
+                    <img id="images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+                    <p>PRODUCT</p>
+                    <p>0.00</p>
+                </div>
+                  
+
+                    <div class="product_details">
+                        <img id="images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+                        <p>PRODUCT</p>
+                        <p>0.00</p>
+                    </div>
+
+                    <div class="product_details">
+                        <img id="images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+                        <p>PRODUCT</p>
+                        <p>0.00</p>
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</body>
+</html>
