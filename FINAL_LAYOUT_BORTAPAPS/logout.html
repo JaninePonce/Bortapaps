@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Containers</title>
+    <link rel="stylesheet" href="/FINAL_LAYOUT_BORTAPAPS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Geologica:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar_contents {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .search input {
+            padding: 5px;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+        .icons div {
+            margin-left: 10px;
+        }
+        .sub_navbar {
+            background-color: #444;
+            padding: 10px 0;
+        }
+        .sub_navbar_contents a {
+            color: white;
+            padding: 14px 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .sub_navbar_contents a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            display: none;
+            padding: 20px;
+            position: absolute;
+            margin-top:13% ;
+            display: none;
+    padding: 20px;
+    position: absolute;
+    margin-top: 13%;
+    width: 100%;
+    height: 100%;
+        }
+        .container.active {
+            display: block;
+        }
+        #transactions{
+            background-color: cadetblue;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+        }
+        .transaction_container{
+            background-color: brown;
+            width: 20%;
+            height: 20%;
+            border: 1px solid black;
+            
+        }
+        .s1{
+            width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+    align-items: center;
+        }
+        .s2{
+            width: 100%;
+    height: 78dvh;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+        }
+.sub_containers1{
+    border: 1px solid black;
+    width: 96%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub_containers2{
+    border: 1px solid black;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+.profile{
+    width: 10%;
+    height: 86%;
+    background-color: bisque;
+    border-radius: 50%;
+    margin-left: 3%;
+    
+}
+.name{
+    font-size: 231%;
+}
+.search{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+.search-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+}
+
+.search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+   
+    width: 85%;
+    height: 7dvh;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 13%;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+.transac_container{
+    width: 95%;
+    height: 80%;
+}
+.transac_title{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    background-color: burlywood;
+    
+}
+#align{
+    display: flex;
+    flex-direction: row;
+    gap: 56%;
+    padding: 27px;
+}
+.trans_container{
+    width: 100%;
+    height: 80%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+ .sub_trans_container{
+    width: 100%;
+    height: 20%;
+    margin-top: 3%;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: row;
+    gap: 56%;
+    padding: 27px;
+    border-radius: 20px;
+ }       
+ #trans_details{
+    display: flex;
+    flex-direction: row;
+    width: 123%;
+    gap: 27%;
+    margin-left: -62%;
+    align-items: center;
+    font-size: 169%;
+    
+ }
+ .to_pay{
+    width: 100%;
+    height: 14%;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 230%;
+ }
+ .pending_container{
+    width: 100%;
+    height: 86%;
+    overflow-y:auto ;
+    scrollbar-width: none;
+ }
+ .sub_pending_container{
+    width: 100%;
+    height: 20%;
+    background-color: burlywood;
+    margin-top: 2%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+ }
+ #pending_img{
+    height: 65%;
+    width: 15%;
+    margin-left: 3%;
+    margin-top: -1%;
+ }
+ .pending_price{
+    margin-left: 39%;
+    display: flex;
+    gap: 25%;
+    width: 35%;
+    font-size: 186%;
+ }
+ .pending_total{
+    width: 100%;
+    height: 16%;
+    background-color: burlywood;
+    margin-top: -21%;
+    display: flex;
+    padding: 10px;
+    font-size: 214%;
+    gap: 56%;
+    align-items: center;
+    padding-left: 42px;
+ }
+ #qr{
+
+     background-color: chocolate; 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .qr_container{
+    width: 60%;
+    height: 100%;
+    background-color: cadetblue;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+ }
+ .qr{
+    width: 87%;
+    height: 79%;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .account_name{
+    font-size: 185%;
+    margin-top: 3%;
+ }
+
+ #profile{
+    padding: 10px;
+    background-color: darkgray;
+ }
+.prof_container{
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.picture{
+    width: 41%;
+    height: 51%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+.circle{
+    font-size: 59dvh;
+    margin-top: -7%;
+}
+.account_conatiner{
+    width: 95%;
+    background-color: burlywood;
+    height: 38%;
+    margin-top: -21%;
+    margin-left: 2%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.sub_account_container{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(190, 125, 45);
+
+}
+.right  {
+    width: 466%;
+}
+
+
+#notifications{
+    background-color: crimson;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.notifications_container{
+    width: 100%;
+    height: 95%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+}
+.sub_notifications{
+    width: 100%;
+    height: 13%;
+    background-color: chartreuse;
+    display: flex;
+    align-items: center;
+    font-size: 234%;
+    padding-left: 3%;
+}
+.p1{
+    margin-top: 1%;
+    height: 87%;
+    padding: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+   
+}
+.container_onscroll{
+    width: 100%;
+    height: 20%;
+    background-color: darkgoldenrod;
+    border-radius: 31px;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.onscroll{
+    width: 100%;
+    height: 100%;
+  
+}
+#account{
+    width: 20%;
+    width: 6%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+}
+#msg{
+    display: flex;
+    gap: 1%;
+    width: 84%;
+    margin-left: 2%;
+    margin-bottom: 0%;
+}
+#logout{
+    background-color: #007bff00;
+    padding: 20%;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+}
+.sub_logout{
+    display: flex;
+    width: 91%;
+    height: 136%;
+    background-color: bisque;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+#logout_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2%;
+}
+.fa{
+    font-size: 222%;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar_contents">
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search...">
+            </div>
+            <div class="logo">
+                <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt="Logo">
+            </div>
+            <div class="icons">
+                <div class="acc"></div>
+                <div class="heart">
+                    <span id="heart" class="material-symbols-outlined">favorite</span>
+                </div>
+                <div class="cart">
+                    <span id="cart_total">
+                        <p>Shopping Cart</p>
+                        <p>Php 0.00</p>
+                    </span>
+                    <span>
+                        <span id="bag" class="material-symbols-outlined">shopping_bag</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sub_navbar">
+        <div class="sub_navbar_contents">
+            <a href="/FINAL_LAYOUT_BORTAPAPS/Home_page.html">HOME</a>
+            <a href="#transactionss" onclick="showContainer(event, 'transactionss')">TRANSACTIONS</a>
+            <a href="#qr" onclick="showContainer(event, 'qr')">QR</a>
+            <a href="#profile" onclick="showContainer(event, 'profile')">PROFILE</a>
+            <a href="#notifications" onclick="showContainer(event, 'notifications')">NOTIFICATIONS</a>
+            <a href="#logout" onclick="showContainer(event, 'logout')">LOGOUT</a>
+        </div>
+    </div>
+
+  
+    <!-- LOGOUT -->
+    <div id="logout" class="container">
+      <div class="sub_logout">
+        <p style="font-size: 259%;">ARE YOU SURE YOU WANT TO LOG OUT?</p>
+        <span id="logout_button">
+        <button style="width: 24%;">YES</button>
+        <button style="width: 24%;">NO</button>
+    </span>
+      </div>
+    </div>
+
+    
+<div class="footer" style="position: absolute;margin-top: 69%;">
+    <div class="footer1">
+        <div class="logo_footer"> <img id="img_footer" src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt=""></div>
+        <div class="subscribe"><span><p>Subscribe to our Newsletter</p>
+            <p style="font-size: 80%;">Get all the latest information, Sales and Offers.</p></span>
+            <div class="email"><input type="text" id="email" name="username" placeholder="Enter Username" required>
+            <div class="button_footer"><button id="button_footer">SUBSCRIBE</button></div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="footer2">
+        <span id="info">
+            <p>Contact Info</p> 
+            <p>PHONE:Toll Free (123) 456-7890</p> 
+            <p>EMAIL:bortapaps@mail.com</p>
+            <p>ADDRESS:123 Street Name, City, England</p>
+            <p>WORKING DAYS / HOURS:</p>
+            <p>Mon - Sun / 9:00 AM - 8:00 PM</p>
+        </span>
+        <span id="about">
+            <p>About Us</p>
+            <p>Order History</p>
+            <p>Returns</p>
+            <p>Custom Service</p>
+            <p>Terms & Condition</p>
+        </span>
+        <span id="myacc">
+            <p>My Account</p>
+            <p>Sign in</p>
+            <p>View Cart</p>
+            <p>My Wishlist</p>
+            <p>Track My Order</p>
+            <p>Help</p>
+        </span>
+        <span id="socials">
+            <p style="width: 79%;">SOCIALS</p>
+            <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a> 
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-tumblr"></a>
+        </span>
+    </div>
+    <div class="footer3">
+        <p>Bortapaps eCommerce © 2024. All Rights Reserved</p>
+    </div>
+    </div>
+    
+    
+
+    <script>
+        function showContainer(event, containerId) {
+            event.preventDefault(); 
+
+            var containers = document.querySelectorAll('.container');
+            containers.forEach(function(container) {
+                container.classList.remove('active');
+            });
+
+            var selectedContainer = document.getElementById(containerId);
+            selectedContainer.classList.add('active');
+        }
+    </script>
+</body>
+</html>

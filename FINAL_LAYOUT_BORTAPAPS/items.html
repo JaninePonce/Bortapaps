@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITEMS PAGE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Geologica:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/FINAL_LAYOUT_BORTAPAPS/style.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(255, 255, 255);
+
+    }
+    .color{
+        background-color: black;
+        color: white;
+    }
+    .product_container{
+        width: 100%;
+        height: 115dvh;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    .product_section{
+        width: 100%;
+    height: 87%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 12%;
+    }
+    .s1{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+    .s2{
+        width: 140%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 23px;
+    }
+
+    #description{
+        width: 102%;
+    font-size: 154%;
+    }
+
+#star{
+   
+    width: 94%;
+    margin-top: 8%;
+}
+.star_size{
+    font-size: 333%;
+    margin-left: 4%;
+}
+
+    #details{
+        margin-top: -17%;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    }
+    #name{
+        font-size: 336%;
+
+    }
+    #images{
+        width: 95%;
+    height: 80%;
+    margin-top: 1%;
+}
+.others{
+    width: 97%;
+    height: 20%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 42px;
+}
+.others_section{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(95, 91, 91);
+}
+
+.section_{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.s3{
+    padding: 10px;
+    display: flex;
+   flex-direction: column;
+   
+}
+.ps1{
+    height: 60%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 399%;
+    gap: 16px;
+    padding-left: 33px;
+    justify-content: center;
+    
+}
+.ps2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    justify-content: center;
+
+}
+
+.quantity-selector button {
+    border: 1px solid #ffffff;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.quantity-selector button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.quantity-selector .quantity-input {
+    width: 202px;
+    height: 66px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid black;
+
+}
+.decrement{
+    border-radius: 0%;
+    height: 96%;
+    width: 14%;
+    font-size: 195%;
+    
+
+}
+.increment{
+    border-radius: 0%;
+    height: 96%;
+    width: 14%;
+    font-size: 195%;
+}
+.sizes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3%;
+    row-gap: 3%;
+    column-gap: 6%;
+    margin-top: 14%;
+    flex-wrap: wrap;
+}
+#size{
+    width: 28%;
+    border-radius: 0%;
+    background-color: black;
+        color: white;
+}
+#qnty{
+    font-size: 182%;
+    margin-left: 7%;
+    margin-bottom: 8%;
+    margin-top: 6%;
+}
+#sizes{
+    font-size: 182%;
+    margin-left: 7%;
+    margin-bottom: -8%;
+    margin-top: 6%;
+}
+.sec{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 2%;
+}
+.ps3{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.add_cart{
+   
+    display: flex;
+    justify-content: center;
+    margin-top: -1%;
+    width: 49%;
+    height: 20%;
+    margin-right: 7px;
+}
+#add{
+    width: 40dvh;
+    border-radius: 0%;
+    background-color: black;
+        color: white;
+}
+
+.add_fave{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: -1%;
+    width: 49%;
+    height: 20%;
+}
+#fave{
+    width: 40dvh;
+    border-radius: 0%;
+    background-color: black;
+        color: white;
+}
+.check_stocks{
+   
+    display: flex;
+    justify-content: center;
+    margin-bottom: 11%;
+    width: 100%;
+    height: 20%;
+
+}
+#stocks{
+    width: 48dvh;
+    border-radius: 0%;
+    background-color: black;
+        color: white;
+}
+.add_cart,.add_fave{
+    margin-top: 22%;
+}
+#stockss{
+    position: absolute;
+    bottom: 5%;
+    margin-left: 2%;
+    display: flex;
+    gap: 8px;
+}
+
+
+    .explore{
+        width: 100%;
+        height: 50dvh;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        margin-top: 6%;
+    }
+    .reviews{
+        width: 100%;
+        height: 114%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    }
+    .review{
+        width: 30%;
+    height: 24%;
+    font-size: 329%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    border: 1px solid black;
+}
+
+
+    .comments{
+        display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    
+    flex-direction: column;
+    align-items: center;
+    height: 64%;
+    gap: 3%;
+    }
+.comments_conatiner{
+    width: 96%;
+    height: 10dvh;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+
+    box-shadow: 4px 6px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+.explore_more{
+    width: 100%;
+    height: 100dvh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 2%;
+
+}
+.title{
+    width: 100%;
+    height: 20%;
+    font-size: 341%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_explore{
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    margin-top: -24%;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 2%;
+
+}
+.explore_conatiner{
+    width: 24%;
+    height: 47%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+
+}
+.profile{
+    width: 4%;
+    height: 84%;
+    background-color: bisque;
+    border-radius: 50%;
+    margin-left: 3%;
+    margin-top: 7px;
+}
+.comment_details{
+    width: 91%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 2%;
+    align-items: center;
+    font-size: 152%;
+    
+}
+hr{
+    margin-top: 9%;
+    width: 94%;
+    margin-left: 3%;
+}
+
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="navbar_contents">
+         <div class="search">
+             <input type="text" name="search" id="search" placeholder="Search...">
+         </div>
+         <div class="logo">
+             <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt="">
+         </div>
+         <div class="icons">
+            <div class="acc"></div>
+            <div class="heart">
+             <span id="heart" class="material-symbols-outlined">favorite</span>
+         </div>
+            <div class="cart">
+                 <span id="cart_total">
+                     <p>Shopping Cart</p>
+                     <p>Php 0.00</p>
+                 </span>
+                 <span>
+                     <span id="bag" class="material-symbols-outlined">shopping_bag </span>
+                 </span>
+             </div>
+            
+            </div>
+         </div>
+        </div>
+
+
+        
+    <div class="sub_navbar">
+        <div class="sub_navbar_contents">
+            <a href="">HOME</a>
+            <a href="">BRANDS</a>
+            <a href="">MEN</a>
+            <a href="">WOMEN</a>
+            <a href="">ACCESSORIES</a>
+            <a href="">ABOUT US</a>
+        </div>
+    </div>
+         
+    <div class="product_container">
+        <div class="product_section s1">
+            <span id="details"> <p id="name">HOODIE</p><p id="description">Experience comfort and style with our Classic Comfort Hoodie. Made from a premium cotton-polyester blend, this hoodie is soft, cozy, and perfect for any season. 
+                It's breathable yet warm, keeping you comfortable whether you're lounging at home or out on a chilly evening.</p>
+            </span>
+            <span id="star">
+            <span class="material-symbols-outlined star_size">grade</span>
+            <span class="material-symbols-outlined star_size">grade</span>
+            <span class="material-symbols-outlined star_size">grade</span>
+            <span class="material-symbols-outlined star_size">grade</span>
+            <span class="material-symbols-outlined star_size">grade</span>
+        </span>
+        </div>
+        <div class="product_section s2">
+            <img id="images" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <div class="others">
+                <div class="others_section"></div>
+                <div class="others_section"></div>
+                <div class="others_section"></div>
+            </div>
+        </div>
+        <div class="product_section s3">
+            <div class="section_ ps1"><p>Php</p> <p>0.00</p></div>
+            <div class="section_ ps2">
+                <p id="qnty">QUANTITY</p>
+                <div class="quantity-selector">
+                    <button class="decrement">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" max="100">
+                    <button class="increment">+</button>
+                </div>
+                <p id="sizes">SIZES</p>
+                <div class="sizes ">
+                <button id="size">SMALL</button>
+                <button id="size">LARGE</button>
+                <button id="size">MEDIUM</button>
+                <span class="sec">
+                <button id="size">XXL</button>
+                <button id="size">XXXLLL</button>
+                <button id="size">XXXXLLLL</button>
+            </span>
+                </div>
+                <span id="stockss"><p style="font-size: 182%;">STOCKS:</p><p style="font-size: 182%;">00</p></span>
+            </div>
+
+            <div class="section_ ps3">
+               
+                <div class="add_cart">
+                    <button id="add">ADD TO CART</button>
+                </div>
+                <div class="add_fave"><button id="fave">ADD TO FAVORITES</button></div>
+                <div class="check_stocks"><button id="stocks">BUY NOW</button></div>
+            </div>
+        </div>
+    </div>
+ 
+ 
+
+     <div class="explore">
+        <div class="reviews">
+            <div class="review">REVIEWS</div>
+        <div class="comments">
+            <div class="comments_conatiner">
+                <div class="profile"></div>
+                <div class="comment_details"> <p style="margin-right: 1%;">PAUL TUNACAO</p> <li style="width: 72%;">2 min ago</li> <p>THE PRODUCT IS GOOD. THE SELLER SAKS LANG</p></div>
+            </div>
+            <div class="comments_conatiner">
+                <div class="profile"></div>
+                <div class="comment_details"> <p style="margin-right: 1%;">PAUL TUNACAO</p> <li style="width: 72%;">2 min ago</li> <p>THE PRODUCT IS GOOD. THE SELLER SAKS LANG</p></div>
+            </div>
+            <div class="comments_conatiner">
+                <div class="profile"></div>
+                <div class="comment_details"> <p style="margin-right: 1%;">PAUL TUNACAO</p> <li style="width: 72%;">2 min ago</li> <p>THE PRODUCT IS GOOD. THE SELLER SAKS LANG</p></div>
+            </div>
+        </div>
+        </div>
+     </div>
+
+     <hr>
+
+     <div class="explore_more">
+        <div class="title">EXPLORE MORE</div>
+        <div class="container_explore">
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+        <div class="explore_conatiner"></div>
+    </div>
+     </div>
+
+
+     
+<div class="footer">
+    <div class="footer1">
+        <div class="logo_footer"> <img id="img_footer" src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt=""></div>
+        <div class="subscribe"><span><p>Subscribe to our Newsletter</p>
+            <p style="font-size: 80%;">Get all the latest information, Sales and Offers.</p></span>
+            <div class="email"><input type="text" id="email" name="username" placeholder="Enter Username" required>
+            <div class="button_footer"><button id="button_footer">SUBSCRIBE</button></div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="footer2">
+        <span id="info">
+            <p>Contact Info</p> 
+            <p>PHONE:Toll Free (123) 456-7890</p> 
+            <p>EMAIL:bortapaps@mail.com</p>
+            <p>ADDRESS:123 Street Name, City, England</p>
+            <p>WORKING DAYS / HOURS:</p>
+            <p>Mon - Sun / 9:00 AM - 8:00 PM</p>
+        </span>
+        <span id="about">
+            <p>About Us</p>
+            <p>Order History</p>
+            <p>Returns</p>
+            <p>Custom Service</p>
+            <p>Terms & Condition</p>
+        </span>
+        <span id="myacc">
+            <p>My Account</p>
+            <p>Sign in</p>
+            <p>View Cart</p>
+            <p>My Wishlist</p>
+            <p>Track My Order</p>
+            <p>Help</p>
+        </span>
+        <span id="socials">
+            <p style="width: 79%;">SOCIALS</p>
+            <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a> 
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-tumblr"></a>
+        </span>
+    </div>
+    <div class="footer3">
+        <p>Bortapaps eCommerce © 2024. All Rights Reserved</p>
+    </div>
+    </div>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const decrementButton = document.querySelector('.decrement');
+    const incrementButton = document.querySelector('.increment');
+    const quantityInput = document.querySelector('.quantity-input');
+
+    decrementButton.addEventListener('click', () => {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+        }
+    });
+
+    incrementButton.addEventListener('click', () => {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue < parseInt(quantityInput.max)) {
+            quantityInput.value = currentValue + 1;
+        }
+    });
+
+    quantityInput.addEventListener('input', () => {
+        if (quantityInput.value === '' || parseInt(quantityInput.value) < 1) {
+            quantityInput.value = 1;
+        } else if (parseInt(quantityInput.value) > parseInt(quantityInput.max)) {
+            quantityInput.value = quantityInput.max;
+        }
+    });
+});
+
+     </script>
+</body>
+</html>

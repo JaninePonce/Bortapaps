@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Geologica:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-r+/1pBuh0UqE2UK5KPDd3rPA3+ylUX+MHn6YZwZcSISiWxo3fC5ct1BhV/Hc2ZhCLmAU+1CBu0lBWnmZW6lYVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/FINAL_LAYOUT_BORTAPAPS/style.css">
+</head>
+
+<!-- 
+<style>
+    *{
+        margin: 0;  
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+    body{
+        background-color: brown;
+       
+    }
+    
+    .navbar {
+        width: 100%;
+        height: 14dvh;
+        background-color: black;
+        position: fixed;
+        z-index: 1;
+    }
+
+    .navbar_contents{
+        display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    }
+    
+    .search, .logo, .icons    {
+        width: 100%;
+        height: 14dvh;
+        
+        
+    }
+    .search{
+        display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    }
+    #search{
+        margin-left: 8%;
+    }
+    .logo{
+        display: flex;
+    justify-content: center;
+    }
+    img{
+        width: 63%;
+    height: 139%;
+    margin-top: -27px;
+    }
+    .icons{
+        display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 5%;
+    justify-content: end;
+    align-items: center;
+    }
+    .acc{
+        width: 10%;
+    height: 6dvh;
+    background-color: aliceblue;
+    border-radius: 50%;
+    
+    border: 1px solid blue;
+    }
+    .heart{
+        width: 15%;
+    border-right: 1px solid white;
+    }
+    #heart{
+        color: white;
+    font-size: 6dvh;
+    
+    }
+    .cart  {
+        width: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    }
+    #cart_total{
+        color: white;
+        font-size: 143%;
+    }
+
+    #bag{
+        font-size: 6dvh; 
+        color: white;
+    }
+
+
+    .sub_navbar{
+        width: 100%;
+    height: 10dvh;
+    background-color: chartreuse;
+    position: absolute;
+    margin-top: 7%; 
+    }
+    .sub_navbar_contents{
+      
+    width: 100%;
+    height: 10dvh;
+    display: flex;
+    font-size: 124%;
+    align-items: center;
+    justify-content: center;
+    gap: 145px;
+    }
+    a{
+        text-decoration: none;
+        color:black;
+    }
+   
+    /* FIRST PAGE */
+    .first_page{
+        width: 100%;
+        height: 105vh;
+        background-color: cadetblue;
+    }
+    /* END OF FIRST PAGE */
+
+
+
+    /* SECOND PAGE */
+    .second_page{
+        width: 100%;
+        height: 105vh;
+        background-color: rgb(36, 67, 68);
+        padding: 10px;
+    }
+
+    .wrapper{
+        display: flex;
+    max-width: 1811px;
+    position: relative;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 60%;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+    height: 697px;
+    object-fit: cover;
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+}
+.carousel img:first-child{
+  margin-left: 0px;
+}
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+}
+#product_title{
+    font-size: 416%;
+    width: 50%;
+    margin-left: 3%;
+    margin-top: 2%;
+}
+
+
+
+    /* END OF SECOND PAGE */
+
+    /* THIRD PAGE */
+    .third_page{
+        width: 100%;
+        height: 160vh;
+        background-color: rgb(14, 32, 32);
+        padding: 10px;
+    }
+
+    .third_page_container{
+        width: 100%;
+    height: 73%;
+    background-color: cornflowerblue;
+    margin-top: 2%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    row-gap: 0%
+    }
+
+    .filter_buttons{
+        width: 97%;
+    margin-left: 3%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+    button{
+    width: 10%;
+    height: 7dvh;
+    font-size: 135%;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    }
+   
+
+
+  
+.topnav {
+    background-color: rgb(14, 32, 32);
+    overflow: hidden;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    height: 9dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 151%;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+    .product_container{
+        width: 24%;
+    height: 43%;
+    background-color: #ccc;
+}
+#view{
+    margin-left: 41%;
+    width: 19%;
+    height: 6%;
+    margin-top: -2%;
+}
+
+
+
+    /* END OF THIRD PAGE */
+   
+    /* FOURTH PAGE */
+    .fourth_page{
+        width: 100%;
+    height: 35dvh;
+    background-color: #343F4F;
+    padding: 19px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    }
+    .ad1,.ad2{
+        background-color: #fff;
+    width: 100%;
+    height: 31dvh;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14%;
+    
+}
+#ad_details{
+
+    margin-top: 1%;
+    margin-left: 8%;
+    font-size: 4dvh;
+}
+#shop  {
+    width: 24%;
+    margin-left: 8%;
+}
+    /* END OF FOURTH PAGE */
+
+
+/* FIFTH PAGE */
+.fifth_page{
+    width: 100%;
+    height: 115dvh;
+    background-color: #06295c;
+    padding: 10px;
+}
+
+
+
+.carousels {
+    position: relative;
+    width: 80%;
+    max-width: 642%;
+    overflow: hidden;
+    height: 65%;
+    margin-left: 9%;
+    margin-top: 43px;
+}
+.carousel__track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel__image {
+  display: block;
+  width: 100%;
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 6%;
+}
+
+.carousel__button--left {
+  left: 10px;
+}
+
+.carousel__button--right {
+  right: 10px;
+}
+.fifth{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7dvh;
+    margin-top: 2%;
+}
+#brandss{
+    margin-left: 40%;
+    width: 20%;
+    height: 8%;
+    margin-top: 4%;
+}
+
+/* END OF FIFTH PAGE */
+
+
+/* SIXTH PAGE */
+
+.sixth_page{
+    background-color: #240947;
+    width: 100%;
+    height: 70dvh;
+    padding: 10px;
+}
+.sixth_page_container{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.product_container2{
+    width: 24%;
+    height: 68%;
+    background-color: #ccc;
+    margin-top: 0%;
+    margin-left: 8px;
+}
+.sixth{
+    display: flex;
+    font-size: 400%;
+    justify-content: flex-start;
+
+}
+
+
+
+/* END OF SIXTH PAGE */
+
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    height: 70dvh;
+    background-color: darkslategrey;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.footer1,.footer2,.footer3
+{
+    width: 100%;
+    height: 33%;
+    background-color: #f2f2f2;
+}
+.footer1{
+    height: 24%;
+    display: flex;
+    gap: 8%;
+}
+.footer2{
+    height: 53%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 9%;
+}
+.footer3{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 181%;
+}
+#img_footer{
+    height: 108%;
+    width: 98%;
+    margin-left: 21%;
+    margin-top: 6%;
+}
+.logo_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscribe{
+    display: flex;
+    align-items: center;
+    font-size: 195%;
+    width: 58%;
+    gap: 8%;
+}
+.email{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 39%;
+    gap: 8%;
+}
+#email{
+    height: 9dvh;
+    width: 150%;
+}
+.button_footer{
+    width: 0;
+    font-size: 60%;
+}
+#button_footer{
+    width: 11dvw;
+}
+#info{
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    line-height: 296%;
+    font-size: 113%;
+}
+#about{
+    display: flex;
+    flex-direction: column;
+    line-height: 296%;
+    font-size: 113%;
+    margin-top: -54px;
+}
+#myacc{
+    display: flex;
+    flex-direction: column;
+    line-height: 296%;
+    font-size: 113%;
+}
+
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+    width: 18%;
+    height: 28%;
+    font-size: 242%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#socials{
+    display: flex;
+    flex-direction: row;
+    line-height: 296%;
+    font-size: 113%;
+    width: 27%;
+    height: 76%;
+    align-items: center;
+    gap: 4%;
+    flex-wrap: wrap;
+    margin-top: -2%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* END FOOTER */
+
+
+</style> -->
+<body>
+    <div class="navbar">
+       <div class="navbar_contents">
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search...">
+        </div>
+        <div class="logo">
+            <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt="">
+        </div>
+        <div class="icons">
+           <div class="acc"></div>
+           <div class="heart">
+            <span id="heart" class="material-symbols-outlined">favorite</span>
+        </div>
+           <div class="cart">
+                <span id="cart_total">
+                    <p>Shopping Cart</p>
+                    <p>Php 0.00</p>
+                </span>
+                <span>
+                    <span id="bag" class="material-symbols-outlined">shopping_bag </span>
+                </span>
+            </div>
+           
+           </div>
+        </div>
+       </div>
+        
+    </div>
+
+
+    <div class="sub_navbar">
+        <div class="sub_navbar_contents">
+            <a href="">HOME</a>
+            <a href="">BRANDS</a>
+            <a href="">MEN</a>
+            <a href="">WOMEN</a>
+            <a href="">ACCESSORIES</a>
+            <a href="">ABOUT US</a>
+        </div>
+    </div>
+    
+ 
+
+   <div class="first_page"></div>
+
+   <div class="second_page">
+    <div class="product_title"><p id="product_title">BORTAPAPS: Extra 20% Off</p></div>
+    
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"> </i>
+        <div class="carousel">   
+
+        
+        <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="img" draggable="false"> 
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-2.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-3.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-4.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-5.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-6.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-7.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-8.jpg" alt="img" draggable="false">
+          <img src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-9.jpg" alt="img" draggable="false">
+        </div>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+
+   </div>
+
+   <div class="third_page">
+    <div class="product_title"><p id="product_title">Top Sellers in the Phillipines</p></div>
+    <div class="filter_buttons">
+        <div class="topnav">
+            <a href="#home" >All</a>
+            <a href="#news">Sleeveless</a>
+            <a href="#contact"> Dresses</a>
+            <a href="#contact"> Hoodies</a>
+            <a href="#contact"> Jeans</a>
+            <a href="#contact">Sunglasses</a>
+            <a href="#contact"> Short Sleeves</a>
+          </div>
+       
+          
+
+
+    </div>
+    <div class="third_page_container">
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+
+        <div class="product_container">
+            <img id="product_name" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="">
+            <span id="product_detailss">
+            <p>ARIRANG</p>
+            <p>₱ 1,500.00</p>
+        </span>
+        </div>
+      
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <button id="view">View More Products</button>
+   
+   </div>
+  
+<div class="fourth_page">
+<div class="ad1">
+    <p id="ad_details">EXPLORE MORE BRANDS</p>
+    <button id="shop">SHOP NOW</button>
+</div>
+<div class="ad2">
+    <p id="ad_details">Flash Sale 50% Off
+        Necessaries For Summer Season</p>
+        <button id="shop">SHOP NOW</button>
+</div>
+
+</div>
+   
+<div class="fifth_page">
+
+    <div class="product_title fifth"><p>Discover your Favorite Brand!</p></div>
+    <div class="carousels">
+        <button class="carousel__button carousel__button--left">&lt;</button>
+        <div class="carousel__track-container">
+          <ul class="carousel__track">
+            <li class="carousel__slide"><img class="carousel__image" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-1.jpg" alt="Image 1"></li>
+            <li class="carousel__slide"><img class="carousel__image" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-2.jpg" alt="Image 2"></li>
+            <li class="carousel__slide"><img class="carousel__image" src="/FINAL_LAYOUT_BORTAPAPS/pictures/img-3.jpg" alt="Image 3"></li>
+          </ul>
+        </div>
+        <button class="carousel__button carousel__button--right">&gt;</button>
+      </div>
+   
+      <button id="brandss">View More Brands</button>
+   
+   </div>
+
+   <div class="sixth_page">
+<div class="sixth_page_container">
+
+    <div class="product_title fifth sixth"><p style="width: 22%;border-right: 1px solid black;">Accessories</p><p style="font-size: 57%;margin-left: 2%;">View More</p></div>
+    <div class="product_container2"></div>
+    <div class="product_container2"></div>
+    <div class="product_container2"></div>
+    <div class="product_container2"></div>
+</div>
+    
+   </div>
+
+
+
+
+
+   
+<div class="footer">
+<div class="footer1">
+    <div class="logo_footer"> <img id="img_footer" src="/FINAL_LAYOUT_BORTAPAPS/pictures/bts_logo.png" alt=""></div>
+    <div class="subscribe"><span><p>Subscribe to our Newsletter</p>
+        <p style="font-size: 80%;">Get all the latest information, Sales and Offers.</p></span>
+        <div class="email"><input type="text" id="email" name="username" placeholder="Enter Username" required>
+        <div class="button_footer"><button id="button_footer">SUBSCRIBE</button></div>
+        </div>
+    </div>
+   
+</div>
+<div class="footer2">
+    <span id="info">
+        <p>Contact Info</p> 
+        <p>PHONE:Toll Free (123) 456-7890</p> 
+        <p>EMAIL:bortapaps@mail.com</p>
+        <p>ADDRESS:123 Street Name, City, England</p>
+        <p>WORKING DAYS / HOURS:</p>
+        <p>Mon - Sun / 9:00 AM - 8:00 PM</p>
+    </span>
+    <span id="about">
+        <p>About Us</p>
+        <p>Order History</p>
+        <p>Returns</p>
+        <p>Custom Service</p>
+        <p>Terms & Condition</p>
+    </span>
+    <span id="myacc">
+        <p>My Account</p>
+        <p>Sign in</p>
+        <p>View Cart</p>
+        <p>My Wishlist</p>
+        <p>Track My Order</p>
+        <p>Help</p>
+    </span>
+    <span id="socials">
+        <p style="width: 79%;">SOCIALS</p>
+        <a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-youtube"></a>
+<a href="#" class="fa fa-instagram"></a>
+<a href="#" class="fa fa-pinterest"></a> 
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-tumblr"></a>
+    </span>
+</div>
+<div class="footer3">
+    <p>Bortapaps eCommerce © 2024. All Rights Reserved</p>
+</div>
+</div>
+
+
+
+
+   <script>
+    const carousel = document.querySelector(".carousel"),
+firstImg = carousel.querySelectorAll("img")[0],
+arrowIcons = document.querySelectorAll(".wrapper i");
+let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+const showHideIcons = () => {
+    
+    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; 
+    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+}
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        let firstImgWidth = firstImg.clientWidth + 14; 
+       
+        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        setTimeout(() => showHideIcons(), 60); 
+    });
+});
+const autoSlide = () => {
+    
+    if(carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+    positionDiff = Math.abs(positionDiff); 
+    let firstImgWidth = firstImg.clientWidth + 14;
+   
+    let valDifference = firstImgWidth - positionDiff;
+    if(carousel.scrollLeft > prevScrollLeft) { 
+        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    
+    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+}
+const dragStart = (e) => {
+    
+    isDragStart = true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft = carousel.scrollLeft;
+}
+const dragging = (e) => {
+    
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging = true;
+    carousel.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+    showHideIcons();
+}
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging");
+    if(!isDragging) return;
+    isDragging = false;
+    autoSlide();
+}
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+document.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("touchend", dragStop);
+
+// sample
+
+const track = document.querySelector('.carousel__track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.carousel__button--right');
+const prevButton = document.querySelector('.carousel__button--left');
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+// Arrange the slides next to one another
+const setSlidePosition = (slide, index) => {
+  slide.style.left = slideWidth * index + 'px';
+};
+
+slides.forEach(setSlidePosition);
+
+// Initialize the first slide as the current slide
+slides[0].classList.add('current-slide');
+
+// Function to move to a specific slide
+const moveToSlide = (track, currentSlide, targetSlide) => {
+  track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+  currentSlide.classList.remove('current-slide');
+  targetSlide.classList.add('current-slide');
+};
+
+// Update button states based on the current slide
+const updateButtonState = (slides, prevButton, nextButton, targetIndex) => {
+  if (targetIndex === 0) {
+    prevButton.setAttribute('disabled', true);
+    nextButton.removeAttribute('disabled');
+  } else if (targetIndex === slides.length - 1) {
+    nextButton.setAttribute('disabled', true);
+    prevButton.removeAttribute('disabled');
+  } else {
+    prevButton.removeAttribute('disabled');
+    nextButton.removeAttribute('disabled');
+  }
+};
+
+// Move to the next slide
+nextButton.addEventListener('click', e => {
+  const currentSlide = track.querySelector('.current-slide');
+  const nextSlide = currentSlide.nextElementSibling;
+  const currentIndex = slides.findIndex(slide => slide === currentSlide);
+  const targetIndex = currentIndex + 1;
+
+  if (nextSlide) {
+    moveToSlide(track, currentSlide, nextSlide);
+    updateButtonState(slides, prevButton, nextButton, targetIndex);
+  }
+});
+
+// Move to the previous slide
+prevButton.addEventListener('click', e => {
+  const currentSlide = track.querySelector('.current-slide');
+  const prevSlide = currentSlide.previousElementSibling;
+  const currentIndex = slides.findIndex(slide => slide === currentSlide);
+  const targetIndex = currentIndex - 1;
+
+  if (prevSlide) {
+    moveToSlide(track, currentSlide, prevSlide);
+    updateButtonState(slides, prevButton, nextButton, targetIndex);
+  }
+});
+
+// Initial button state
+updateButtonState(slides, prevButton, nextButton, 0);
+
+
+function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelector(`.nav a[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+
+</script>
+</body>
+</html>
